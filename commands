@@ -1,0 +1,503 @@
+nd23@nd23-pc:~$ git clone https://github.com/nicdom23/FHPC_2019-2020.git
+Cloning into 'FHPC_2019-2020'...
+remote: Enumerating objects: 29, done.
+remote: Counting objects: 100% (29/29), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 110 (delta 9), reused 28 (delta 9), pack-reused 81
+Receiving objects: 100% (110/110), 56.08 MiB | 2.46 MiB/s, done.
+Resolving deltas: 100% (34/34), done.
+^[[And23@nd23-pc:~$ git remote add source https://github.com/nicdom23/FHPC_2019-2020.git
+fatal: not a git repository (or any of the parent directories): .git
+nd23@nd23-pc:~$ cd FHPC_2019-2020/
+nd23@nd23-pc:~/FHPC_2019-2020$ git remote add source https://github.com/nicdom23/FHPC_2019-2020.git
+nd23@nd23-pc:~/FHPC_2019-2020$ ls
+D00  D01  D02  D03  README.md  Thomas_Sterling,_Matthew_Anderson.pdf  Ulysses_mpi.txt
+nd23@nd23-pc:~/FHPC_2019-2020$ gedit Ulysses_mpi.txt 
+nd23@nd23-pc:~/FHPC_2019-2020$ ssh -l ndomenis frontend2.hpc.sissa.it
+The authenticity of host 'frontend2.hpc.sissa.it (147.122.3.33)' can't be established.
+RSA key fingerprint is SHA256:S28GxATJkM3FSZ0NcZNWBQRgauhvtZh/ypqOdtwHbqo.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'frontend2.hpc.sissa.it,147.122.3.33' (RSA) to the list of known hosts.                
+ndomenis@frontend2.hpc.sissa.it's password:                                                                       
+Permission denied, please try again.                                                                              
+ndomenis@frontend2.hpc.sissa.it's password:                                                                       
+Last login: Sun Oct 20 19:55:46 2019 from 140.105.160.250                                                         
+                                                                                                                  
+Queue system documentation: please see   man queues                                                               
+                                                                                                                  
+FAIR USAGE: this is a login node, not a computing node. Long-running jobs                                         
+            should be queued, not run here, and will be automatically killed                                      
+            when they exceed their memory or cputime limit.                                                       
+                                                                                                                  
+                                                                                                                  
+                                                                                                                  
+2018-12-14   STORAGE FAILURE
+
+             one of the two storage controllers that power shared filesystems
+             (/home and /scratch) is DOWN
+             
+             all your data are safe and accessible, but you will probably 
+             experience a performance degradation while reading and writing
+             to /home and /scratch (depending on overall access pattern
+             expected access times could be 2 to 10 times longer than usual)
+             
+             
+[ndomenis@login2 ~]$ ls
+file_of_output.o  log_of_my_job   myjob.e3386086  myjob.e3386103  test.sh           test.sh.e3386082  test.sh.o3386080                       
+jobtest           myjob.e3386085  myjob.e3386092  myjob.e3386104  test.sh.e3386080  test.sh.e3386083  test.sh.o3386082                       
+[ndomenis@login2 ~]$ nano                                                                                                                    
+[ndomenis@login2 ~]$ ls                                                                                                                      
+file_of_output.o  log_of_my_job  myjob.e3386085  myjob.e3386092  myjob.e3386104  test.sh.e3386080  test.sh.e3386083  test.sh.o3386082        
+jobtest           mpi_pi.c       myjob.e3386086  myjob.e3386103  test.sh         test.sh.e3386082  test.sh.o3386080
+[ndomenis@login2 ~]$ module load openmpi/1.8.3/
+openmpi/1.8.3/(4):ERROR:105: Unable to locate a modulefile for 'openmpi/1.8.3/'
+[ndomenis@login2 ~]$ module avail
+
+-------------------------------------------------------- /u/shared/modules/compilers --------------------------------------------------------
+bazel/0.4.5/gnu/4.9.2    cudatoolkit/6.5(default) gcc/4.8.2                intel/18.4               pgi_CE/16.10-openmpi
+cudatoolkit/10.0         cudatoolkit/7.5          gnu/4.9.2(default)       pgi/14.6                 pgi_CE/17.4(default)
+cudatoolkit/6.0          cudatoolkit/9.2          intel/14.0               pgi_CE/16.10             pgi_CE/17.4-openmpi
+
+----------------------------------------------------------- /u/shared/modules/mpi -----------------------------------------------------------
+impi-trial/5.0.1.035             mvapich2/2.1a/intel/14.0         openmpi/1.8.3/intel/14.0
+mvapich2/2.1a/gnu/4.9.2          openmpi/1.8.3/gnu/4.9.2(default)
+
+-------------------------------------------------------- /u/shared/modules/libraries --------------------------------------------------------
+2decomp_fft/1.5/fftw/3.3.4/intel/14.0                     matplotlib/1.4.3/python/2.7.8/numpy/1.9.1
+atlas/3.10.2/gnu/4.9.2                                    matplotlib/1.4.3/python/3.4.2/numpy/1.9.1
+boost/1.57.0/gnu/4.9.2/python/2.7.8                       mkl/11.1
+fftw/2.1.5/gnu/4.9.2                                      netcdf/4.3.2/gnu/4.9.2
+fftw/2.1.5/intel/14.0                                     netcdf-cxx/4.2/gnu/4.9.2
+fftw/3.3.4/gnu/4.9.2                                      netcdf-fortran/4.4.1/gnu/4.9.2
+fftw/3.3.4/intel/14.0                                     numpy/1.9.1/intel/14.0/mkl/11.1/python/2.7.8
+fftw/3.3.4/old(default)                                   numpy/1.9.1/intel/14.0/mkl/11.1/python/3.4.2
+fftw/3.3.4-single/gnu/4.9.2                               openblas/0.2.13/gnu/4.9.2
+fftw/3.3.4-single/intel/14.0                              plasma/1.6.1/intel/14.0/mkl/11.1
+gsl/1.16/gnu/4.9.2                                        scipy/0.15.1/numpy/1.9.1/intel/14.0/mkl/11.1/python/2.7.8
+gsl/2.2/gnu/4.9.2                                         scipy/0.15.1/numpy/1.9.1/intel/14.0/mkl/11.1/python/3.4.2
+hdf5/1.8.12/gnu/4.9.2                                     tensorflow/1.1.0/gnu/4.9.2/cpu
+magma/1.6.1/intel/14.0/mkl/11.1/cudatoolkit/6.5           tensorflow/1.1.0/gnu/4.9.2/gpu
+
+------------------------------------------------------ /u/shared/modules/applications -------------------------------------------------------
+cmake/2.8.12(default)  cmake/3.1.1            cplex/12.6.3-community idl/8.4.1              python/2.7.8/gnu/4.9.2 python/3.4.2/gnu/4.9.2
+
+-------------------------------------------------------- /u/shared/modules/utilities --------------------------------------------------------
+SMR3102                contribs               gnuplot/5.0.0          hwloc/1.10.0(default)  likwid/3.1.3/gnu/4.9.2 numactl/2.0.10
+cluster-utils          gnuplot/4.6.6(default) gnuplot/5.0.6          hwloc/1.11.0           likwid/4.0.0/gnu/4.9.2 testing
+[ndomenis@login2 ~]$ module load openmpi/1.8.3/gnu
+openmpi/1.8.3/gnu        openmpi/1.8.3/gnu/4.9.2  
+[ndomenis@login2 ~]$ module load openmpi/1.8.3/gnu/4.9.2 
+loading dependency gnu/4.9.2
+loading dependency numactl/2.0.10
+loading dependency hwloc/1.10.0
+[ndomenis@login2 ~]$ mpicc mpi_pi.c -o mpi_pi.x
+[ndomenis@login2 ~]$ ls
+file_of_output.o  log_of_my_job  mpi_pi.x        myjob.e3386086  myjob.e3386103  test.sh           test.sh.e3386082  test.sh.o3386080
+jobtest           mpi_pi.c       myjob.e3386085  myjob.e3386092  myjob.e3386104  test.sh.e3386080  test.sh.e3386083  test.sh.o3386082
+[ndomenis@login2 ~]$ mpi_pi.x
+-bash: mpi_pi.x: command not found
+[ndomenis@login2 ~]$ ./mpi_pi.x
+--------------------------------------------------------------------------
+Error obtaining unique transport key from ORTE (orte_precondition_transports not present in
+the environment).
+
+  Local host: login2
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+It looks like MPI_INIT failed for some reason; your parallel process is
+likely to abort.  There are many reasons that a parallel process can
+fail during MPI_INIT; some of which are due to configuration or environment
+problems.  This failure appears to be an internal failure; here's some
+additional information (which may only be relevant to an Open MPI
+developer):
+
+  PML add procs failed
+  --> Returned "Error" (-1) instead of "Success" (0)
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[login2:5474] Local abort before MPI_INIT completed successfully; not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+[ndomenis@login2 ~]$ mpirun -np 4 ./mpi_pi.x 100000000
+
+ # walltime on processor 2 : 0.64459491 
+
+ # walltime on processor 3 : 0.64007211 
+
+ # of trials = 100000000 , estimate of pi is 3.141382160 
+
+ # walltime on master processor : 0.63093781 
+
+ # walltime on processor 1 : 0.63586497 
+[ndomenis@login2 ~]$ mpirun -np 4 ./mpi_pi.x 10000000000
+
+ # walltime on processor 1 : 63.04244304 
+
+ # walltime on processor 2 : 63.07311797 
+
+ # walltime on processor 3 : 63.06435800 
+
+ # of trials = 10000000000 , estimate of pi is 3.141577497 
+
+ # walltime on master processor : 63.06031990 
+[ndomenis@login2 ~]$ mpirun -np 8 ./mpi_pi.x 10000000000
+^[[A^[[B
+ # walltime on processor 1 : 32.53820109 
+
+ # walltime on processor 2 : 32.54650092 
+
+ # walltime on processor 3 : 32.54242611 
+
+ # walltime on processor 4 : 40.91671681 
+
+ # walltime on processor 5 : 40.91189599 
+
+ # walltime on processor 6 : 40.90362787 
+
+ # walltime on processor 7 : 40.90767598 
+
+ # of trials = 10000000000 , estimate of pi is 3.141595503 
+
+ # walltime on master processor : 40.93439293 
+[ndomenis@login2 ~]$ mpirun -np 16 ./mpi_pi.x 10000000000
+login2.5556ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5557ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5558ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5559ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5569ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5568ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5571ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+login2.5570ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
+        
+ # walltime on processor 1 : 31.09395599 
+
+ # walltime on processor 2 : 31.13402891 
+
+ # walltime on processor 12 : 33.15553498 
+
+ # walltime on processor 4 : 33.17268991 
+
+ # walltime on processor 5 : 33.16861200 
+
+ # walltime on processor 7 : 33.13762498 
+
+ # walltime on processor 8 : 33.15948892 
+
+ # walltime on processor 9 : 33.19502807 
+
+ # walltime on processor 10 : 33.13353395 
+
+ # walltime on processor 11 : 33.15066981 
+
+ # walltime on processor 13 : 33.16386604 
+
+ # walltime on processor 3 : 33.12857699 
+
+ # walltime on processor 14 : 33.18164015 
+
+ # walltime on processor 6 : 33.19035792 
+
+ # of trials = 10000000000 , estimate of pi is 3.141580484 
+
+ # walltime on master processor : 33.17852092 
+
+ # walltime on processor 15 : 33.14286399 
+[ndomenis@login2 ~]$ logout
+Connection to frontend2.hpc.sissa.it closed.
+nd23@nd23-pc:~/FHPC_2019-2020$ ls
+D00  D01  D02  D03  README.md  Thomas_Sterling,_Matthew_Anderson.pdf  Ulysses_mpi.txt
+nd23@nd23-pc:~/FHPC_2019-2020$ ssh -l ndomenis frontend2.hpc.sissa.it
+ndomenis@frontend2.hpc.sissa.it's password: 
+Last login: Thu Oct 24 21:23:47 2019 from 140.105.160.92
+                                                              
+Queue system documentation: please see   man queues
+
+FAIR USAGE: this is a login node, not a computing node. Long-running jobs 
+            should be queued, not run here, and will be automatically killed
+            when they exceed their memory or cputime limit.
+
+
+
+2018-12-14   STORAGE FAILURE
+
+             one of the two storage controllers that power shared filesystems
+             (/home and /scratch) is DOWN
+             
+             all your data are safe and accessible, but you will probably 
+             experience a performance degradation while reading and writing
+             to /home and /scratch (depending on overall access pattern
+             expected access times could be 2 to 10 times longer than usual)
+             
+             
+[ndomenis@login2 ~]$ cp ~cozzini/mpi_codes.tgz .
+[ndomenis@login2 ~]$ ls
+file_of_output.o  mpi_codes.tgz  myjob.e3386085  myjob.e3386103  test.sh.e3386080  test.sh.o3386080
+jobtest           mpi_pi.c       myjob.e3386086  myjob.e3386104  test.sh.e3386082  test.sh.o3386082
+log_of_my_job     mpi_pi.x       myjob.e3386092  test.sh         test.sh.e3386083
+[ndomenis@login2 ~]$ packet_write_wait: Connection to 147.122.3.33 port 22: Broken pipe
+nd23@nd23-pc:~/FHPC_2019-2020$ ssh -l ndomenis frontend2.hpc.sissa.it
+ndomenis@frontend2.hpc.sissa.it's password: 
+Last login: Fri Oct 25 09:41:10 2019 from nb-21-87.ictp.it
+                                                              
+Queue system documentation: please see   man queues
+
+FAIR USAGE: this is a login node, not a computing node. Long-running jobs 
+            should be queued, not run here, and will be automatically killed
+            when they exceed their memory or cputime limit.
+
+
+
+2018-12-14   STORAGE FAILURE
+
+             one of the two storage controllers that power shared filesystems
+             (/home and /scratch) is DOWN
+             
+             all your data are safe and accessible, but you will probably 
+             experience a performance degradation while reading and writing
+             to /home and /scratch (depending on overall access pattern
+             expected access times could be 2 to 10 times longer than usual)
+             
+             
+[ndomenis@login2 ~]$ nano
+[ndomenis@login2 ~]$ module list
+No Modulefiles Currently Loaded.
+[ndomenis@login2 ~]$ module avail
+
+-------------------------------------------------------- /u/shared/modules/compilers --------------------------------------------------------
+bazel/0.4.5/gnu/4.9.2    cudatoolkit/6.5(default) gcc/4.8.2                intel/18.4               pgi_CE/16.10-openmpi
+cudatoolkit/10.0         cudatoolkit/7.5          gnu/4.9.2(default)       pgi/14.6                 pgi_CE/17.4(default)
+cudatoolkit/6.0          cudatoolkit/9.2          intel/14.0               pgi_CE/16.10             pgi_CE/17.4-openmpi
+
+----------------------------------------------------------- /u/shared/modules/mpi -----------------------------------------------------------
+impi-trial/5.0.1.035             mvapich2/2.1a/intel/14.0         openmpi/1.8.3/intel/14.0
+mvapich2/2.1a/gnu/4.9.2          openmpi/1.8.3/gnu/4.9.2(default)
+
+-------------------------------------------------------- /u/shared/modules/libraries --------------------------------------------------------
+2decomp_fft/1.5/fftw/3.3.4/intel/14.0                     matplotlib/1.4.3/python/2.7.8/numpy/1.9.1
+atlas/3.10.2/gnu/4.9.2                                    matplotlib/1.4.3/python/3.4.2/numpy/1.9.1
+boost/1.57.0/gnu/4.9.2/python/2.7.8                       mkl/11.1
+fftw/2.1.5/gnu/4.9.2                                      netcdf/4.3.2/gnu/4.9.2
+fftw/2.1.5/intel/14.0                                     netcdf-cxx/4.2/gnu/4.9.2
+fftw/3.3.4/gnu/4.9.2                                      netcdf-fortran/4.4.1/gnu/4.9.2
+fftw/3.3.4/intel/14.0                                     numpy/1.9.1/intel/14.0/mkl/11.1/python/2.7.8
+fftw/3.3.4/old(default)                                   numpy/1.9.1/intel/14.0/mkl/11.1/python/3.4.2
+fftw/3.3.4-single/gnu/4.9.2                               openblas/0.2.13/gnu/4.9.2
+fftw/3.3.4-single/intel/14.0                              plasma/1.6.1/intel/14.0/mkl/11.1
+gsl/1.16/gnu/4.9.2                                        scipy/0.15.1/numpy/1.9.1/intel/14.0/mkl/11.1/python/2.7.8
+gsl/2.2/gnu/4.9.2                                         scipy/0.15.1/numpy/1.9.1/intel/14.0/mkl/11.1/python/3.4.2
+hdf5/1.8.12/gnu/4.9.2                                     tensorflow/1.1.0/gnu/4.9.2/cpu
+magma/1.6.1/intel/14.0/mkl/11.1/cudatoolkit/6.5           tensorflow/1.1.0/gnu/4.9.2/gpu
+
+------------------------------------------------------ /u/shared/modules/applications -------------------------------------------------------
+cmake/2.8.12(default)  cmake/3.1.1            cplex/12.6.3-community idl/8.4.1              python/2.7.8/gnu/4.9.2 python/3.4.2/gnu/4.9.2
+
+-------------------------------------------------------- /u/shared/modules/utilities --------------------------------------------------------
+SMR3102                contribs               gnuplot/5.0.0          hwloc/1.10.0(default)  likwid/3.1.3/gnu/4.9.2 numactl/2.0.10
+cluster-utils          gnuplot/4.6.6(default) gnuplot/5.0.6          hwloc/1.11.0           likwid/4.0.0/gnu/4.9.2 testing
+[ndomenis@login2 ~]$ ls
+deadlock.c        log_of_my_job  mpi_pi.x        myjob.e3386092  test.sh           test.sh.e3386083
+file_of_output.o  mpi_codes.tgz  myjob.e3386085  myjob.e3386103  test.sh.e3386080  test.sh.o3386080
+jobtest           mpi_pi.c       myjob.e3386086  myjob.e3386104  test.sh.e3386082  test.sh.o3386082
+[ndomenis@login2 ~]$ cd rm myjob.e
+-bash: cd: rm: No such file or directory
+[ndomenis@login2 ~]$ cd rm myjob.e*
+-bash: cd: rm: No such file or directory
+[ndomenis@login2 ~]$ ls
+deadlock.c        log_of_my_job  mpi_pi.x        myjob.e3386092  test.sh           test.sh.e3386083
+file_of_output.o  mpi_codes.tgz  myjob.e3386085  myjob.e3386103  test.sh.e3386080  test.sh.o3386080
+jobtest           mpi_pi.c       myjob.e3386086  myjob.e3386104  test.sh.e3386082  test.sh.o3386082
+[ndomenis@login2 ~]$ rm myjob.e3386
+rm: cannot remove `myjob.e3386': No such file or directory
+[ndomenis@login2 ~]$ rm myjob.e3386085
+[ndomenis@login2 ~]$ rm myjob.e3386086
+[ndomenis@login2 ~]$ rm myjob.e3386080
+rm: cannot remove `myjob.e3386080': No such file or directory
+[ndomenis@login2 ~]$ rm myjob.e3386082
+rm: cannot remove `myjob.e3386082': No such file or directory
+[ndomenis@login2 ~]$ rm myjob.e3386082
+rm: cannot remove `myjob.e3386082': No such file or directory
+[ndomenis@login2 ~]$ ls
+deadlock.c        jobtest        mpi_codes.tgz  mpi_pi.x        myjob.e3386103  test.sh           test.sh.e3386082  test.sh.o3386080
+file_of_output.o  log_of_my_job  mpi_pi.c       myjob.e3386092  myjob.e3386104  test.sh.e3386080  test.sh.e3386083  test.sh.o3386082
+[ndomenis@login2 ~]$ rm myjob.e3386103
+[ndomenis@login2 ~]$ rm myjob.e3386104
+[ndomenis@login2 ~]$ l
+-bash: l: command not found
+[ndomenis@login2 ~]$ ls
+deadlock.c        jobtest        mpi_codes.tgz  mpi_pi.x        test.sh           test.sh.e3386082  test.sh.o3386080
+file_of_output.o  log_of_my_job  mpi_pi.c       myjob.e3386092  test.sh.e3386080  test.sh.e3386083  test.sh.o3386082
+[ndomenis@login2 ~]$ rm myjob.e3386082
+rm: cannot remove `myjob.e3386082': No such file or directory
+[ndomenis@login2 ~]$ rm test.sh.
+test.sh.e3386080  test.sh.e3386082  test.sh.e3386083  test.sh.o3386080  test.sh.o3386082  
+[ndomenis@login2 ~]$ rm test.sh.e3386083
+[ndomenis@login2 ~]$ rm test.sh.e3386082
+[ndomenis@login2 ~]$ rm test.sh.e3386080
+[ndomenis@login2 ~]$ ls
+deadlock.c        jobtest        mpi_codes.tgz  mpi_pi.x        test.sh           test.sh.o3386082
+file_of_output.o  log_of_my_job  mpi_pi.c       myjob.e3386092  test.sh.o3386080
+[ndomenis@login2 ~]$ rm test.sh.e3386092
+rm: cannot remove `test.sh.e3386092': No such file or directory
+[ndomenis@login2 ~]$ ls
+deadlock.c        jobtest        mpi_codes.tgz  mpi_pi.x        test.sh           test.sh.o3386082
+file_of_output.o  log_of_my_job  mpi_pi.c       myjob.e3386092  test.sh.o3386080
+[ndomenis@login2 ~]$ open mpi_codes.tgz 
+Couldn't get a file descriptor referring to the console
+[ndomenis@login2 ~]$ 
+[ndomenis@login2 ~]$ mkdir mpi_codes
+[ndomenis@login2 ~]$ cd mpi_codes
+[ndomenis@login2 mpi_codes]$ cp ../mpi_codes.tgz .
+
+[ndomenis@login2 mpi_codes]$ 
+[ndomenis@login2 mpi_codes]$ ls
+mpi_codes.tgz
+[ndomenis@login2 mpi_codes]$ tar -xvzf mpi_codes.tgz 
+deadlock.c
+hello_world.c
+hello_world.F90
+mpi_env_call.c
+send_message.F90
+[ndomenis@login2 mpi_codes]$ ls
+deadlock.c  hello_world.c  hello_world.F90  mpi_codes.tgz  mpi_env_call.c  send_message.F90
+[ndomenis@login2 mpi_codes]$ vim hello_world.F90
+[ndomenis@login2 mpi_codes]$ use a wrapper
+-bash: use: command not found
+[ndomenis@login2 mpi_codes]$ module load openmpi/1.8.3/gnu
+openmpi/1.8.3/gnu        openmpi/1.8.3/gnu/4.9.2  
+[ndomenis@login2 mpi_codes]$ module load openmpi/1.8.3/gnu/4.9.2
+loading dependency gnu/4.9.2
+loading dependency numactl/2.0.10
+loading dependency hwloc/1.10.0
+[ndomenis@login2 mpi_codes]$ echo $LD_LIBRARY_PATH
+/u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/lib:/u/shared/programs/x86_64/hwloc/1.10.0/lib:/u/shared/programs/x86_64/numactl/2.0.10/lib:/u/shared/programs/x86_64/gnu/gcc/4.9.2/lib64:/u/shared/programs/x86_64/gnu/gcc/4.9.2/lib:/u/shared/programs/x86_64/gnu/isl/0.14/lib:/u/shared/programs/x86_64/gnu/cloog/0.18.1/lib:/u/shared/programs/x86_64/gnu/elf/0.8.13/lib:/u/shared/programs/x86_64/gnu/mpc/1.0.2/lib:/u/shared/programs/x86_64/gnu/mpfr/3.1.2/lib:/u/shared/programs/x86_64/gnu/gmp/5.1.3/lib
+[ndomenis@login2 mpi_codes]$ echo $PATH
+/u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/bin:/u/shared/programs/x86_64/hwloc/1.10.0/bin:/u/shared/programs/x86_64/numactl/2.0.10/bin:/u/shared/programs/x86_64/gnu/gcc/4.9.2/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/maui/sbin:/opt/maui/bin:/home/ndomenis/bin
+[ndomenis@login2 mpi_codes]$ mpi
+-bash: mpi: command not found
+[ndomenis@login2 mpi_codes]$ mpi
+mpic++      mpiCC       mpiCC-vt    mpicxx      mpiexec     mpif77-vt   mpif90-vt   mpifort-vt  
+mpicc       mpicc-vt    mpic++-vt   mpicxx-vt   mpif77      mpif90      mpifort     mpirun      
+[ndomenis@login2 mpi_codes]$ commands available
+-bash: commands: command not found
+[ndomenis@login2 mpi_codes]$ mpif90 hello_world.F90
+hello_world.F90:2.1:
+
+ INCLUDE \xE2\x80\x98mpif.h\xE2\x80\x98
+ 1
+Error: Unclassifiable statement at (1)
+[ndomenis@login2 mpi_codes]$ which mpif90
+/u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/bin/mpif90
+[ndomenis@login2 mpi_codes]$ mpif90 hello_world.F90 -o hello_world.x
+hello_world.F90:2.1:
+
+ INCLUDE \xE2\x80\x98mpif.h\xE2\x80\x98
+ 1
+Error: Unclassifiable statement at (1)
+[ndomenis@login2 mpi_codes]$ vim hello_world.F90
+[ndomenis@login2 mpi_codes]$ mpif90 hello_world.F90 -o hello_world.x
+[ndomenis@login2 mpi_codes]$ ls
+deadlock.c  hello_world.c  hello_world.F90  hello_world.x  mpi_codes.tgz  mpi_env_call.c  send_message.F90
+[ndomenis@login2 mpi_codes]$ hello_world.x
+-bash: hello_world.x: command not found
+[ndomenis@login2 mpi_codes]$ ./hello_world.x
+--------------------------------------------------------------------------
+Error obtaining unique transport key from ORTE (orte_precondition_transports not present in
+the environment).
+
+  Local host: login2
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+It looks like MPI_INIT failed for some reason; your parallel process is
+likely to abort.  There are many reasons that a parallel process can
+fail during MPI_INIT; some of which are due to configuration or environment
+problems.  This failure appears to be an internal failure; here's some
+additional information (which may only be relevant to an Open MPI
+developer):
+
+  PML add procs failed
+  --> Returned "Error" (-1) instead of "Success" (0)
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[login2:30915] Local abort before MPI_INIT completed successfully; not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+[ndomenis@login2 mpi_codes]$ ldd hello_world.x
+        linux-vdso.so.1 =>  (0x00007ffcbf39d000)
+        libmpi_usempif08.so.0 => /u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/lib/libmpi_usempif08.so.0 (0x00007f539e493000)
+        libmpi_usempi_ignore_tkr.so.0 => /u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/lib/libmpi_usempi_ignore_tkr.so.0 (0x00007f539e292000)
+        libmpi_mpifh.so.2 => /u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/lib/libmpi_mpifh.so.2 (0x00007f539e041000)
+        libmpi.so.1 => /u/shared/programs/x86_64/openmpi/1.8.3/gnu/4.9.2/torque/lib/libmpi.so.1 (0x00007f539dd61000)
+        libgfortran.so.3 => /u/shared/programs/x86_64/gnu/gcc/4.9.2/lib64/libgfortran.so.3 (0x00007f539da44000)
+        libm.so.6 => /lib64/libm.so.6 (0x0000003556000000)
+        libgcc_s.so.1 => /u/shared/programs/x86_64/gnu/gcc/4.9.2/lib64/libgcc_s.so.1 (0x00007f539d81d000)
+        libquadmath.so.0 => /u/shared/programs/x86_64/gnu/gcc/4.9.2/lib64/libquadmath.so.0 (0x00007f539d5e0000)
+        libpthread.so.0 => /lib64/libpthread.so.0 (0x0000003555c00000)
+        libc.so.6 => /lib64/libc.so.6 (0x0000003555400000)
+        libopen-rte.so.7 => /u/shared/programs/x86_64//openmpi/1.8.3/gnu/4.9.2/torque/lib/libopen-rte.so.7 (0x00007f539d364000)
+        libopen-pal.so.6 => /u/shared/programs/x86_64//openmpi/1.8.3/gnu/4.9.2/torque/lib/libopen-pal.so.6 (0x00007f539d0b5000)
+        libdl.so.2 => /lib64/libdl.so.2 (0x0000003555800000)
+        librt.so.1 => /lib64/librt.so.1 (0x0000003556800000)
+        libutil.so.1 => /lib64/libutil.so.1 (0x000000355b000000)
+        libhwloc.so.5 => /u/shared/programs/x86_64//hwloc/1.10.0/lib/libhwloc.so.5 (0x00007f539ce73000)
+        libnuma.so.1 => /u/shared/programs/x86_64/numactl/2.0.10/lib/libnuma.so.1 (0x00007f539cc68000)
+        libltdl.so.7 => /usr/lib64/libltdl.so.7 (0x0000003556c00000)
+        /lib64/ld-linux-x86-64.so.2 (0x0000003555000000)
+[ndomenis@login2 mpi_codes]$ ./hello_world.x
+--------------------------------------------------------------------------
+Error obtaining unique transport key from ORTE (orte_precondition_transports not present in
+the environment).
+
+  Local host: login2
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+It looks like MPI_INIT failed for some reason; your parallel process is
+likely to abort.  There are many reasons that a parallel process can
+fail during MPI_INIT; some of which are due to configuration or environment
+problems.  This failure appears to be an internal failure; here's some
+additional information (which may only be relevant to an Open MPI
+developer):
+
+  PML add procs failed
+  --> Returned "Error" (-1) instead of "Success" (0)
+--------------------------------------------------------------------------
+*** An error occurred in MPI_Init
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[login2:541] Local abort before MPI_INIT completed successfully; not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 -I
+qsub: waiting for job 3398850.master1 to start
+
+^ZSorry, you cannot suspend qsub until the job is started
+^CDo you wish to terminate the job and exit (y|[n])? y
+Job 3398850.master1 is being deleted
+[ndomenis@login2 mpi_codes]$ showbf
+backfill window (user: 'ndomenis' group: 'dssc' partition: ALL) Fri Oct 25 12:33:18
+
+192 procs available for      00:29:34
+190 procs available for      00:44:39
+176 procs available for    1:10:37:13
+172 procs available with no timelimit
+
+
+
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 ,walltime = 00:30:00 -I
+qsub: script file ',walltime' cannot be loaded - No such file or directory
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 -l Walltime = 00:30:00 -I
+qsub: script file '=' cannot be loaded - No such file or directory
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 -l Walltime=00:30:00 -I
+qsub: submit error (Unknown resource type  Resource_List.Walltime)
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 -l Walltime=00:30:00 -I
+qsub: submit error (Unknown resource type  Resource_List.Walltime)
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 ,Walltime=00:30:00 -I
+qsub: script file ',Walltime=00:30:00' cannot be loaded - No such file or directory
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 -l Walltime=00:30:00 -I
+qsub: submit error (Unknown resource type  Resource_List.Walltime)
+[ndomenis@login2 mpi_codes]$ qsub -l nodes=1:ppn=4 -I
+qsub: waiting for job 3398959.master1 to start
+
+################################################################################################################
+########################################à
+tar -xvzf mpi_codes.tgz
