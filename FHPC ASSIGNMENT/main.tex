@@ -20,7 +20,7 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt]{scrartcl} % Font size
-
+\usepackage{algorithmic}
 \input{structure.tex} % Include the file specifying the document structure and custom commands
 
 %----------------------------------------------------------------------------------------
@@ -80,9 +80,9 @@ We gather that $clock frequency = 2.90 Ghz$,$ FLOP = 16$ and $numberofcores = 2$
 %cercare FMA fused multiply addiction A = BxC+D  vec
 %vector_size*2*#fma
 
-quanti cicli ci vogliono? pensiamo che sia 1 = 1*vector_size*2*#fma
+%quanti cicli ci vogliono? pensiamo che sia 1 = 1*vector_size*2*#fma
 
-numero di operazioni in double precision
+%numero di operazioni in double precision
 
 \begin{table}
 	\centering
@@ -94,8 +94,8 @@ numero di operazioni in double precision
 \end{table}
 \subsection{Smartphone theoretical peak performance}
 We installed "`Mobile Linpack"' app and we run a few test. We report here some results,even on repeated trials: 
-\begin{center}
-	\begin{tabular}{l| l| l |l| l| l}
+
+	\begin{tabular}{l| p{0.2\textwidth}| l |l| l|l }
 		\hline
 			&Model& Sustained performance&Matrix size&Peak performance&Memory\\
 			\hline
@@ -105,20 +105,21 @@ We installed "`Mobile Linpack"' app and we run a few test. We report here some r
 			& &201.32 Mflop/s&800& &\\
 			& &155.93 Mflop/s&900& &\\
 			& &109.88 Mflop/s&1000& &\\
-			& &201.32 Mflop/s&2000& &\\
+			& &103.14 Mflop/s&2000& &\\
 		\end{tabular}
-\end{center}
 
+\subsection{Laptops,smartphones and the top 500}
 Let's check now whether our technologies would have competed with the Top500 supercomputers in the past:
-\begin{center}
-	\begin{tabular}{l| l| l |l| l| l}
+
+	\begin{tabular}{l| p{0.2\textwidth}| l | p{0.3\textwidth}| p{0.3\textwidth}}
 		\hline
 			&Model&Performance&Top 500 year\& position&number 1 HPC system\\
 			\hline
-			Smartphone&Samsung Galaxy XCover 4 &114,81 Mflops/s &250 &not calculated&16,00 GB\\
-			Laptop&ASUS F556U&92.8 GFLOPs/s& 3rd position at nov 1993. Remains in the top 10 until nov 1996& Numerical Wind Tunnel,Fujitsu National Aerospace Laboratory of Japan is first in the year &\\
+			Smartphone&Samsung Galaxy XCover 4 &201,32 Mflops/s &does not enter in the top500 of the first year of measurement, the 500th Supercomputer has an Rmax of 0.5 GFlops/s (equal to 2.4 times our smartphone peak performance)& Numerical Wind Tunnel,Fujitsu National Aerospace Laboratory of Japan is first in the year 1993 with a Rmax equal to 124.0 GFlops/s (equal to 616 times our cellphone's sustained peak performance)\\
+			\hline
+			Laptop&ASUS F556U&92.8 GFLOPs/s& 3rd position at nov 1993. Remains in the top 10 until nov 1996 & We have the same top position with a Rpeak equal to 235.8 GFlops/s(equal to 2.5 times our laptop's theoretical peak performance)\\
 		\end{tabular}
-\end{center}
+
 
 %\begin{table}
 	%\centering
@@ -136,27 +137,87 @@ Let's check now whether our technologies would have competed with the Top500 sup
 %	TEXT EXAMPLE
 %----------------------------------------------------------------------------------------
 
-\section{Understanding Text}
+\section{Section 1}
 
-\subsection{How much wood would a woodchuck chuck if a woodchuck could chuck wood?}
+\subsection{Model for a serial and parallel summation of n numbers}
+Here we discuss about modeling a simple program which consists of summing n numbers.
+A simple pseudocode for the serial program would be:
+
+
+\begin{algorithmic}
+
+\STATE {Data:array $A[]$ of values}
+\FOR{i from 1 to n} \STATE {sum = sum + A[i]} \ENDFOR
+\RETURN{sum}
+\end{algorithmic}
+
+If we choose $T_{comp}$ as the time to compute a floating point operation we could calculate the total time of a serial computation as
+$T_s = N * T_{comp}$,whereas the code simply computes N times the sum of two values.
+
+For the parallel program we complicate a little the execution:
+
+\begin{algorithmic}
+
+\STATE {Data:array $A[]$ of values}
+\STATE {Environment: p parallel processors}
+\IF {Master process}
+
+		\STATE{Read and Split $A[]$ into p subarrays $A_i[]$}
+		\STATE{Send $p-1$ subarrays to the other $p-1$ processors}
+		\FOR{i from $1$ to n/p} \STATE {$sum_i = sum_i + A_i[i]$} \ENDFOR
+		\STATE{Collect the resulting $p-1$ values $sum_i$ from the processors}
+		\FOR{i from $1$ to p} \STATE {$sum = sum + sum_i$} \ENDFOR
+\ENDIF
+\IF {Slave process}
+	\STATE{Receive subarrays $A_i[]$ from the Master process}
+	\FOR{i from 1 to n/p} \STATE {$sum_i = sum_i + A_i[i]$} \ENDFOR
+	\STATE{Send $sum_i$ back to the Master process}
+\ENDIF
+\RETURN{sum}
+\end{algorithmic}
+
+If we define the times $T_{read}$ to indicate the time needed to read a variable,and $T_{comm}$ to indicate the time needed to communicate a variable, we can deduce the theoretical execution time of the model:
+\  
+\begin{algorithmic}
+		\STATE{Read and Split $A[]$ into p subarrays $A_i[]$}
+		\STATE{EXECUTION TIME: $T_{read}$
+\end{algorithmic}
+\ 
+\begin{algorithmic}
+		\STATE{Send $p-1$ subarrays to the other $p-1$ processors}
+		\STATE{EXECUTION TIME: $T_{comm}*(p-1)$}
+\end{algorithmic}
+\ 
+
+\begin{algorithmic}
+
+\FOR{i from $1$ to n/p} \STATE {$sum_i = sum_i + A_i[i]$} \ENDFOR
+\STATE{EXECUTION TIME: $p+n/p * T_{comp}=n*T_{comp}$}
+\STATE{Notice that this is a parallel execution, the subarrays are added inside each processor}	
+\end{algorithmic}
+
+\ 
+\begin{algorithmic}
+\STATE{Send $sum_i$ back to the Master process}
+\STATE{EXECUTION TIME: (p-1)*$T_{comm}$}
+\end{algorithmic}
+
+\begin{algorithmic}
+		\FOR{i from $1$ to p} \STATE {$sum = sum + sum_i$} \ENDFOR
+		\STATE{EXECUTION TIME: (p-1)*T_{comp}}
+\end{algorithmic}
+
+The total sum of the execution times gives $T_p = T_{read} + (p-1+1/n)*T_{comp}+2*T_{comm}(p-1)$
+%----------------------------------------------
+
+\subsection{Scalability of the Model}
+
+Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given by the formula $$
+%------------------------------------------------
+
 
 %------------------------------------------------
 
-\subsubsection{Suppose ``chuck" implies throwing.}
-
-According to the Associated Press (1988), a New York Fish and Wildlife technician named Richard Thomas calculated the volume of dirt in a typical 25--30 foot (7.6--9.1 m) long woodchuck burrow and had determined that if the woodchuck had moved an equivalent volume of wood, it could move ``about \textbf{700 pounds (320 kg)} on a good day, with the wind at his back".
-
-%------------------------------------------------
-
-\subsubsection{Suppose ``chuck" implies vomiting.}
-
-A woodchuck can ingest 361.92 cm\textsuperscript{3} (22.09 cu in) of wood per day. Assuming immediate expulsion on ingestion with a 5\% retainment rate, a woodchuck could chuck \textbf{343.82 cm\textsuperscript{3}} of wood per day.
-
-%------------------------------------------------
-
-\paragraph{Bonus: suppose there is no woodchuck.}
-
-Fusce varius orci ac magna dapibus porttitor. In tempor leo a neque bibendum sollicitudin. Nulla pretium fermentum nisi, eget sodales magna facilisis eu. Praesent aliquet nulla ut bibendum lacinia. Donec vel mauris vulputate, commodo ligula ut, egestas orci. Suspendisse commodo odio sed hendrerit lobortis. Donec finibus eros erat, vel ornare enim mattis et.
 
 %----------------------------------------------------------------------------------------
 %	EQUATION EXAMPLES
