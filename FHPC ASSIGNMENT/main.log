@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  29 OCT 2019 08:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  2 NOV 2019 13:01
 entering extended mode
 **./main.tex
 (main.tex
@@ -829,72 +829,128 @@ Package scrlayer-scrpage Info: deactivating warning for font element
 (scrlayer-scrpage)             `pagefoot' on input line 1271.
 )
 Package scrlayer-scrpage Info: auto-selection of `pagestyleset=KOMA-Script'.
+)
+(C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\subcaption.sty
+Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
+
+(C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption.sty
+Package: caption 2019/09/01 v3.3d Customizing captions (AR)
+
+(C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/caption\caption3.sty
+Package: caption3 2019/09/01 v1.8d caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen173
+\captionmargin@=\dimen174
+\captionwidth=\dimen175
+\caption@tempdima=\dimen176
+\caption@indent=\dimen177
+\caption@parindent=\dimen178
+\caption@hangindent=\dimen179
+)
+Package caption Info: KOMA-Script document class.
+\c@caption@flags=\count283
+\c@ContinuedFloat=\count284
+Package caption Info: listings package is loaded.
+)
+\c@subfigure=\count285
+\c@subtable=\count286
+)
+("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count287
+\float@exts=\toks31
+\float@box=\box53
+\@float@everytoks=\toks32
+\@floatcapt=\box54
+)
+
+! LaTeX Error: Option clash for package geometry.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 \usepackage
+                {changepage}
+The package geometry has already been loaded with options:
+  []
+There has now been an attempt to load it with options
+  [showframe=true]
+Adding the global options:
+  ,showframe=true
+to your \documentclass declaration may fix this.
+Try typing  <return>  to proceed.
+
+(C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/changepage\changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count288
+\cp@tempcnt=\count289
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 46.
-LaTeX Font Info:    Trying to load font information for FML+futm on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 53.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 53.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/fourier\fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 46.
-LaTeX Font Info:    Trying to load font information for FMS+futm on input line 46.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 53.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 53.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/fourier\fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 46.
-LaTeX Font Info:    Trying to load font information for FMX+futm on input line 46.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 53.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 53.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/fourier\fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 46.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 53.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Trying to load font information for T1+futs on input line 46.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Trying to load font information for T1+futs on input line 53.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/fourier\t1futs.fd
 File: t1futs.fd 2004/03/02 Fontinst v1.926 font definitions for T1/futs.
 )
-Package scrbase Info: activating english \contentsname on input line 46.
-Package scrbase Info: activating english \listfigurename on input line 46.
-Package scrbase Info: activating english \listtablename on input line 46.
-\c@lstlisting=\count283
+Package scrbase Info: activating english \contentsname on input line 53.
+Package scrbase Info: activating english \listfigurename on input line 53.
+Package scrbase Info: activating english \listtablename on input line 53.
+\c@lstlisting=\count290
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count284
-\scratchdimen=\dimen173
-\scratchbox=\box53
-\nofMPsegments=\count285
-\nofMParguments=\count286
-\everyMPshowfont=\toks31
-\MPscratchCnt=\count287
-\MPscratchDim=\dimen174
-\MPnumerator=\count288
-\makeMPintoPDFobject=\count289
-\everyMPtoPDFconversion=\toks32
+\scratchcounter=\count291
+\scratchdimen=\dimen180
+\scratchbox=\box55
+\nofMPsegments=\count292
+\nofMParguments=\count293
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count294
+\MPscratchDim=\dimen181
+\MPnumerator=\count295
+\makeMPintoPDFobject=\count296
+\everyMPtoPDFconversion=\toks34
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -969,236 +1025,215 @@ Package grfext Info: Graphics extension search list:
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 46.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 46.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 49.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 53.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 53.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 56.
 ("C:\Program Files\MiKTeX 2.9\tex/latex/base\t1cmss.fd"
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Trying to load font information for FML+futmi on input line 49.
+LaTeX Font Info:    Trying to load font information for FML+futmi on input line 56.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/fourier\fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 49.
+(Font)              scaled to size 13.24796pt on input line 56.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 49.
+(Font)              scaled to size 9.19998pt on input line 56.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 49.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
+(Font)              scaled to size 7.35999pt on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
  ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 49.
+(Font)              scaled to size 13.24796pt on input line 56.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 49.
+(Font)              scaled to size 9.19998pt on input line 56.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 49.
-LaTeX Font Info:    Trying to load font information for TS1+futs on input line 59.
+(Font)              scaled to size 7.35999pt on input line 56.
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 66.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/fourier\ts1futs.fd
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
-<Figures/swallow.jpg, id=1, 1606.0pt x 1069.9975pt>
-File: Figures/swallow.jpg Graphic file (type jpg)
-<use Figures/swallow.jpg>
-Package pdftex.def Info: Figures/swallow.jpg  used on input line 67.
-(pdftex.def)             Requested size: 213.39568pt x 142.174pt.
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 73.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 74.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 75.
+(Font)              scaled to size 10.07397pt on input line 77.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 75.
+(Font)              scaled to size 7.63599pt on input line 77.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 75.
+(Font)              scaled to size 5.51999pt on input line 77.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 75.
+(Font)              scaled to size 10.07397pt on input line 77.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 75.
+(Font)              scaled to size 7.63599pt on input line 77.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 75.
+(Font)              scaled to size 5.51999pt on input line 77.
 
-Overfull \hbox (102.67021pt too wide) in paragraph at lines 75--82
-\T1/futs/m/n/10.95 puter ar-chi-tec-ture,an in-tel i7 with a kaby lake mi-croar-chi-tec-ture; thus we com-pute $\FML/fut
-mi/m/it/10.95 theoreticalpeakperformance \FMS/futm/m/n/10.95 Å
+Overfull \hbox (17.1138pt too wide) in paragraph at lines 90--95
+[][]
  []
 
 
-Overfull \hbox (17.1138pt too wide) in paragraph at lines 89--94
- [][] 
+Underfull \hbox (badness 10000) in paragraph at lines 107--107
+[]\T1/futs/m/n/10.95 Samsung Galaxy
  []
 
 [1
 
 
-{C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Figures/swallow.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
-[]\T1/futs/m/n/10.95 Samsung Galaxy
+{C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
+[]\T1/futs/m/n/10.95 Samsung
  []
 
 
-Overfull \hbox (56.65602pt too wide) in paragraph at lines 98--110
-[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 126--126
+\T1/futs/m/n/10.95 Galaxy
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--118
-[]\T1/futs/m/n/10.95 Samsung Galaxy
- []
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 118--118
+Underfull \hbox (badness 1389) in paragraph at lines 126--126
 \T1/futs/m/n/10.95 puter has an Rmax of 0.5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 []\T1/futs/m/n/10.95 Numerical Wind Tun-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 \T1/futs/m/n/10.95 nel,Fujitsu Na-tional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 \T1/futs/m/n/10.95 Aerospace Lab-o-ra-tory of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 126--127
 \T1/futs/m/n/10.95 our cell-phone's sus-tained
  []
 
 
-Overfull \hbox (104.02808pt too wide) in paragraph at lines 114--122
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
+[]\T1/futs/m/n/10.95 92.8 GFLOP-
+ []
+
+
+Overfull \hbox (24.42879pt too wide) in paragraph at lines 122--130
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 150.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 159.
 [2]
-! Missing } inserted.
-<inserted text> 
-                }
-l.184 \end{algorithmic}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.207 		\STATE{EXECUTION TIME: (p-1)*T_
-                                       {comp}}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.207 		\STATE{EXECUTION TIME: (p-1)*T_{comp}}
-                                              
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-! LaTeX Error: Command \end{list} invalid in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.208 \end{algorithmic}
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.208 \end{algorithmic}
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.208 \end{algorithmic}
-                       
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.208 \end{algorithmic}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.208 \end{algorithmic}
-                       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[3]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4] (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.sty
+<Figures/Rplot_speedup_4.jpeg, id=12, 242.40562pt x 271.76532pt>
+File: Figures/Rplot_speedup_4.jpeg Graphic file (type jpg)
+<use Figures/Rplot_speedup_4.jpeg>
+Package pdftex.def Info: Figures/Rplot_speedup_4.jpeg  used on input line 241.
+(pdftex.def)             Requested size: 256.07741pt x 287.12854pt.
+ [3]
+<Figures/Rplot_speedup_3.jpeg, id=16, 242.40562pt x 271.76532pt>
+File: Figures/Rplot_speedup_3.jpeg Graphic file (type jpg)
+<use Figures/Rplot_speedup_3.jpeg>
+Package pdftex.def Info: Figures/Rplot_speedup_3.jpeg  used on input line 248.
+(pdftex.def)             Requested size: 256.07741pt x 287.12854pt.
+<Figures/Rplot_speedup_!.jpeg, id=17, 242.40562pt x 271.76532pt>
+File: Figures/Rplot_speedup_!.jpeg Graphic file (type jpg)
+<use Figures/Rplot_speedup_!.jpeg>
+Package pdftex.def Info: Figures/Rplot_speedup_!.jpeg  used on input line 271.
+(pdftex.def)             Requested size: 256.07741pt x 287.12854pt.
+<Figures/Rplot_speedup_2.jpeg, id=18, 242.40562pt x 271.76532pt>
+File: Figures/Rplot_speedup_2.jpeg Graphic file (type jpg)
+<use Figures/Rplot_speedup_2.jpeg>
+Package pdftex.def Info: Figures/Rplot_speedup_2.jpeg  used on input line 276.
+(pdftex.def)             Requested size: 256.07741pt x 287.12854pt.
+ [4 <./Figures/Rplot_speedup_4.jpeg> <./Figures/Rplot_speedup_3.jpeg>] [5 <./Figures/Rplot_speedup_!.jpeg> <./Figures/Rp
+lot_speedup_2.jpeg>] (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) (luftballons.pl) [5] [6] (main.aux)
+)
+(C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) [6]
+<Figures/Rplot_speed_p2.jpeg, id=28, 242.40562pt x 271.76532pt>
+File: Figures/Rplot_speed_p2.jpeg Graphic file (type jpg)
+<use Figures/Rplot_speed_p2.jpeg>
+Package pdftex.def Info: Figures/Rplot_speed_p2.jpeg  used on input line 355.
+(pdftex.def)             Requested size: 256.07741pt x 287.12854pt.
+<Figures/Rplot_speedup_pi.jpeg, id=29, 352.31625pt x 257.46187pt>
+File: Figures/Rplot_speedup_pi.jpeg Graphic file (type jpg)
+<use Figures/Rplot_speedup_pi.jpeg>
+Package pdftex.def Info: Figures/Rplot_speedup_pi.jpeg  used on input line 362.
+(pdftex.def)             Requested size: 256.07741pt x 187.13239pt.
+ [7 <./Figures/Rplot_speed_p2.jpeg>]
+<Figures/Rplot_pi_master_execution.jpeg, id=34, 563.85657pt x 364.36125pt>
+File: Figures/Rplot_pi_master_execution.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_master_execution.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_master_execution.jpeg  used on input line 371.
+(pdftex.def)             Requested size: 256.07741pt x 165.47884pt.
+<Figures/Rplot_pi_speedup_many_processors.jpeg, id=35, 563.85657pt x 364.36125pt>
+File: Figures/Rplot_pi_speedup_many_processors.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_speedup_many_processors.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_speedup_many_processors.jpeg  used on input line 377.
+(pdftex.def)             Requested size: 256.07741pt x 165.47884pt.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+[8 <./Figures/Rplot_speedup_pi.jpeg> <./Figures/Rplot_pi_master_execution.jpeg>]
+<Figures/Rplot_pi_as_100million_time.jpeg, id=39, 496.85625pt x 255.95625pt>
+File: Figures/Rplot_pi_as_100million_time.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_as_100million_time.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_as_100million_time.jpeg  used on input line 384.
+(pdftex.def)             Requested size: 256.07741pt x 131.91852pt.
+<Figures/Rplot_pi_as_100millions_speedup.jpeg, id=40, 496.85625pt x 255.95625pt>
+File: Figures/Rplot_pi_as_100millions_speedup.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_as_100millions_speedup.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_as_100millions_speedup.jpeg  used on input line 389.
+(pdftex.def)             Requested size: 256.07741pt x 131.91852pt.
+<Figures/Rplot_pi_as_billions.jpeg, id=41, 496.85625pt x 255.95625pt>
+File: Figures/Rplot_pi_as_billions.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_as_billions.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_as_billions.jpeg  used on input line 395.
+(pdftex.def)             Requested size: 256.07741pt x 131.91852pt.
+<Figures/Rplot_pi_as_billions_speedup.jpeg, id=42, 496.85625pt x 255.95625pt>
+File: Figures/Rplot_pi_as_billions_speedup.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_as_billions_speedup.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_as_billions_speedup.jpeg  used on input line 400.
+(pdftex.def)             Requested size: 256.07741pt x 131.91852pt.
+ [9 <./Figures/Rplot_pi_speedup_many_processors.jpeg> <./Figures/Rplot_pi_as_100million_time.jpeg> <./Figures/Rplot_pi_a
+s_100millions_speedup.jpeg>]
+Overfull \hbox (23.25551pt too wide) in paragraph at lines 412--414
+\T1/futs/m/n/10.95 for the sum-ma-tion of the first n in-te-gers. We have the se-rial im-ple-men-ta-tion in the code \T1
+/futs/m/sc/10.95 sum_of_n.c
+ []
 
- ) 
+[10 <./Figures/Rplot_pi_as_billions.jpeg> <./Figures/Rplot_pi_as_billions_speedup.jpeg>] [11] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 21626 strings out of 492452
- 414491 string characters out of 3129807
- 779217 words of memory out of 3000000
- 25744 multiletter control sequences out of 15000+200000
- 633763 words of font info for 121 fonts, out of 3000000 for 9000
+ 22840 strings out of 492452
+ 438746 string characters out of 3129807
+ 798693 words of memory out of 3000000
+ 26941 multiletter control sequences out of 15000+200000
+ 633753 words of font info for 121 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,19n,89p,10089b,1398s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/fourier/fourier-mex.pfb><C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (6 pages, 249939 bytes).
+ 59i,19n,89p,10089b,1816s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Fi
+les/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fourier/fourier
+-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/
+utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (11 pages, 434772 bytes).
 PDF statistics:
- 43 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
