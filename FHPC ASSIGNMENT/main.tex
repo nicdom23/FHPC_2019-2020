@@ -22,6 +22,13 @@
 \documentclass[11pt]{scrartcl} % Font size
 \usepackage{algorithmic}
 \input{structure.tex} % Include the file specifying the document structure and custom commands
+%\usepackage[demo]{graphicx}
+%\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[showframe=true]{geometry}
+\usepackage{changepage}
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -62,18 +69,12 @@ In this assignment we will present the following subjects:
 \end{itemize}
 
 
-\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
-	\centering
-	\includegraphics[width=0.5\columnwidth]{swallow.jpg} % Example image
-	\caption{Photo of a parallel program}
-\end{figure}
-
 %------------------------------------------------
 \section{section 0}
 \subsection{Laptop theoretical peak performance}
 
-We want to calculate the theoretical peak performance of our own portable computer by using the formula \textit{$theoretical peak performance$} $= clock_frequency x FLOPs x number of cores$.
-We gather that $clock frequency = 2.90 Ghz$,$ FLOP = 16$ and $numberofcores = 2$ for our computer architecture,an intel i7 with a kaby lake microarchitecture; thus we compute $theoretical peak performance = 92.8 GFlops/s$
+We want to calculate the theoretical peak performance of our own portable computer by using the formula \textit{theoretical peak performance} = clock frequency x FLOPs x number of cores.
+We gather that \textit{clock frequency} $= 2.90 Ghz$,$ FLOPs = 16$ and $numberofcores = 2$ for our computer architecture,an intel i7 with a Kaby Lake microarchitecture; thus we compute \textit{theoretical peak performance} $= 92.8 GFlops/s$
 %Vect_size = dimensione di registro vettoriale stessa operaaxione nello stesso momento diviso dimensione double:andiamo a vedere se ci sono le sigle (mmx sse)128bit 2 double (avx avx2) 256bit 4 double (avx512)512bit 8 double
 %primo fattore
 %
@@ -83,19 +84,23 @@ We gather that $clock frequency = 2.90 Ghz$,$ FLOP = 16$ and $numberofcores = 2$
 %quanti cicli ci vogliono? pensiamo che sia 1 = 1*vector_size*2*#fma
 
 %numero di operazioni in double precision
-
-\begin{table}
-	\centering
-		\begin{tabular}{l| l| l| l| l| l| }
+%\begin{figure}
+%\begin{adjustwidth}{-2cm}{}
+\begin{table}[H]
+		\begin{tabular}[H]{l| l| l| l| l| l }
 			&Your model&CPU&Frequency&Number of Cores&Peak Performance\\
 			laptop& Asus F556U & Intel Core i7-7500 &$2.90$ GHz&2&92.8 GFLOPs/s
 		\end{tabular}
 	\label{Result}
 \end{table}
+%\end{adjustwidth}
+%\end{figure}
+
 \subsection{Smartphone theoretical peak performance}
 We installed "`Mobile Linpack"' app and we run a few test. We report here some results,even on repeated trials: 
-
-	\begin{tabular}{l| p{0.2\textwidth}| l |l| l|l }
+%\begin{figure}
+\begin{adjustwidth}{-2cm}{}
+	\begin{tabular}[H]{l| p{0.2\textwidth}| l |l| l|l }
 		\hline
 			&Model& Sustained performance&Matrix size&Peak performance&Memory\\
 			\hline
@@ -107,11 +112,14 @@ We installed "`Mobile Linpack"' app and we run a few test. We report here some r
 			& &109.88 Mflop/s&1000& &\\
 			& &103.14 Mflop/s&2000& &\\
 		\end{tabular}
+\end{adjustwidth}
+%\end{figure}
 
 \subsection{Laptops,smartphones and the top 500}
 Let's check now whether our technologies would have competed with the Top500 supercomputers in the past:
-
-	\begin{tabular}{l| p{0.2\textwidth}| l | p{0.3\textwidth}| p{0.3\textwidth}}
+%\begin{figure}
+\begin{adjustwidth}{-2cm}{}
+	\begin{tabular}[H]{p{0.15\textwidth}| p{0.15\textwidth}| p{0.15\textwidth} | p{0.3\textwidth}| p{0.3\textwidth}}
 		\hline
 			&Model&Performance&Top 500 year\& position&number 1 HPC system\\
 			\hline
@@ -119,7 +127,8 @@ Let's check now whether our technologies would have competed with the Top500 sup
 			\hline
 			Laptop&ASUS F556U&92.8 GFLOPs/s& 3rd position at nov 1993. Remains in the top 10 until nov 1996 & We have the same top position with a Rpeak equal to 235.8 GFlops/s(equal to 2.5 times our laptop's theoretical peak performance)\\
 		\end{tabular}
-
+\end{adjustwidth}
+%\end{figure}
 
 %\begin{table}
 	%\centering
@@ -152,7 +161,7 @@ A simple pseudocode for the serial program would be:
 \end{algorithmic}
 
 If we choose $T_{comp}$ as the time to compute a floating point operation we could calculate the total time of a serial computation as
-$T_s = N * T_{comp}$,whereas the code simply computes N times the sum of two values.
+$T_s = N * T_{comp}$,whereas the code simply computes N times(the size of the problem) the sum of two values.
 
 For the parallel program we complicate a little the execution:
 
@@ -164,7 +173,7 @@ For the parallel program we complicate a little the execution:
 
 		\STATE{Read and Split $A[]$ into p subarrays $A_i[]$}
 		\STATE{Send $p-1$ subarrays to the other $p-1$ processors}
-		\FOR{i from $1$ to n/p} \STATE {$sum_i = sum_i + A_i[i]$} \ENDFOR
+		\FOR{i from $1$ to n/p} \STATE {$sum_0 = sum_0 + A_0[i]$} \ENDFOR
 		\STATE{Collect the resulting $p-1$ values $sum_i$ from the processors}
 		\FOR{i from $1$ to p} \STATE {$sum = sum + sum_i$} \ENDFOR
 \ENDIF
@@ -180,7 +189,7 @@ If we define the times $T_{read}$ to indicate the time needed to read a variable
 \  
 \begin{algorithmic}
 		\STATE{Read and Split $A[]$ into p subarrays $A_i[]$}
-		\STATE{EXECUTION TIME: $T_{read}$
+		\STATE{EXECUTION TIME: $T_{read}$}
 \end{algorithmic}
 \ 
 \begin{algorithmic}
@@ -191,161 +200,272 @@ If we define the times $T_{read}$ to indicate the time needed to read a variable
 
 \begin{algorithmic}
 
-\FOR{i from $1$ to n/p} \STATE {$sum_i = sum_i + A_i[i]$} \ENDFOR
-\STATE{EXECUTION TIME: $p+n/p * T_{comp}=n*T_{comp}$}
-\STATE{Notice that this is a parallel execution, the subarrays are added inside each processor}	
+\FOR{i from $1$ to $n/p$} \STATE {$sum_i = sum_i + A_i[i]$} \ENDFOR
+\STATE{EXECUTION TIME: $n/p * T_{comp}$}
+\STATE{This is a parallel execution, the subarrays are added inside each processor}	
 \end{algorithmic}
 
 \ 
 \begin{algorithmic}
 \STATE{Send $sum_i$ back to the Master process}
-\STATE{EXECUTION TIME: (p-1)*$T_{comm}$}
+\STATE{EXECUTION TIME: $(p-1)*T_{comm}$}
 \end{algorithmic}
-
+\ 
 \begin{algorithmic}
 		\FOR{i from $1$ to p} \STATE {$sum = sum + sum_i$} \ENDFOR
-		\STATE{EXECUTION TIME: (p-1)*T_{comp}}
+		\STATE{EXECUTION TIME: $(p-1)*T_{comp}$}
 \end{algorithmic}
 
-The total sum of the execution times gives $T_p = T_{read} + (p-1+1/n)*T_{comp}+2*T_{comm}(p-1)$
+The total sum of the execution times gives $T_p = T_{read} + (p-1+n/p)*T_{comp}+2*T_{comm}(p-1)$. We can calculate it with the theoretical values $T_{comp} =2 \times 10^{-9}$,$T_{read}= 1 \times 10^{-4}$ and $T_{comm}= 1 \times 10^{-6}$
 %----------------------------------------------
 
 \subsection{Scalability of the Model}
 
-Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given by the formula $$
+Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given by the formula $Speedup(p)=T_s/T_p$ . We give the following plots on the variable $p$:
+
+%\begin{figure}
+%\centering
+%\begin{subfigure}{.5\textwidth}
+	%\includegraphics[width=0.5\columnwidth]{Rplot_speedup_4} % Example image
+	%\caption{Speedup for $N=10^2$,maximum: $speedup = 0.00199$ at $p = 1$}
+%\end{subfigure}%
+%\begin{subfigure}{.5\textwidth}
+ %% [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	%\includegraphics[width=0.5\columnwidth]{Rplot_speedup_3} % Example image
+	%\caption{Speedup for $N=10^4$,maximum: $speedup = 0.180$ at $p = 3$}
+ %\end{subfigure}
+%\end{figure}
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_4} % Example image
+	\caption{Speedup for $N=10^2$,maximum: $speedup = 0.00199$ at $p = 1$}
+\end{figure}
+
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_3} % Example image
+	\caption{Speedup for $N=10^4$,maximum: $speedup = 0.180$ at $p = 3$}
+\end{figure}
+
+%\begin{figure}
+%\centering
+%\begin{subfigure}{.5\textwidth}
+ %% [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	%\centering  %
+	%\includegraphics[width=0.6\columnwidth]{Rplot_speedup_!} % Example image
+	%\caption{Speedup for $N=10^6$,
+	%maximum: $speedup = 8.90$ at $p = 32$}
+%\end{subfigure}%
+%\begin{subfigure}{.5\textwidth}
+%\centering
+%% [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	%\includegraphics[width=0.6\columnwidth]{Rplot_speedup_2} % Example image
+	%\caption{Speedup for $N=10^8$,
+	%maximum: $speedup = 146.67$ at $p = 316$}
+ %\end{subfigure}
+%\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_!} % Example image
+	\caption{Speedup for $N=10^6$,maximum: $speedup = 8.90$ at $p = 32$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_2} % Example image
+	\caption{Speedup for $N=10^8$,maximum: $speedup = 146.67$ at $p = 316$}
+\end{figure}
+
+We notice that this is a case of strong scaling, where adding a certain number of processors accelerate the calculations of a same-size problem, but only to a certain point. After the maximum, the communication time overpowers the advantage of the parallelization, thus lowering the speedup. Simply adding processors to the calculus will not speed up the process because the time it takes to the master node to assign the subarray to the slaves will become too high to be easily computed.
+This is different when we have a high problem size, starting from around $N=10^4$
+we see that the model starts scaling from p=1 to the maximum of the plot.
 %------------------------------------------------
+\section{Section 2}
 
+\subsection{mpi\_pi.c and pi.c execution}
+We start by executing the two codes pi.c and mpi\_pi.c we have:
 
+\begin{lstlisting}[language=bash]
+  
+$ g++ pi.c -o pi.x
+$ time ./pi.x 10000000
+
+ # of trials = 10000000 , estimate of pi is 3.141396400 
+
+ # walltime : 0.19000000 
+
+real    0m0.275s
+user    0m0.271s
+sys     0m0.001s
+\end{lstlisting}
+And the parallel file:
+\begin{lstlisting}[language=bash]
+$ mpicc mpi_pi.c -o mpi_pi.x
+$ time mpirun -np 10 ./mpi_p.x 10000000
+
+ # walltime on processor 1 : 0.02612305 
+
+ # walltime on processor 2 : 0.03022003 
+
+ # walltime on processor 3 : 0.02638388 
+
+ # walltime on processor 4 : 0.03122497 
+
+ # walltime on processor 5 : 0.02647901 
+
+ # walltime on processor 6 : 0.02861810 
+
+ # walltime on processor 7 : 0.03266811 
+
+ # walltime on processor 8 : 0.02701306 
+
+ # walltime on processor 9 : 0.03131413 
+
+ # of trials = 10000000 , estimate of pi is 3.141720800 
+
+ # walltime on master processor : 0.06575489 
+
+real    0m1.890s
+user    0m11.881s
+sys     0m0.630s
+\end{lstlisting}
+
+We should get the longest time of all the parallel execution times of mpi\_pi.x in order to asses its speed.
+
+Let's collect various run times for a different number of processors.
 %------------------------------------------------
+\begin{adjustwidth}{2cm}{}
+	\begin{tabular}[h]{l|l }
+		\hline
+			\# of processors&Master processor speed\\
+			\hline
+			1&0.19828200\\
+			2&0.10205293\\
+			4&0.05147886\\
+			8&0.04555607\\
+			16&0.01546288\\
+			32&0.00758505\\
+		\end{tabular}
+	\end{adjustwidth}
+We notice that the serial run time above and the 1-processor parallel run time on this table differ because of the parallel overhead time: $T_p(1)-T_s= 0.19828-0.190000 = 8.28 ms$
+Those values are plotted as:
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speed_p2} % Example image
+	\caption{Speed vs number of processors graph}
+\end{figure}
 
+The time decreases with an inverse proprotionality to the time. Now lets plot the speedup: 
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_pi} % Example image
+	\caption{Speedup vs number of processors graph}
+\end{figure}
+We see that it is linear,thus we have strong scalability: as we increase the number of processors we obtain a faster parallel program.
 
+Let's repeat our observations by having a larger number of parallel processors.
+Here we have a plot that shows us the master execution time according to the number of processors. The times are not strictly decreasing because the processor is less scalable as p grows. Lets see the case N=10^7
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_master_execution} % Example image
+	\caption{N= 10^7Execution time vs number of processors}
+\end{figure}
+We can see that the speedup  decreases for a large number of processors
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_speedup_many_processors} % Example image
+	\caption{N=10^7Speedup vs number of processors}
+\end{figure}
+We can observe the first linear growth that we plotted earlier. The speedup then decreases.
+Lets see the same graphs for N=10^8:
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_100million_time} % Example image
+	\caption{N= 10^8 execution time vs number of processors}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_100millions_speedup} % Example image
+	\caption{N= 10^8 speedup vs number of processors}
+\end{figure}
+Now lets see the results for N=10^9:
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_billions} % Example image
+	\caption{N= N=10^9 execution time vs number of processors}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_billions_speedup} % Example image
+	\caption{N= N=10^9 speedup vs number of processors}
+\end{figure}
+
+Here the plot is much clearer
+ We have modeled the strong scalability of the program
 %----------------------------------------------------------------------------------------
 %	EQUATION EXAMPLES
 %----------------------------------------------------------------------------------------
 
-\section{Interpreting Equations}
+\section{Section 3}
 
-\subsection{Identify the author of Equation \ref{eq:bayes} below and briefly describe it in English.}
+
+\subsection{The written code}
+Now we will focus on the two codes that represent an implementation of the theoretical model for the summation of the first n integers. We have the serial implementation in the code \textsc{sum\_of\_n.c} and the parallel implementation of the code \textsc{sumNumbers\_mpi.c}.
+Let's try the code for $n=1000$:
+\begin{lstlisting}[language=bash]
+$ g++ sum_of_n.c -o sum_of_n.x
+$ time ./sum_of_n.x < n.txt
+total sum: 500500
+real    0m0.005s
+user    0m0.000s
+sys     0m0.002s
+
+$ module load openmpi
+$ mpicc mpi_sum_of_n.c -o mpi_sum_of_n.x -std=c11
+time mpirun -np 10 ./mpi_sum_of_n.x < n.txt
+time spent on process 1 is 0.000041 seconds
+time spent on process 2 is 0.004197 seconds
+time spent on process 3 is 0.000022 seconds
+time spent on process 4 is 0.009296 seconds
+time spent on process 5 is 0.004883 seconds
+time spent on process 6 is 0.000022 seconds
+time spent on process 7 is 0.008823 seconds
+total sum: 500500 
+time spent on process 0 is 0.023464 seconds
+time spent on process 8 is 0.000022 seconds
+time spent on process 9 is 0.004411 seconds
+
+real    0m1.853s
+user    0m11.561s
+sys     0m0.635s
+\end{lstlisting}
+
+Let's try again with N=1000000000 and p = 10. We collect a few particular times of the execution:
 
 \begin{align} 
-	\label{eq:bayes}
 	\begin{split}
-		P(A|B) = \frac{P(B|A)P(A)}{P(B)}
+		T_{read}&= 3.38554 e-05 seconds\\
+		T_comp (N/P)&= 0.355836\\
+		\rightarrow T_{comp} = 0.355836/100000000 = 3.5836e-9
+		T_comm&=2.14577e-06
 	\end{split}					
 \end{align}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie. Sed dictum nisl non aliquet porttitor. Etiam vulputate arcu dignissim, finibus sem et, viverra nisl. Aenean luctus congue massa, ut laoreet metus ornare in. Nunc fermentum nisi imperdiet lectus tincidunt vestibulum at ac elit. Nulla mattis nisl eu malesuada suscipit.
-
+ We see that those values are close to the theoretical values we gave before
 %------------------------------------------------
 
-\subsection{Try to make sense of some more equations.}
 
-\begin{align} 
-	\begin{split}
-		(x+y)^3 &= (x+y)^2(x+y)\\
-		&=(x^2+2xy+y^2)(x+y)\\
-		&=(x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3)\\
-		&=x^3+3x^2y+3xy^2+y^3
-	\end{split}					
-\end{align}
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-\begin{align}
-	A = 
-	\begin{bmatrix}
-		A_{11} & A_{21} \\
-		A_{21} & A_{22}
-	\end{bmatrix}
-\end{align}
-Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
 
 %----------------------------------------------------------------------------------------
 %	LIST EXAMPLES
+%------------------------------------------------------------------------------
+
+
 %----------------------------------------------------------------------------------------
 
-\section{Viewing Lists}
-
-\subsection{Bullet Point List}
-
-\begin{itemize}
-	\item First item in a list 
-		\begin{itemize}
-		\item First item in a list 
-			\begin{itemize}
-			\item First item in a list 
-			\item Second item in a list 
-			\end{itemize}
-		\item Second item in a list 
-		\end{itemize}
-	\item Second item in a list 
-\end{itemize}
+%-------------------------------------------------------------
 
 %------------------------------------------------
-
-\subsection{Numbered List}
-
-\begin{enumerate}
-	\item First item in a list 
-	\item Second item in a list 
-	\item Third item in a list
-\end{enumerate}
-
-%----------------------------------------------------------------------------------------
-%	TABLE EXAMPLE
-%----------------------------------------------------------------------------------------
-
-\section{Interpreting a Table}
-
-\begin{table}[h] % [h] forces the table to be output where it is defined in the code (it suppresses floating)
-	\centering % Centre the table
-	\begin{tabular}{l l l}
-		\toprule
-		\textit{Per 50g} & \textbf{Pork} & \textbf{Soy} \\
-		\midrule
-		Energy & 760kJ & 538kJ\\
-		Protein & 7.0g & 9.3g\\
-		Carbohydrate & 0.0g & 4.9g\\
-		Fat & 16.8g & 9.1g\\
-		Sodium & 0.4g & 0.4g\\
-		Fibre & 0.0g & 1.4g\\
-		\bottomrule
-	\end{tabular}
-	\caption{Sausage nutrition.}
-\end{table}
-
-%------------------------------------------------
-
-\subsection{The table above shows the nutritional consistencies of two sausage types. Explain their relative differences given what you know about daily adult nutritional recommendations.}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie. Sed dictum nisl non aliquet porttitor. Etiam vulputate arcu dignissim, finibus sem et, viverra nisl. Aenean luctus congue massa, ut laoreet metus ornare in. Nunc fermentum nisi imperdiet lectus tincidunt vestibulum at ac elit. Nulla mattis nisl eu malesuada suscipit.
-
-%----------------------------------------------------------------------------------------
-%	CODE LISTING EXAMPLE
-%----------------------------------------------------------------------------------------
-
-\section{Reading a Code Listing}
-
-\lstinputlisting[
-	caption=Luftballons Perl Script., % Caption above the listing
-	label=lst:luftballons, % Label for referencing this listing
-	language=Perl, % Use Perl functions/syntax highlighting
-	frame=single, % Frame around the code listing
-	showstringspaces=false, % Don't put marks in string spaces
-	numbers=left, % Line numbers on left
-	numberstyle=\tiny, % Line numbers styling
-	]{luftballons.pl}
-
-%------------------------------------------------
-
-\subsection{How many luftballons will be output by the Listing \ref{lst:luftballons} above?}
-
-Aliquam arcu turpis, ultrices sed luctus ac, vehicula id metus. Morbi eu feugiat velit, et tempus augue. Proin ac mattis tortor. Donec tincidunt, ante rhoncus luctus semper, arcu lorem lobortis justo, nec convallis ante quam quis lectus. Aenean tincidunt sodales massa, et hendrerit tellus mattis ac. Sed non pretium nibh. Donec cursus maximus luctus. Vivamus lobortis eros et massa porta porttitor.
-
-%------------------------------------------------
-
-\subsection{Identify the regular expression in Listing \ref{lst:luftballons} and explain how it relates to the anti-war sentiments found in the rest of the script.}
-
-Fusce varius orci ac magna dapibus porttitor. In tempor leo a neque bibendum sollicitudin. Nulla pretium fermentum nisi, eget sodales magna facilisis eu. Praesent aliquet nulla ut bibendum lacinia. Donec vel mauris vulputate, commodo ligula ut, egestas orci. Suspendisse commodo odio sed hendrerit lobortis. Donec finibus eros erat, vel ornare enim mattis et.
 
 %----------------------------------------------------------------------------------------
 
