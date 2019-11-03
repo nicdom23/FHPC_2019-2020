@@ -238,15 +238,15 @@ Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given 
 
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_4} % Example image
-	\caption{Speedup for $N=10^2$,maximum: $speedup = 0.00199$ at $p = 1$}
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_2} % Example image
+	\caption{Speedup for $N=10^2$,maximum: $speedup = 0.002$ at $p = 1$}
 \end{figure}
 
 
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_3} % Example image
-	\caption{Speedup for $N=10^4$,maximum: $speedup = 0.180$ at $p = 3$}
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_4} % Example image
+	\caption{Speedup for $N=10^4$,maximum: $speedup = 0.181$ at $p = 3$}
 \end{figure}
 
 %\begin{figure}
@@ -268,23 +268,33 @@ Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given 
 %\end{figure}
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_!} % Example image
-	\caption{Speedup for $N=10^6$,maximum: $speedup = 8.90$ at $p = 32$}
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_6} % Example image
+	\caption{Speedup for $N=10^6$,maximum: $speedup = 8.91$ at $p = 32$}
 \end{figure}
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_2} % Example image
-	\caption{Speedup for $N=10^8$,maximum: $speedup = 146.67$ at $p = 316$}
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_8} % Example image
+	\caption{Speedup for $N=10^8$,maximum: $speedup = 147$ at $p = 316$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_10} % Example image
+	\caption{Speedup for $N=10^10$,maximum: $speedup = 905$ at $p = 1000$}
 \end{figure}
 
-We notice that this is a case of strong scaling, where adding a certain number of processors accelerate the calculations of a same-size problem, but only to a certain point. After the maximum, the communication time overpowers the advantage of the parallelization, thus lowering the speedup. Simply adding processors to the calculus will not speed up the process because the time it takes to the master node to assign the subarray to the slaves will become too high to be easily computed.
-This is different when we have a high problem size, starting from around $N=10^4$
-we see that the model starts scaling from p=1 to the maximum of the plot.
+We notice that as we increase N we get closer to a case of perfect scaling on our window. As N grows, adding a certain number of processors accelerates the calculations almost linearly.
+If N is low,instead , we see that the problem starts scaling around $N=10^6$, where the speedup grows up to the maximum, and then decreases:the communication time overpowers the advantage of the parallelization, thus lowering the speedup.
+ Simply adding processors to the calculus will not speed up the process because the time it takes to the master node to assign the subarrays to the slaves will grow as well.
+The algorithm performs well if :
+\begin{itemize}
+	\item p corresponds to the maximum speedup;
+	\item the maximum speedup is greater than 1: it makes the parallelization convenient.
+\end{itemize}
 %------------------------------------------------
 \section{Section 2}
 
-\subsection{mpi\_pi.c and pi.c execution}
-We start by executing the two codes pi.c and mpi\_pi.c we have:
+\subsection{\textit{mpi\_pi.c} and \textit{pi.c} execution}
+We start by executing the two codes \textit{pi.c} and \textit{mpi\_pi.c} we have:
 
 \begin{lstlisting}[language=bash]
   
@@ -331,117 +341,95 @@ user    0m11.881s
 sys     0m0.630s
 \end{lstlisting}
 
-We should get the longest time of all the parallel execution times of mpi\_pi.x in order to asses its speed.
+We should get the longest time of all the parallel execution times of \textsc{mpi\_pi.x} in order to asses its speed.
 
-Let's collect various run times for a different number of processors.
+Let's collect various run times for a different number of processors. 
 %------------------------------------------------
 \begin{adjustwidth}{2cm}{}
 	\begin{tabular}[h]{l|l }
 		\hline
-			\# of processors&Master processor speed\\
+			\# of processors&Maximum processor speed\\
 			\hline
-			1&0.19828200\\
-			2&0.10205293\\
-			4&0.05147886\\
-			8&0.04555607\\
-			16&0.01546288\\
-			32&0.00758505\\
+			1&0.19799113\\
+			2&0.102010919\\
+			4&0.0.05167317\\
+			8&0.02782202\\
+			16&0.01556611\\
+			32&0.04725909\\
+			64&0.04147911\\
 		\end{tabular}
 	\end{adjustwidth}
-We notice that the serial run time above and the 1-processor parallel run time on this table differ because of the parallel overhead time: $T_p(1)-T_s= 0.19828-0.190000 = 8.28 ms$
+We notice that the serial execution time and the single processor parallel execution time differ because of the parallel overhead time: $usertime\_T_p(1)-usertime\_T_s+systime\_T_p(1)= 11.881-0.271+ 0.630= 12.24 s$ .This is the parallel overhead time for a single process.
 Those values are plotted as:
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_speed_p2} % Example image
-	\caption{Speed vs number of processors graph}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_times_10millions} % Example image
+	\caption{Execution time vs number of processors $N = 10^7$ }
 \end{figure}
 
-The time decreases with an inverse proprotionality to the time. Now lets plot the speedup: 
+The time decreases inversely to the time. Now lets plot the speedup: 
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_pi} % Example image
-	\caption{Speedup vs number of processors graph}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_speedup_10millions} % Example image
+	\caption{Speedup vs number of processors $N=10^7$}
 \end{figure}
-We see that it is linear,thus we have strong scalability: as we increase the number of processors we obtain a faster parallel program.
+We see that it is not linear: the program scales only until around 20 processors.
 
-Let's repeat our observations by having a larger number of parallel processors.
-Here we have a plot that shows us the master execution time according to the number of processors. The times are not strictly decreasing because the processor is less scalable as p grows. Lets see the case N=10^7
+Let's repeat our observations by having a larger problem size.
+Here we have a plot that shows us the maximum execution time against the number of processors. Lets see the case$ N=10^8$
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_master_execution} % Example image
-	\caption{N= 10^7Execution time vs number of processors}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_times_100millions} % Example image
+	\caption{Execution time vs number of processors $N= 10^8$}
 \end{figure}
 We can see that the speedup  decreases for a large number of processors
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_speedup_many_processors} % Example image
-	\caption{N=10^7Speedup vs number of processors}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_speedup_100millions} % Example image
+	\caption{Speedup vs number of processors $N=10^8$}
 \end{figure}
-We can observe the first linear growth that we plotted earlier. The speedup then decreases.
-Lets see the same graphs for N=10^8:
+We can observe that the graph is rising closer to the drawn line, that represents the perfect speedup that is equal to p.
+Lets see the same graphs for $N=10^9$:
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_100million_time} % Example image
-	\caption{N= 10^8 execution time vs number of processors}
-\end{figure}
-\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
-	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_100millions_speedup} % Example image
-	\caption{N= 10^8 speedup vs number of processors}
-\end{figure}
-Now lets see the results for N=10^9:
-\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
-	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_billions} % Example image
-	\caption{N= N=10^9 execution time vs number of processors}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_times_1billion} % Example image
+	\caption{ Execution time vs number of processors $N= 10^8$}
 \end{figure}
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_as_billions_speedup} % Example image
-	\caption{N= N=10^9 speedup vs number of processors}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_speedup_1billion} % Example image
+	\caption{speedup vs number of processors $N= 10^9$}
 \end{figure}
 
-Here the plot is much clearer
- We have modeled the strong scalability of the program
-%----------------------------------------------------------------------------------------
-%	EQUATION EXAMPLES
-%----------------------------------------------------------------------------------------
+Here the speedup plot is linear, for 0<p<64, thus adding more processors increases linearly the execution time.
+ We have analyzed the strong scalability of the model. 
+\subsection{2.2 Parallel overhead}
+Here we discuss about identifying a model for deducing the overhead of our program. At first the simple walltime given by the programm is not enough, since it doesnt count the overhead of the initialization. We must resort to the command \textit{time}.
 
+A simplified model for the parallel program is :
+$T_p=T_{read}+4*N*T_{comp}+(p-1)*T_{comm}+(p-1)*T_{comp}$,where all the processors read in parallel, do 4 computations to check if the points are inside the circle(two products,one sum and one comparison),then the master processor reads all partial numbers of points that are inside the circle and then calculates the partial sum.
+We see that the parts that depend on p are the part of the communication and the part of the computation of the final sum. These two parts of the program are related to the overhead
+
+For $N = 10^9$ we obtain the following two graphs:
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_execution_time_1billion} % Example image
+	\caption{real execution time vs number of processors $N= 10^9$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_overhead_time_1billion} % Example image
+	\caption{time difference between execution time and walltime vs number of processors $N= 10^9$}
+\end{figure}
+%----------------------------------------------------------------------------------------
 \section{Section 3}
+Here we report the two c++ codes \textsc{sumNumbers\_mpi.cc} and \textsc{sumNumbers\_coll.cc}.
 
+The two codes implement the pseudocode we wrote above, including the variations on the assignment.Both codes return the sum of N consecutive integers starting from 1 to N and both codes implement the calculus using a serial approach. Both codes also adress the case in which N is not divisible by the number of processors p. In this case the master node takes care of the summation of the integers that are left out from the slave processors.
+The code \textsc{sumNumbers\_mpi.cc} uses only \textsc{MPI\_Send()} and \textsc{MPI\_Recv()}
+while the code \textsc{sumNumbers\_coll.cc} uses the collective operations \textsc{MPI\_Bcast()} and \textsc{MPI\_Reduce()}. The codes where tested using as an input a file containing the number $N = 10^9$.
 
-\subsection{The written code}
-Now we will focus on the two codes that represent an implementation of the theoretical model for the summation of the first n integers. We have the serial implementation in the code \textsc{sum\_of\_n.c} and the parallel implementation of the code \textsc{sumNumbers\_mpi.c}.
-Let's try the code for $n=1000$:
-\begin{lstlisting}[language=bash]
-$ g++ sum_of_n.c -o sum_of_n.x
-$ time ./sum_of_n.x < n.txt
-total sum: 500500
-real    0m0.005s
-user    0m0.000s
-sys     0m0.002s
-
-$ module load openmpi
-$ mpicc mpi_sum_of_n.c -o mpi_sum_of_n.x -std=c11
-time mpirun -np 10 ./mpi_sum_of_n.x < n.txt
-time spent on process 1 is 0.000041 seconds
-time spent on process 2 is 0.004197 seconds
-time spent on process 3 is 0.000022 seconds
-time spent on process 4 is 0.009296 seconds
-time spent on process 5 is 0.004883 seconds
-time spent on process 6 is 0.000022 seconds
-time spent on process 7 is 0.008823 seconds
-total sum: 500500 
-time spent on process 0 is 0.023464 seconds
-time spent on process 8 is 0.000022 seconds
-time spent on process 9 is 0.004411 seconds
-
-real    0m1.853s
-user    0m11.561s
-sys     0m0.635s
-\end{lstlisting}
-
-Let's try again with N=1000000000 and p = 10. We collect a few particular times of the execution:
+We collect a few particular times of the execution:
 
 \begin{align} 
 	\begin{split}
@@ -451,7 +439,15 @@ Let's try again with N=1000000000 and p = 10. We collect a few particular times 
 		T_comm&=2.14577e-06
 	\end{split}					
 \end{align}
- We see that those values are close to the theoretical values we gave before
+ We see that these values are close to the theoretical values we gave before,making them plausible.
+%	EQUATION EXAMPLES
+%------------------------------------------------
+
+
+
+
+%----------------------------------------
+
 %------------------------------------------------
 
 
