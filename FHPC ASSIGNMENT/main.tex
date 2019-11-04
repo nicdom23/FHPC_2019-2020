@@ -463,12 +463,26 @@ Where by $10^9$ the model was perfectly scaling, our model is instead not scalin
 The exection time seems to be constant.
 The executed program was the naive-implemented one,and probably the communication time increases too much and vanifies the parallelization attempt.
 Basically adding more processors does not speed up to the execution time.
-The communication time
 %----------------------------------------
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
 	\includegraphics[width=0.6\columnwidth]{Rplot_sum_times_thousand} % Example image
 	\caption{execution time vs number of processors $N= 10^3$}
+\end{figure}
+We get a better result if we plot the scalability for the \textit{sumNumbers\_coll.cc} code, with $N=10^{9}$. The time taken is the \textit{Walltime} given by \textit{MPI\_Walltime()}
+
+
+We see that the second program scales better than the first one.
+We replicated the results with $N=10^{12}$,although there is no common data type to store the result of the sum and although we couldn't test a simple serial code of the summation with such a big number,we estimate $T(1) = 5 s$.
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_complex_sum_times_trillion} % Example image
+	\caption{execution time vs number of processors $N= 10^12$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_complex_sum_speedup_trillion} % Example image
+	\caption{speedup vs number of processors $N= 10^12$}
 \end{figure}
 %------------------------------------------------
 
