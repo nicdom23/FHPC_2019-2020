@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  3 NOV 2019 22:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  4 NOV 2019 22:31
 entering extended mode
 **./main.tex
 (main.tex
@@ -1242,40 +1242,63 @@ File: Figures/Rplot_sum_speedup_10billion.jpeg Graphic file (type jpg)
 Package pdftex.def Info: Figures/Rplot_sum_speedup_10billion.jpeg  used on input line 457.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
  [9 <./Figures/Rplot_sum_times_billion.jpeg> <./Figures/Rplot_sum_scalability_billion.jpeg>]
+<Figures/Rplot_sum_times_thousand.jpeg, id=52, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_sum_times_thousand.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_times_thousand.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_times_thousand.jpeg  used on input line 469.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+ [10 <./Figures/Rplot_sum_times_10billion.jpeg> <./Figures/Rplot_sum_speedup_10billion.jpeg> <./Figures/Rplot_sum_times_
+thousand.jpeg>]
+<Figures/Rplot_complex_sum_times_1billion.jpeg, id=56, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_complex_sum_times_1billion.jpeg Graphic file (type jpg)
+<use Figures/Rplot_complex_sum_times_1billion.jpeg>
+Package pdftex.def Info: Figures/Rplot_complex_sum_times_1billion.jpeg  used on input line 476.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+<Figures/Rplot_complex_sum_speedup_1billion.jpeg, id=57, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_complex_sum_speedup_1billion.jpeg Graphic file (type jpg)
+<use Figures/Rplot_complex_sum_speedup_1billion.jpeg>
+Package pdftex.def Info: Figures/Rplot_complex_sum_speedup_1billion.jpeg  used on input line 481.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
 
-! LaTeX Error: File `Rplot_sum_time_thousand' not found.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.485 ... however replicate the results with N=10^
+                                                  11.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.466 ...0.6\columnwidth]{Rplot_sum_time_thousand}
-                                                   % Example image
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.488 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-[10 <./Figures/Rplot_sum_times_10billion.jpeg> <./Figures/Rplot_sum_speedup_10billion.jpeg>] (main.aux)
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+Overfull \hbox (68.8872pt too wide) in paragraph at lines 484--488
+\T1/futs/m/n/10.95 the re-sults with N=10$[]1\FML/futmi/m/it/10.95 :Theprogramseemstobeproducinginconsistentdatawhileexe
+cutedonUlysses$ 
+ []
 
- ) 
+[11 <./Figures/Rplot_complex_sum_times_1billion.jpeg> <./Figures/Rplot_complex_sum_speedup_1billion.jpeg>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 22903 strings out of 492452
- 441106 string characters out of 3129807
+ 22909 strings out of 492452
+ 441850 string characters out of 3129807
  798058 words of memory out of 3000000
- 26992 multiletter control sequences out of 15000+200000
+ 27007 multiletter control sequences out of 15000+200000
  638363 words of font info for 124 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,19n,89p,10089b,1814s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (10 pages, 644148 bytes).
+{
+C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fo
+urier/fourier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (11 pages, 726043 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
+ 79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
