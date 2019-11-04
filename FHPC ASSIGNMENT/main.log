@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  3 NOV 2019 12:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  3 NOV 2019 22:05
 entering extended mode
 **./main.tex
 (main.tex
@@ -1066,26 +1066,26 @@ LaTeX Font Info:    Trying to load font information for TS1+futs on input line 6
 File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 74.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 76.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 10.07397pt on input line 79.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 77.
+(Font)              scaled to size 7.63599pt on input line 79.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 77.
+(Font)              scaled to size 5.51999pt on input line 79.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 77.
+(Font)              scaled to size 10.07397pt on input line 79.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 77.
+(Font)              scaled to size 7.63599pt on input line 79.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 77.
+(Font)              scaled to size 5.51999pt on input line 79.
 
-Overfull \hbox (17.1138pt too wide) in paragraph at lines 90--95
+Overfull \hbox (17.1138pt too wide) in paragraph at lines 92--97
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--107
+Underfull \hbox (badness 10000) in paragraph at lines 109--109
 []\T1/futs/m/n/10.95 Samsung Galaxy
  []
 
@@ -1093,83 +1093,83 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--107
 
 
 {C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
 []\T1/futs/m/n/10.95 Samsung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
+Underfull \hbox (badness 10000) in paragraph at lines 128--128
 \T1/futs/m/n/10.95 Galaxy
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 126--126
+Underfull \hbox (badness 1389) in paragraph at lines 128--128
 \T1/futs/m/n/10.95 puter has an Rmax of 0.5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 []\T1/futs/m/n/10.95 Numerical Wind Tun-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 \T1/futs/m/n/10.95 nel,Fujitsu Na-tional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 \T1/futs/m/n/10.95 Aerospace Lab-o-ra-tory of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
 \T1/futs/m/n/10.95 our cell-phone's sus-tained
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []\T1/futs/m/n/10.95 92.8 GFLOP-
  []
 
 
-Overfull \hbox (24.42879pt too wide) in paragraph at lines 122--130
+Overfull \hbox (24.42879pt too wide) in paragraph at lines 124--132
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 159.
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 161.
 [2]
 <Figures/Rplot_speedup_sum_2.jpeg, id=12, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_2.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_2.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_2.jpeg  used on input line 241.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_2.jpeg  used on input line 243.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
  [3]
 <Figures/Rplot_speedup_sum_4.jpeg, id=16, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_4.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_4.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_4.jpeg  used on input line 248.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_4.jpeg  used on input line 250.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_speedup_sum_6.jpeg, id=17, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_6.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_6.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_6.jpeg  used on input line 271.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_6.jpeg  used on input line 255.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_speedup_sum_8.jpeg, id=18, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_8.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_8.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_8.jpeg  used on input line 276.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_8.jpeg  used on input line 260.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_speedup_sum_10.jpeg, id=19, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_10.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_10.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_10.jpeg  used on input line 281.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_10.jpeg  used on input line 265.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
  [4 <./Figures/Rplot_speedup_sum_2.jpeg> <./Figures/Rplot_speedup_sum_4.jpeg> <./Figures/Rplot_speedup_sum_6.jpeg> <./Fi
 gures/Rplot_speedup_sum_8.jpeg> <./Figures/Rplot_speedup_sum_10.jpeg>]
 LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <12> not available
-(Font)              Font shape `T1/futs/b/it' tried instead on input line 296.
+(Font)              Font shape `T1/futs/b/it' tried instead on input line 280.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
@@ -1180,63 +1180,102 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 <Figures/Rplot_pi_times_10millions.jpeg, id=27, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_times_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_times_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_times_10millions.jpeg  used on input line 366.
+Package pdftex.def Info: Figures/Rplot_pi_times_10millions.jpeg  used on input line 351.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_speedup_10millions.jpeg, id=28, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_speedup_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_speedup_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_speedup_10millions.jpeg  used on input line 373.
+Package pdftex.def Info: Figures/Rplot_pi_speedup_10millions.jpeg  used on input line 358.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_times_100millions.jpeg, id=29, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_times_100millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_times_100millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_times_100millions.jpeg  used on input line 382.
+Package pdftex.def Info: Figures/Rplot_pi_times_100millions.jpeg  used on input line 367.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
  [6 <./Figures/Rplot_pi_times_10millions.jpeg> <./Figures/Rplot_pi_speedup_10millions.jpeg>]
 <Figures/Rplot_pi_speedup_100millions.jpeg, id=33, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_speedup_100millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_speedup_100millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_speedup_100millions.jpeg  used on input line 388.
+Package pdftex.def Info: Figures/Rplot_pi_speedup_100millions.jpeg  used on input line 373.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_times_1billion.jpeg, id=34, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_times_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_times_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_times_1billion.jpeg  used on input line 395.
+Package pdftex.def Info: Figures/Rplot_pi_times_1billion.jpeg  used on input line 380.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_speedup_1billion.jpeg, id=35, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_speedup_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_speedup_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_speedup_1billion.jpeg  used on input line 400.
+Package pdftex.def Info: Figures/Rplot_pi_speedup_1billion.jpeg  used on input line 385.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
-<Figures/Rplot_pi_execution_time_1billion.jpeg, id=36, 680.5425pt x 255.95625pt>
-File: Figures/Rplot_pi_execution_time_1billion.jpeg Graphic file (type jpg)
-<use Figures/Rplot_pi_execution_time_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_execution_time_1billion.jpeg  used on input line 411.
-(pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
+<Figures/Rplot_pi_max_-_min.jpeg, id=36, 540.51938pt x 255.95625pt>
+File: Figures/Rplot_pi_max_-_min.jpeg Graphic file (type jpg)
+<use Figures/Rplot_pi_max_-_min.jpeg>
+Package pdftex.def Info: Figures/Rplot_pi_max_-_min.jpeg  used on input line 397.
+(pdftex.def)             Requested size: 256.07741pt x 121.26411pt.
  [7 <./Figures/Rplot_pi_times_100millions.jpeg> <./Figures/Rplot_pi_speedup_100millions.jpeg> <./Figures/Rplot_pi_times_
 1billion.jpeg> <./Figures/Rplot_pi_speedup_1billion.jpeg>]
-<Figures/Rplot_pi_overhead_time_1billion.jpeg, id=41, 680.5425pt x 255.95625pt>
-File: Figures/Rplot_pi_overhead_time_1billion.jpeg Graphic file (type jpg)
-<use Figures/Rplot_pi_overhead_time_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_overhead_time_1billion.jpeg  used on input line 416.
-(pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
- [8 <./Figures/Rplot_pi_execution_time_1billion.jpeg> <./Figures/Rplot_pi_overhead_time_1billion.jpeg>] (main.aux) ) 
+<Figures/Rplot_weak_scaling.jpeg, id=41, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_weak_scaling.jpeg Graphic file (type jpg)
+<use Figures/Rplot_weak_scaling.jpeg>
+Package pdftex.def Info: Figures/Rplot_weak_scaling.jpeg  used on input line 408.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+ [8 <./Figures/Rplot_pi_max_-_min.jpeg> <./Figures/Rplot_weak_scaling.jpeg>]
+<Figures/Rplot_sum_times_billion.jpeg, id=45, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_sum_times_billion.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_times_billion.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_times_billion.jpeg  used on input line 441.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+<Figures/Rplot_sum_scalability_billion.jpeg, id=46, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_sum_scalability_billion.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_scalability_billion.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_scalability_billion.jpeg  used on input line 446.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+<Figures/Rplot_sum_times_10billion.jpeg, id=47, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_sum_times_10billion.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_times_10billion.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_times_10billion.jpeg  used on input line 452.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+<Figures/Rplot_sum_speedup_10billion.jpeg, id=48, 406.51875pt x 255.95625pt>
+File: Figures/Rplot_sum_speedup_10billion.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_speedup_10billion.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_speedup_10billion.jpeg  used on input line 457.
+(pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+ [9 <./Figures/Rplot_sum_times_billion.jpeg> <./Figures/Rplot_sum_scalability_billion.jpeg>]
+
+! LaTeX Error: File `Rplot_sum_time_thousand' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.466 ...0.6\columnwidth]{Rplot_sum_time_thousand}
+                                                   % Example image
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[10 <./Figures/Rplot_sum_times_10billion.jpeg> <./Figures/Rplot_sum_speedup_10billion.jpeg>] (main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 22839 strings out of 492452
- 439368 string characters out of 3129807
- 797986 words of memory out of 3000000
- 26937 multiletter control sequences out of 15000+200000
+ 22903 strings out of 492452
+ 441106 string characters out of 3129807
+ 798058 words of memory out of 3000000
+ 26992 multiletter control sequences out of 15000+200000
  638363 words of font info for 124 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,19n,89p,10089b,1814s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/
-Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fouri
-er/fourier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (8 pages, 550034 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
+/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (10 pages, 644148 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

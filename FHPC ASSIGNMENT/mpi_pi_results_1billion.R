@@ -137,8 +137,9 @@ plot(p,speedup,type="l")
 32
  
 64
-
+plot(p,elapsed_time_bill-times,type="l",xlab = "p",ylab = "time difference")
           
+plot(p,elapsed_time_usr-times,type="l",xlab = "p",ylab = "time difference")
 
 
 
