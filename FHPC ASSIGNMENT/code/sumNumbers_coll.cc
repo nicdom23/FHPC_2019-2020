@@ -2,6 +2,8 @@
 #NICOLA DOMENIS### DSSC COURSE 2019/2020
 ##################
 #include<iostream>
+#include<cstdlib>
+
 #include"mpi.h"
 
 int main(int argc,char**argv){
@@ -21,7 +23,11 @@ int main(int argc,char**argv){
 
 			init_time = MPI_Wtime();
         MPI_Status status;
-
+if (size<2){
+std::cout<<"required more processes"<<std::endl;
+MPI_Finalize();
+exit(0);
+}
        int problem_size;
        unsigned long long int sum,tot_sum =0;
        if (rank == 0){
