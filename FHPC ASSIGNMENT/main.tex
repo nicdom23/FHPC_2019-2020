@@ -63,9 +63,11 @@
 In this assignment we will present the following subjects:
 
 \begin{itemize}
-	\item the production of a parallel program code
-	\item the graphs of the theoretical and real speedup of the code
-	\item anything else
+	\item the analysis of the computational power of our laptop and smartphone;
+	\item the analysis of a strong scaling model for a simple addition problem;
+	\item the resolution of a scalability problem for a simple parallel code that computes pi;
+	\item the parallel implementation of the above addition program;
+	\item the scalability of the addition program.
 \end{itemize}
 
 
@@ -74,7 +76,7 @@ In this assignment we will present the following subjects:
 \subsection{Laptop theoretical peak performance}
 
 We want to calculate the theoretical peak performance of our own portable computer by using the formula \textit{theoretical peak performance} = clock frequency x FLOPs x number of cores.
-We gather that \textit{clock frequency} $= 2.90 Ghz$,$ FLOPs = 16$ and $numberofcores = 2$ for our computer architecture,an intel i7 with a Kaby Lake microarchitecture; thus we compute \textit{theoretical peak performance} $= 92.8 GFlops/s$
+We gather that \textit{clock frequency} $= 2.90 Ghz$,$ FLOPs = 16$ and \textit{number of cores} $= 2$ for our computer architecture,an intel i7 with a Kaby Lake microarchitecture; thus we compute \textit{theoretical peak performance} $= 92.8 GFlops/s$
 %Vect_size = dimensione di registro vettoriale stessa operaaxione nello stesso momento diviso dimensione double:andiamo a vedere se ci sono le sigle (mmx sse)128bit 2 double (avx avx2) 256bit 4 double (avx512)512bit 8 double
 %primo fattore
 %
@@ -248,24 +250,6 @@ Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given 
 	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_4} % Example image
 	\caption{Speedup for $N=10^4$,maximum: $speedup = 0.181$ at $p = 3$}
 \end{figure}
-
-%\begin{figure}
-%\centering
-%\begin{subfigure}{.5\textwidth}
- %% [h] forces the figure to be output where it is defined in the code (it suppresses floating)
-	%\centering  %
-	%\includegraphics[width=0.6\columnwidth]{Rplot_speedup_!} % Example image
-	%\caption{Speedup for $N=10^6$,
-	%maximum: $speedup = 8.90$ at $p = 32$}
-%\end{subfigure}%
-%\begin{subfigure}{.5\textwidth}
-%\centering
-%% [h] forces the figure to be output where it is defined in the code (it suppresses floating)
-	%\includegraphics[width=0.6\columnwidth]{Rplot_speedup_2} % Example image
-	%\caption{Speedup for $N=10^8$,
-	%maximum: $speedup = 146.67$ at $p = 316$}
- %\end{subfigure}
-%\end{figure}
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
 	\includegraphics[width=0.6\columnwidth]{Rplot_speedup_sum_6} % Example image
@@ -282,8 +266,8 @@ Once we have the theoretical $T_p$ and $T_s$ we can calculate the Speedup given 
 	\caption{Speedup for $N=10^10$,maximum: $speedup = 905$ at $p = 1000$}
 \end{figure}
 
-We notice that as we increase N we get closer to a case of perfect scaling on our window. As N grows, adding a certain number of processors accelerates the calculations almost linearly.
-If N is low,instead , we see that the problem starts scaling around $N=10^6$, where the speedup grows up to the maximum, and then decreases:the communication time overpowers the advantage of the parallelization, thus lowering the speedup.
+We notice that as we increase N we get closer to a case of perfect scaling, on our number of processors. As N grows, adding a certain number of processors accelerates the calculations almost linearly.
+If N is low,instead , we see that the problem starts scaling around $N=10^6$, where the speedup grows up to a maximum, and then decreases:the communication time overpowers the advantage of the parallelization, thus lowering the speedup.
  Simply adding processors to the calculus will not speed up the process because the time it takes to the master node to assign the subarrays to the slaves will grow as well.
 The algorithm performs well if :
 \begin{itemize}
@@ -360,6 +344,7 @@ Let's collect various run times for a different number of processors.
 		\end{tabular}
 	\end{adjustwidth}
 We notice that the serial execution time and the single processor parallel execution time differ because of the parallel overhead time: $usertime\_T_p(1)-usertime\_T_s+systime\_T_p(1)= 11.881-0.271+ 0.630= 12.24 s$ .This is the parallel overhead time for a single process.
+
 Those values are plotted as:
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
@@ -404,28 +389,31 @@ Lets see the same graphs for $N=10^9$:
 Here the speedup plot is linear, for 0<p<64, thus adding more processors increases linearly the execution time.
  We have analyzed the strong scalability of the model. 
 \subsection{2.2 Parallel overhead}
-Here we discuss about identifying a model for deducing the overhead of our program. At first the simple walltime given by the programm is not enough, since it doesnt count the overhead of the initialization. We must resort to the command \textit{time}.
-
-A simplified model for the parallel program is :
-$T_p=T_{read}+4*N*T_{comp}+(p-1)*T_{comm}+(p-1)*T_{comp}$,where all the processors read in parallel, do 4 computations to check if the points are inside the circle(two products,one sum and one comparison),then the master processor reads all partial numbers of points that are inside the circle and then calculates the partial sum.
-We see that the parts that depend on p are the part of the communication and the part of the computation of the final sum. These two parts of the program are related to the overhead
-
-For $N = 10^9$ we obtain the following two graphs:
+Here we discuss about identifying a model for deducing the overhead of our program. We study the case where $N=10^7$ and we plot the difference between the maximum processor walltime
+ and the minimum processor walltime for a different number of processors.
+We obtain the following graph
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_execution_time_1billion} % Example image
-	\caption{real execution time vs number of processors $N= 10^9$}
+	\includegraphics[width=0.6\columnwidth]{Rplot_pi_max_-_min} % Example image
+	\caption{overhead vs number of processors $N= 10^9$}
 \end{figure}
+
+We can see that the overhead grows as p grows. This is explained by the fact that the overhead increases because of the accessory computation we adopt in order to manage more nodes.
+\subsection{2.3 Weak scaling}
+
+We run a shell script to automatically collect the runtimes for various proportional values of p and N. N is equal to $10^7*p$ as p grows.
+We obtain the following plot
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
-	\includegraphics[width=0.6\columnwidth]{Rplot_pi_overhead_time_1billion} % Example image
-	\caption{time difference between execution time and walltime vs number of processors $N= 10^9$}
+	\includegraphics[width=0.6\columnwidth]{Rplot_weak_scaling} % Example image
+	\caption{Weak scaling case: execution time vs number of processors $N= 10^7$}
 \end{figure}
+We see that the execution time is almost constant,which is what we expect with a weak scalable program.
 %----------------------------------------------------------------------------------------
 \section{Section 3}
-Here we report the two c++ codes \textsc{sumNumbers\_mpi.cc} and \textsc{sumNumbers\_coll.cc}.
+Here we have the two c++ codes \textsc{sumNumbers\_mpi.cc} and \textsc{sumNumbers\_coll.cc}.
 
-The two codes implement the pseudocode we wrote above, including the variations on the assignment.Both codes return the sum of N consecutive integers starting from 1 to N and both codes implement the calculus using a serial approach. Both codes also adress the case in which N is not divisible by the number of processors p. In this case the master node takes care of the summation of the integers that are left out from the slave processors.
+The two codes implement the pseudocode we wrote above, including the variations on the assignment.Both codes return the sum of N consecutive integers starting from 1 to N and both codes implement the calculation using a parallel approach. Both codes also address the case in which N is not divisible by the number of processors p. In this case the master node takes care of the summation of the integers that are left out from the slave processors.
 The code \textsc{sumNumbers\_mpi.cc} uses only \textsc{MPI\_Send()} and \textsc{MPI\_Recv()}
 while the code \textsc{sumNumbers\_coll.cc} uses the collective operations \textsc{MPI\_Bcast()} and \textsc{MPI\_Reduce()}. The codes where tested using as an input a file containing the number $N = 10^9$.
 
@@ -433,21 +421,55 @@ We collect a few particular times of the execution:
 
 \begin{align} 
 	\begin{split}
-		T_{read}&= 3.38554 e-05 seconds\\
-		T_comp (N/P)&= 0.355836\\
-		\rightarrow T_{comp} = 0.355836/100000000 = 3.5836e-9
-		T_comm&=2.14577e-06
+		&T_{read}= 3.38554 e-05 seconds\\
+		&T_comp (N/P)= 0.355836\\
+		\rightarrow &T_{comp} = 0.355836/100000000 = 3.5836e-9\\
+		&T_comm=2.14577e-06
 	\end{split}					
 \end{align}
  We see that these values are close to the theoretical values we gave before,making them plausible.
 %	EQUATION EXAMPLES
 %------------------------------------------------
 
+\section{Section 4}
+Now its time to plot the execution time of the function we wrote, to test the strong scalability.
 
+We plot for $N=10^9$
 
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_sum_times_billion} % Example image
+	\caption{execution time vs number of processors $N= 10^9$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_sum_scalability_billion} % Example image
+	\caption{speedup vs number of processors $N= 10^9$}
+\end{figure}
 
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_sum_times_10billion} % Example image
+	\caption{execution time vs number of processors $N= 10^{10}$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_sum_speedup_10billion} % Example image
+	\caption{speedup vs number of processors $N= 10^{10}$}
+\end{figure}
+
+We see that the program isn't scaling as we predicted in our model.
+Where by $10^9$ the model was perfectly scaling, our model is instead not scaling.
+The exection time seems to be constant.
+The executed program was the naive-implemented one,and probably the communication time increases too much and vanifies the parallelization attempt.
+Basically adding more processors does not speed up to the execution time.
+The communication time
 %----------------------------------------
-
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.6\columnwidth]{Rplot_sum_times_thousand} % Example image
+	\caption{execution time vs number of processors $N= 10^3$}
+\end{figure}
 %------------------------------------------------
 
 
