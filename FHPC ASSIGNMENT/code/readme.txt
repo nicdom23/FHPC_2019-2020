@@ -22,3 +22,6 @@ $ time mpirun -np 10 ./sumNumbers_coll.xx < n.txt
 
 the program repeats the sumNumbers_mpi.cc behaviour, but uses
 collective functions
+
+The execute file here included is not explicative of the different versions
+that i used to calculate the different times of execution
