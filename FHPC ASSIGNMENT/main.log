@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  6 NOV 2019 12:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  7 NOV 2019 01:52
 entering extended mode
 **./main.tex
 (main.tex
@@ -1067,6 +1067,8 @@ File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
 )
 LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <12> not available
 (Font)              Font shape `T1/futs/b/n' tried instead on input line 76.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 10.07397pt on input line 79.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -1080,42 +1082,42 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 79.
 
-Overfull \hbox (17.1138pt too wide) in paragraph at lines 92--97
+Overfull \hbox (17.1138pt too wide) in paragraph at lines 82--87
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\T1/futs/m/n/10.95 Samsung Galaxy
  []
 
 
-Underfull \hbox (badness 3128) in paragraph at lines 109--109
+Underfull \hbox (badness 3128) in paragraph at lines 99--99
 []\T1/futs/m/n/10.95 not cal-cu-lated(we
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 \T1/futs/m/n/10.95 didn't find the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
-\T1/futs/m/n/10.95 FLOPs of the
+Underfull \hbox (badness 1838) in paragraph at lines 99--99
+\T1/futs/m/n/10.95 which is a quad-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--109
-\T1/futs/m/n/10.95 cpu,which is a
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+\T1/futs/m/n/10.95 core pro-ces-sor
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 109--109
-\T1/futs/m/n/10.95 sor that goes on
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+\T1/futs/m/n/10.95 with a 1.4 Ghz
  []
 
 
-Overfull \hbox (2.0957pt too wide) in paragraph at lines 105--117
+Overfull \hbox (2.0957pt too wide) in paragraph at lines 95--107
 [][] 
  []
 
@@ -1123,87 +1125,85 @@ Overfull \hbox (2.0957pt too wide) in paragraph at lines 105--117
 
 
 {C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 []\T1/futs/m/n/10.95 Samsung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
+Underfull \hbox (badness 10000) in paragraph at lines 118--118
 \T1/futs/m/n/10.95 Galaxy
  []
 
 
-Underfull \hbox (badness 1389) in paragraph at lines 128--128
+Underfull \hbox (badness 1389) in paragraph at lines 118--118
 \T1/futs/m/n/10.95 puter has an Rmax of 0.5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 []\T1/futs/m/n/10.95 Numerical Wind Tun-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 \T1/futs/m/n/10.95 nel,Fujitsu Na-tional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 \T1/futs/m/n/10.95 Aerospace Lab-o-ra-tory of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 \T1/futs/m/n/10.95 our cell-phone's sus-tained
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 []\T1/futs/m/n/10.95 92.8 GFLOP-
  []
 
 
-Overfull \hbox (24.42879pt too wide) in paragraph at lines 124--132
+Overfull \hbox (24.42879pt too wide) in paragraph at lines 114--122
 [][] 
  []
 
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 161.
 [2]
 <Figures/Rplot_speedup_sum_2.jpeg, id=12, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_speedup_sum_2.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_2.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_2.jpeg  used on input line 243.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_2.jpeg  used on input line 233.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
  [3]
 <Figures/Rplot_speedup_sum_4.jpeg, id=16, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_4.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_4.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_4.jpeg  used on input line 250.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_4.jpeg  used on input line 240.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_speedup_sum_6.jpeg, id=17, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_6.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_6.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_6.jpeg  used on input line 255.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_6.jpeg  used on input line 245.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_speedup_sum_8.jpeg, id=18, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_8.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_8.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_8.jpeg  used on input line 260.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_8.jpeg  used on input line 250.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_speedup_sum_10.jpeg, id=19, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_speedup_sum_10.jpeg Graphic file (type jpg)
 <use Figures/Rplot_speedup_sum_10.jpeg>
-Package pdftex.def Info: Figures/Rplot_speedup_sum_10.jpeg  used on input line 265.
+Package pdftex.def Info: Figures/Rplot_speedup_sum_10.jpeg  used on input line 255.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
  [4 <./Figures/Rplot_speedup_sum_2.jpeg> <./Figures/Rplot_speedup_sum_4.jpeg> <./Figures/Rplot_speedup_sum_6.jpeg> <./Fi
 gures/Rplot_speedup_sum_8.jpeg>]
-Overfull \hbox (4.65965pt too wide) in paragraph at lines 275--276
+Overfull \hbox (4.65965pt too wide) in paragraph at lines 265--266
 []\T1/futs/m/n/10.95 the max-i-mum speedup is greater than 1: it makes the par-al-leliza-tion con-ve-nient,otherwise
  []
 
 LaTeX Font Info:    Font shape `T1/futs/bx/it' in size <12> not available
-(Font)              Font shape `T1/futs/b/it' tried instead on input line 280.
+(Font)              Font shape `T1/futs/b/it' tried instead on input line 270.
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
@@ -1213,169 +1213,180 @@ File: lstlang1.sty 2019/09/10 1.8c listings language file
 <Figures/Rplot_pi_times_10millions.jpeg, id=27, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_times_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_times_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_times_10millions.jpeg  used on input line 351.
+Package pdftex.def Info: Figures/Rplot_pi_times_10millions.jpeg  used on input line 334.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_speedup_10millions.jpeg, id=28, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_speedup_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_speedup_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_speedup_10millions.jpeg  used on input line 358.
+Package pdftex.def Info: Figures/Rplot_pi_speedup_10millions.jpeg  used on input line 341.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
-
-[6 <./Figures/Rplot_pi_times_10millions.jpeg>]
-<Figures/Rplot_pi_times_100millions.jpeg, id=32, 680.5425pt x 255.95625pt>
+<Figures/Rplot_pi_times_100millions.jpeg, id=29, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_times_100millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_times_100millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_times_100millions.jpeg  used on input line 367.
+Package pdftex.def Info: Figures/Rplot_pi_times_100millions.jpeg  used on input line 350.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
+
+[6 <./Figures/Rplot_pi_times_10millions.jpeg> <./Figures/Rplot_pi_speedup_10millions.jpeg>]
 <Figures/Rplot_pi_speedup_100millions.jpeg, id=33, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_speedup_100millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_speedup_100millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_speedup_100millions.jpeg  used on input line 373.
+Package pdftex.def Info: Figures/Rplot_pi_speedup_100millions.jpeg  used on input line 355.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_times_1billion.jpeg, id=34, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_times_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_times_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_times_1billion.jpeg  used on input line 380.
+Package pdftex.def Info: Figures/Rplot_pi_times_1billion.jpeg  used on input line 362.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
 <Figures/Rplot_pi_speedup_1billion.jpeg, id=35, 680.5425pt x 255.95625pt>
 File: Figures/Rplot_pi_speedup_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_speedup_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_speedup_1billion.jpeg  used on input line 385.
+Package pdftex.def Info: Figures/Rplot_pi_speedup_1billion.jpeg  used on input line 367.
 (pdftex.def)             Requested size: 256.07741pt x 96.31142pt.
- [7 <./Figures/Rplot_pi_speedup_10millions.jpeg> <./Figures/Rplot_pi_times_100millions.jpeg> <./Figures/Rplot_pi_speedup
-_100millions.jpeg> <./Figures/Rplot_pi_times_1billion.jpeg>]
-<Figures/Rplot_pi_elapsed_time_10millions.jpeg, id=40, 273.27094pt x 191.9672pt>
+<Figures/Rplot_pi_elapsed_time_10millions.jpeg, id=36, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_pi_elapsed_time_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_elapsed_time_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_elapsed_time_10millions.jpeg  used on input line 394.
+Package pdftex.def Info: Figures/Rplot_pi_elapsed_time_10millions.jpeg  used on input line 376.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
-<Figures/Rplot_pi_elapsed_speedup_10millions.jpeg, id=41, 273.27094pt x 191.9672pt>
+<Figures/Rplot_pi_elapsed_speedup_10millions.jpeg, id=37, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_pi_elapsed_speedup_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_elapsed_speedup_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_elapsed_speedup_10millions.jpeg  used on input line 399.
+Package pdftex.def Info: Figures/Rplot_pi_elapsed_speedup_10millions.jpeg  used on input line 381.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
+ [7 <./Figures/Rplot_pi_times_100millions.jpeg> <./Figures/Rplot_pi_speedup_100millions.jpeg> <./Figures/Rplot_pi_times_
+1billion.jpeg> <./Figures/Rplot_pi_speedup_1billion.jpeg>]
 <Figures/Rplot_pi_elapsed_times_1billion.jpeg, id=42, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_pi_elapsed_times_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_elapsed_times_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_elapsed_times_1billion.jpeg  used on input line 406.
+Package pdftex.def Info: Figures/Rplot_pi_elapsed_times_1billion.jpeg  used on input line 388.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
- [8 <./Figures/Rplot_pi_speedup_1billion.jpeg> <./Figures/Rplot_pi_elapsed_time_10millions.jpeg> <./Figures/Rplot_pi_ela
-psed_speedup_10millions.jpeg>]
-<Figures/Rplot_pi_elapsed_speedup_1billion.jpeg, id=46, 273.27094pt x 191.9672pt>
+<Figures/Rplot_pi_elapsed_speedup_1billion.jpeg, id=43, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_pi_elapsed_speedup_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_elapsed_speedup_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_elapsed_speedup_1billion.jpeg  used on input line 412.
+Package pdftex.def Info: Figures/Rplot_pi_elapsed_speedup_1billion.jpeg  used on input line 394.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
+ [8 <./Figures/Rplot_pi_elapsed_time_10millions.jpeg> <./Figures/Rplot_pi_elapsed_speedup_10millions.jpeg> <./Figures/Rp
+lot_pi_elapsed_times_1billion.jpeg>]
 <Figures/Rplot_pi_max_-_min.jpeg, id=47, 540.51938pt x 255.95625pt>
 File: Figures/Rplot_pi_max_-_min.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_max_-_min.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_max_-_min.jpeg  used on input line 422.
+Package pdftex.def Info: Figures/Rplot_pi_max_-_min.jpeg  used on input line 406.
 (pdftex.def)             Requested size: 256.07741pt x 121.26411pt.
- [9 <./Figures/Rplot_pi_elapsed_times_1billion.jpeg> <./Figures/Rplot_pi_elapsed_speedup_1billion.jpeg>]
-<Figures/Rplot_weak_scaling.jpeg, id=51, 406.51875pt x 255.95625pt>
+<Figures/Rplot_weak_scaling.jpeg, id=48, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_weak_scaling.jpeg Graphic file (type jpg)
 <use Figures/Rplot_weak_scaling.jpeg>
-Package pdftex.def Info: Figures/Rplot_weak_scaling.jpeg  used on input line 434.
+Package pdftex.def Info: Figures/Rplot_weak_scaling.jpeg  used on input line 418.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
+ [9 <./Figures/Rplot_pi_elapsed_speedup_1billion.jpeg> <./Figures/Rplot_pi_max_-_min.jpeg>]
 File: Figures/Rplot_pi_elapsed_time_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_elapsed_time_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_elapsed_time_10millions.jpeg  used on input line 441.
+Package pdftex.def Info: Figures/Rplot_pi_elapsed_time_10millions.jpeg  used on input line 425.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
 <Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg, id=52, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg Graphic file (type jpg)
 <use Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg>
-Package pdftex.def Info: Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg  used on input line 446.
+Package pdftex.def Info: Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg  used on input line 431.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
-[10 <./Figures/Rplot_pi_max_-_min.jpeg> <./Figures/Rplot_weak_scaling.jpeg>]
-Overfull \hbox (21.80705pt too wide) in paragraph at lines 457--458
-[]\T1/futs/m/n/10.95 We col-lected a few par-tic-u-lar times of the ex-e-cu-tion for $\FML/futmi/m/it/10.95 N \FMS/futm/
-m/n/10.95 Å \T1/futs/m/n/10.95 10[]$ and $\FML/futmi/m/it/10.95 p \FMS/futm/m/n/10.95 Å \T1/futs/m/n/10.95 10$, by us-in
-g \T1/futs/m/it/10.95 MPI_Walltime()\T1/futs/m/n/10.95 : 
- []
-
-[11 <./Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg>]
-<Figures/Rplot_sum_times_billion.jpeg, id=59, 406.51875pt x 255.95625pt>
+ [10 <./Figures/Rplot_weak_scaling.jpeg>]
+<Figures/Rplot_sum_seq_execution_times.jpeg, id=56, 273.27094pt x 191.9672pt>
+File: Figures/Rplot_sum_seq_execution_times.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_seq_execution_times.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_seq_execution_times.jpeg  used on input line 437.
+(pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
+ [11 <./Figures/Rplot_pi_weak_elapsed_speedup_10million.jpeg> <./Figures/Rplot_sum_seq_execution_times.jpeg>]
+<Figures/Rplot_sum_times_billion.jpeg, id=60, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_sum_times_billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_times_billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_times_billion.jpeg  used on input line 478.
+Package pdftex.def Info: Figures/Rplot_sum_times_billion.jpeg  used on input line 470.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
-<Figures/Rplot_sum_scalability_billion.jpeg, id=60, 406.51875pt x 255.95625pt>
+<Figures/Rplot_sum_scalability_billion.jpeg, id=61, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_sum_scalability_billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_scalability_billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_scalability_billion.jpeg  used on input line 483.
+Package pdftex.def Info: Figures/Rplot_sum_scalability_billion.jpeg  used on input line 475.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
-<Figures/Rplot_sum_times_10billion.jpeg, id=61, 406.51875pt x 255.95625pt>
+<Figures/Rplot_sum_times_10billion.jpeg, id=62, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_sum_times_10billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_times_10billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_times_10billion.jpeg  used on input line 489.
+Package pdftex.def Info: Figures/Rplot_sum_times_10billion.jpeg  used on input line 481.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
-<Figures/Rplot_sum_speedup_10billion.jpeg, id=62, 406.51875pt x 255.95625pt>
+<Figures/Rplot_sum_speedup_10billion.jpeg, id=63, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_sum_speedup_10billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_speedup_10billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_speedup_10billion.jpeg  used on input line 494.
+Package pdftex.def Info: Figures/Rplot_sum_speedup_10billion.jpeg  used on input line 486.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
  [12 <./Figures/Rplot_sum_times_billion.jpeg> <./Figures/Rplot_sum_scalability_billion.jpeg>]
-<Figures/Rplot_complex_sum_times_1billion.jpeg, id=66, 406.51875pt x 255.95625pt>
+<Figures/Rplot_sum_elapsed_time.jpeg, id=67, 273.27094pt x 191.9672pt>
+File: Figures/Rplot_sum_elapsed_time.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_elapsed_time.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_elapsed_time.jpeg  used on input line 502.
+(pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
+ [13 <./Figures/Rplot_sum_times_10billion.jpeg> <./Figures/Rplot_sum_speedup_10billion.jpeg>]
+<Figures/Rplot_sum_elapsed_speedup.jpeg, id=72, 273.27094pt x 191.9672pt>
+File: Figures/Rplot_sum_elapsed_speedup.jpeg Graphic file (type jpg)
+<use Figures/Rplot_sum_elapsed_speedup.jpeg>
+Package pdftex.def Info: Figures/Rplot_sum_elapsed_speedup.jpeg  used on input line 508.
+(pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
+<Figures/Rplot_complex_sum_times_1billion.jpeg, id=73, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_complex_sum_times_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_complex_sum_times_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_complex_sum_times_1billion.jpeg  used on input line 513.
+Package pdftex.def Info: Figures/Rplot_complex_sum_times_1billion.jpeg  used on input line 521.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
- [13 <./Figures/Rplot_sum_times_10billion.jpeg> <./Figures/Rplot_sum_speedup_10billion.jpeg>]
-<Figures/Rplot_complex_sum_speedup_1billion.jpeg, id=71, 406.51875pt x 255.95625pt>
+<Figures/Rplot_complex_sum_speedup_1billion.jpeg, id=74, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_complex_sum_speedup_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_complex_sum_speedup_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_complex_sum_speedup_1billion.jpeg  used on input line 519.
+Package pdftex.def Info: Figures/Rplot_complex_sum_speedup_1billion.jpeg  used on input line 527.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
-<Figures/Rplot_complex_sum_times_trillion.jpeg, id=72, 406.51875pt x 255.95625pt>
+ [14 <./Figures/Rplot_sum_elapsed_time.jpeg> <./Figures/Rplot_sum_elapsed_speedup.jpeg> <./Figures/Rplot_complex_sum_tim
+es_1billion.jpeg>]
+<Figures/Rplot_complex_sum_times_trillion.jpeg, id=78, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_complex_sum_times_trillion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_complex_sum_times_trillion.jpeg>
-Package pdftex.def Info: Figures/Rplot_complex_sum_times_trillion.jpeg  used on input line 526.
+Package pdftex.def Info: Figures/Rplot_complex_sum_times_trillion.jpeg  used on input line 534.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
-<Figures/Rplot_complex_sum_speedup_trillion.jpeg, id=73, 406.51875pt x 255.95625pt>
+<Figures/Rplot_complex_sum_speedup_trillion.jpeg, id=79, 406.51875pt x 255.95625pt>
 File: Figures/Rplot_complex_sum_speedup_trillion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_complex_sum_speedup_trillion.jpeg>
-Package pdftex.def Info: Figures/Rplot_complex_sum_speedup_trillion.jpeg  used on input line 531.
+Package pdftex.def Info: Figures/Rplot_complex_sum_speedup_trillion.jpeg  used on input line 539.
 (pdftex.def)             Requested size: 256.07741pt x 161.23766pt.
- [14 <./Figures/Rplot_complex_sum_times_1billion.jpeg> <./Figures/Rplot_complex_sum_speedup_1billion.jpeg> <./Figures/Rp
-lot_complex_sum_times_trillion.jpeg>]
-<Figures/Rplot_sum_elapsed_times_10millions.jpeg, id=77, 273.27094pt x 191.9672pt>
+ [15 <./Figures/Rplot_complex_sum_speedup_1billion.jpeg> <./Figures/Rplot_complex_sum_times_trillion.jpeg> <./Figures/Rp
+lot_complex_sum_speedup_trillion.jpeg>]
+<Figures/Rplot_sum_elapsed_times_10millions.jpeg, id=83, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_sum_elapsed_times_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_elapsed_times_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_elapsed_times_10millions.jpeg  used on input line 539.
+Package pdftex.def Info: Figures/Rplot_sum_elapsed_times_10millions.jpeg  used on input line 548.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
-<Figures/Rplot_sum_elapsed_speedup_10millions.jpeg, id=78, 273.27094pt x 191.9672pt>
+<Figures/Rplot_sum_elapsed_speedup_10millions.jpeg, id=84, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_sum_elapsed_speedup_10millions.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_elapsed_speedup_10millions.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_elapsed_speedup_10millions.jpeg  used on input line 544.
+Package pdftex.def Info: Figures/Rplot_sum_elapsed_speedup_10millions.jpeg  used on input line 553.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
-<Figures/Rplot_sum_elapsed_times_1billion.jpeg, id=79, 273.27094pt x 191.9672pt>
+<Figures/Rplot_sum_elapsed_times_1billion.jpeg, id=85, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_sum_elapsed_times_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_elapsed_times_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_elapsed_times_1billion.jpeg  used on input line 550.
+Package pdftex.def Info: Figures/Rplot_sum_elapsed_times_1billion.jpeg  used on input line 560.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
-<Figures/Rplot_sum_elapsed_speedup_1billion.jpeg, id=80, 273.27094pt x 191.9672pt>
+<Figures/Rplot_sum_elapsed_speedup_1billion.jpeg, id=86, 273.27094pt x 191.9672pt>
 File: Figures/Rplot_sum_elapsed_speedup_1billion.jpeg Graphic file (type jpg)
 <use Figures/Rplot_sum_elapsed_speedup_1billion.jpeg>
-Package pdftex.def Info: Figures/Rplot_sum_elapsed_speedup_1billion.jpeg  used on input line 555.
+Package pdftex.def Info: Figures/Rplot_sum_elapsed_speedup_1billion.jpeg  used on input line 565.
 (pdftex.def)             Requested size: 256.07741pt x 179.90143pt.
- [15 <./Figures/Rplot_complex_sum_speedup_trillion.jpeg> <./Figures/Rplot_sum_elapsed_times_10millions.jpeg> <./Figures/
-Rplot_sum_elapsed_speedup_10millions.jpeg>] [16 <./Figures/Rplot_sum_elapsed_times_1billion.jpeg> <./Figures/Rplot_sum_e
-lapsed_speedup_1billion.jpeg>] (main.aux) ) 
+ [16 <./Figures/Rplot_sum_elapsed_times_10millions.jpeg> <./Figures/Rplot_sum_elapsed_speedup_10millions.jpeg>] [17 <./F
+igures/Rplot_sum_elapsed_times_1billion.jpeg> <./Figures/Rplot_sum_elapsed_speedup_1billion.jpeg>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 23009 strings out of 492452
- 446490 string characters out of 3129807
- 793324 words of memory out of 3000000
- 27107 multiletter control sequences out of 15000+200000
+ 23031 strings out of 492452
+ 447535 string characters out of 3129807
+ 792351 words of memory out of 3000000
+ 27129 multiletter control sequences out of 15000+200000
  638363 words of font info for 124 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,19n,89p,10089b,1814s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppD
-ata/Roaming/MiKTeX/2.9/fonts/type1/public/fourier/fourier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/p
-utb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ado
-be/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on main.pdf (16 pages, 924975 bytes).
+{C:/Progr
+am Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/giann/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/fourier/fo
+urier-ms.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/a
+dobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/adobe/utopia/putri8a.pfb>
+Output written on main.pdf (17 pages, 987763 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
+ 111 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
