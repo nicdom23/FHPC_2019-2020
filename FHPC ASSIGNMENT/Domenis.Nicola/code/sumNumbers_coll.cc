@@ -1,6 +1,6 @@
-##################
-#NICOLA DOMENIS### DSSC COURSE 2019/2020
-##################
+//#################
+//NICOLA DOMENIS### DSSC COURSE 2019/2020
+//#################
 #include<iostream>
 #include<cstdlib>
 
@@ -28,6 +28,8 @@ std::cout<<"required more processes"<<std::endl;
 MPI_Finalize();
 exit(0);
 }
+//in order to improve the system time at the execution of the code I commented all the prints that i used in assessing the execution times
+        
        int problem_size;
        unsigned long long int sum,tot_sum =0;
        if (rank == 0){
@@ -35,7 +37,7 @@ exit(0);
                     std::cin >>problem_size;
 		end_read_time = MPI_Wtime();
 
- std::cout<<"reading time spent on process "<<rank<< " is "<<end_read_time-init_read_time<< " seconds"<<std::endl<<std::endl;
+ //std::cout<<"reading time spent on process "<<rank<< " is "<<end_read_time-init_read_time<< " seconds"<<std::endl<<std::endl;
 
 	int array_size = (problem_size-problem_size%(size-1))/(size-1);
 	sum = 0;
@@ -46,7 +48,7 @@ exit(0);
         init_broad_time = MPI_Wtime();
 				MPI_Bcast(&problem_size,1,MPI_INT,0,MPI_COMM_WORLD);
         end_broad_time = MPI_Wtime();
-               std::cout<<"execution time spent on broadcast by processor"<<rank<<" is "<<end_broad_time-init_broad_time<< " seconds"<<std::endl;
+              // std::cout<<"execution time spent on broadcast by processor"<<rank<<" is "<<end_broad_time-init_broad_time<< " seconds"<<std::endl;
 
  if(rank>0){
 		int array_size = (problem_size-problem_size%(size-1))/(size-1);
@@ -57,14 +59,14 @@ exit(0);
 			for( int i = 0 ; i<array_size;++i)
 					sum += (rank-1)*(array_size)+i+1; //calculating partial sum
 		end_comp_time = MPI_Wtime();
-                        std::cout<<"computation time spent on processor "<<rank<< " is "<<end_comp_time-init_comp_time<< " seconds"<<std::endl;
+                        //std::cout<<"computation time spent on processor "<<rank<< " is "<<end_comp_time-init_comp_time<< " seconds"<<std::endl;
 
         }
 							//we use reduce to collect and sum all the partial sums from the processors
         init_redu_time = MPI_Wtime();
                 MPI_Reduce(&sum,&tot_sum,1,MPI_UNSIGNED_LONG_LONG,MPI_SUM,0,MPI_COMM_WORLD);
         end_redu_time = MPI_Wtime();
-         std::cout<<"execution time spent on reduce for"<<rank<< " is "<<end_redu_time-init_redu_time<< " seconds"<<std::endl<<std::endl;
+         //std::cout<<"execution time spent on reduce for"<<rank<< " is "<<end_redu_time-init_redu_time<< " seconds"<<std::endl<<std::endl;
 
 if (rank==0)
                 std::cout<<"TOTAL SUM:"<<tot_sum<<std::endl; //print the solution

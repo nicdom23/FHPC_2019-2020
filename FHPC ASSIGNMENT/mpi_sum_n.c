@@ -18,7 +18,8 @@ printf("required more processes\n");
 MPI_Finalize();
 exit(0);
 }
-
+//in order to improve the system time of the execution of the code I commented all the prints that i used in assessing the execution times
+        
 int message;
 if (rank == 0){
 

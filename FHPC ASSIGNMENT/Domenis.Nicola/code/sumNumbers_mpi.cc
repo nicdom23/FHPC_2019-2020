@@ -1,6 +1,6 @@
-##################
-#NICOLA DOMENIS### DSSC COURSE 2019/2020
-##################
+//##################
+//#NICOLA DOMENIS### DSSC COURSE 2019/2020
+//##################
 
 #include<iostream>
 #include<cstdlib>
@@ -25,14 +25,14 @@ if (size<2){
 std::cout<<"required more processes"<<std::endl;
 MPI_Finalize();
 exit(0);
-}
+}        //in order to improve the system time at the execution of the code I commented all the prints that i used in assessing the execution times
         int problem_size;
 		unsigned long long int sum =0;
         if (rank == 0){
 				init_read_time = MPI_Wtime();
                 std::cin >>problem_size;//read a number from file
                 end_read_time = MPI_Wtime();
-				std::cout<<"reading time spent on process "<<rank<< " is "<<end_read_time-init_read_time<< " seconds"<<std::endl<<std::endl;
+				//std::cout<<"reading time spent on process "<<rank<< " is "<<end_read_time-init_read_time<< " seconds"<<std::endl<<std::endl;
 
 				int array_size = (problem_size-problem_size%(size-1))/(size-1);//calculating subproblem size
 				for( int i = 0 ;i<problem_size%(size-1);++i)
@@ -48,7 +48,7 @@ exit(0);
 						MPI_Send(&problem_size,1,MPI_INT,other_node,125,MPI_COMM_WORLD);
 						MPI_Recv(&sum,1,MPI_UNSIGNED_LONG_LONG,other_node,0,MPI_COMM_WORLD,&status);
                    end_comm_time = MPI_Wtime();
-				   std::cout<<"communication time spent with process "<<other_node<< " is "<<end_comm_time-init_comm_time<< "seconds"<<std::endl;
+				   //std::cout<<"communication time spent with process "<<other_node<< " is "<<end_comm_time-init_comm_time<< "seconds"<<std::endl;
 
 				   tot_sum += sum;//sum of partial sums
                       }
@@ -65,13 +65,13 @@ exit(0);
 						for( int i = 0 ; i<array_size;++i)
 							sum += (rank-1)*(array_size)+i+1; //partial sum calculation
                     end_comp_time = MPI_Wtime();
-					std::cout<<"computation time spent on processor "<<rank<< " is "<<end_comp_time-init_comp_time<< " seconds"<<std::endl;
+					//std::cout<<"computation time spent on processor "<<rank<< " is "<<end_comp_time-init_comp_time<< " seconds"<<std::endl;
 
             MPI_Send(&sum,1,MPI_UNSIGNED_LONG_LONG,0,0,MPI_COMM_WORLD);//sending back the result
         }
 
         end_time = MPI_Wtime();
-        	std::cout<<"time spent on process "<<rank<< " is "<<end_time-init_time<< " seconds"<<std::endl<<std::endl;
+        	//std::cout<<"time spent on process "<<rank<< " is "<<end_time-init_time<< " seconds"<<std::endl<<std::endl;
 
         MPI_Finalize();
 
