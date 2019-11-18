@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <ptiming.h>
+//#include <ptiming.h>
 #include <time.h>
 
 
@@ -36,7 +36,7 @@
 #define DATASIZE 200
 #endif
 
-typedef struct node_t {
+typedef struct node_t {//Difference
   double         key;
   struct node_t *next;
   char           data[DATASIZE];
