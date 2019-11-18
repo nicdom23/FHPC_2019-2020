@@ -18,9 +18,9 @@
 
 #define DEFAULT_ARG1 100
 #define PI           3.14159265358979323846
-
+//a macro for the precompiler,substitures these values as he finds the tags
 #define CHECK_VALUE( V, P ) if ( (V) != ctrl_value ) printf("something wrong at point %d\n", P)
-
+       //  argument substitution here
 /*
  * +-------------------------------------+
  * |                                     |
@@ -73,7 +73,7 @@ void function_1( int N, double *array )
   int    i;
   double N_inv = 1.0 / N;
   
-  for ( i = 0; i < 2*N; i++ )
+  for ( i = 0; i < N; i++ )//2*N   error in 2 on purpose
     array[ i ] = sin( i * N_inv * PI );
     
   return;
@@ -102,12 +102,12 @@ int main ( int argc, char **argv )
   int ret;
   double * darray1 = (double*)calloc( N, sizeof(double) );
   double * darray2 = (double*)calloc( N, sizeof(double) );
-  double ctrl_value = sin( 0 );
+  double ctrl_value = sin( 0 );//first element is always sin(0)
   
   
   function_1( N, darray2 );
 
-  CHECK_VALUE( darray2[0], 1 );
+  CHECK_VALUE( darray2[0], 1 );//something is wrong here
 
   function_1( N, darray1 );
 

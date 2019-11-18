@@ -11,7 +11,8 @@
 #include <malloc.h>
 #endif 
  
-void demo( size_t N )
+void demo( size_t N )//demo calls the cycle counters //performs an numerical experiment and takes the best time of the run,,you perfrom many statistics,,like calculating best time for the best time and then calculate the mean
+//cpu cucles do noy dempenr on memory rewuired77 how much allocation you have on system level, you have some overhead,,you must know that 
 {
 
   int repeat        = 500;

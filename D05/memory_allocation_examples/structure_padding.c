@@ -100,9 +100,14 @@ void main(int argc, char **argv)
     mode = 1;
   
   printf("\n"
-	 "arrayA begins at %p, size of STRUCT_A is %zd, memory displacement among array elements is %zd\n",
+	 "arrayA begins at %p, size of STRUCT_A is %zd, memory displacement among array elements is %zd\n",         //reference to the second element of the array and the seroeth element of the array, we get the difference, it is not 14 size of is the memory occupancy ot the argument and its 24 becasue of memory oadding then you can expect in whuch element the adres start,,zero and tdoube is at 8 not 	1 struct B you get...
+	 //exactrly as in the slides  //i use void * becasue of pointer arithmetichs double d1,d2 &d1-&d2 = 1 in units of double....
+	 //void*means going to the real bytes like char *
 	 arrayA, sizeof(STRUCT_A), (void*)&arrayA[1] - (void*)&arrayA[0]);
   printf("\t%18s%3zd\n\t%18s%3zd\n\t%18s%3zd\n\t%18s%3zd\n\n",
+	 
+	 //adress casted to void*  //char_field put in memory somewere, were they are inside the structure,, relative bosition relative to the memory,,
+	 //structure start where are they? in different position according to their order of declaration...   s.int_field is the initialziation of the int_field,,,means that cmpiler knows were it is in memory location. So if ii can out a 1 in them then their adress is &s.int_field   so then i just  &s[0].int_field,then i subtract the adress of the beginning of the structure...and get the relative position...To solve type mismatch i use cast to void *,,do perform pointer arytmetics in byte units
 	 "char_field at ",   (void*)&arrayA[0].char_field   - (void*)&arrayA[0],
 	 "double_field at ", (void*)&arrayA[0].double_field - (void*)&arrayA[0],
 	 "int_field at ",    (void*)&arrayA[0].int_field    - (void*)&arrayA[0],

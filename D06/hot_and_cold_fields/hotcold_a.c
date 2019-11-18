@@ -24,12 +24,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <ptiming.h>
+//#include <ptiming.h>
 #include <time.h>
 
 
 #define CPU_TIME (clock_gettime( id, &ts ), (double)ts.tv_sec +	\
-		  (double)ts.tv_nsec * 1e-9)
+		  (double)ts.tv_nsec * 1e-9) //1 nanoescond precision
 
 #ifndef DATASIZE
 #define DATASIZE 200
@@ -70,9 +70,9 @@ int main( int argc, char **argv )
   printf("creating and initializing %d nodes\n", N ); fflush(stdout);
   srand48( time(NULL) );
 
-  for( int nn = 0; nn < N; nn++ )
+  for( int nn = 0; nn < N; nn++ ) //allocates some nodes
     {
-      node *new = (node*)calloc( 1, sizeof(node) );
+      node* new = (node*)calloc( 1, sizeof(node) );
       if ( last != NULL )
 	last->next = new;
       else
@@ -89,7 +89,7 @@ int main( int argc, char **argv )
   int NSHOTS    = N;
   double sum    = 0;
   
-  double tstart = CPU_TIME;
+  double tstart = CPU_TIME;  //keys is chosen randomlyn searches in n nodes randomly
   
   for( int ii = 0; ii < NSHOTS; ii++ )
     {      
