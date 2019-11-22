@@ -77,7 +77,7 @@ int main( int argc, char **argv )
     else if ( myid % 3 == 2 )
       result = heavy_work_2( );
 
-    if ( myid < 3 )
+    if ( myid < 3 )//the first three threads are actually used
       results[myid] = result;
   }
 #else                                            // ---------- serial execution
