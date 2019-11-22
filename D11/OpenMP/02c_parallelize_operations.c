@@ -67,7 +67,7 @@ int main( int argc, char **argv )
   double tstart = CPU_TIME;
   
 #ifdef _OPENMP                                   // ---------- parallel execution
-#pragma omp parallel if ( N > 10 )
+#pragma omp parallel if ( N > 10 ) //use parallel region if work is enough //executed if number of iterations is larger than 10
   {
 #pragma omp master    
     printf("running %d threads\n", omp_get_num_threads() );
