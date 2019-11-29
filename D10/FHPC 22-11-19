@@ -1,0 +1,69 @@
+As many threads as cores, you can control this number 
+omp_Set_num_threafs
+
+
+OMP_NUM_THREADS
+
+#pragma omp parallel num_threads(n)
+
+use this to change the number of threads
+
+->00b_parallel_regions_scope_of_variables.c
+
+each thread has its own stack, in different regions, we have separated stacks, a private variable is different here than from outside the parallel region
+
+->parallel_region__num_of_threads.c
+
+
+how to reinforce the order
+
+pragma omp single, the first thread executes the parallel code
+
+pragma omp critcal: all execute one at a time
+->01_ordered parallel regions.c  //is incorrect, does not consider random arriving threads
+-->01b_ordered parallel regions.c //here we reinforce the order using a while and a flag
+
+
+
+->assigning different workloads to different threads 
+multiple of three has a job
+multipe of two has a different job
+We could use a better solution: use nested parallel regions called by the function
+
+->02_parallelize operations
+
+give thread time(wall clock as seen by time zero0) vs processor time(accounts for chidren)
+lots of threads
+
+02b_parallelize_operations
+
+Actually they are creating a separate environment to prove dinamical extent
+
+
+Conditional execution of the parallel section
+->02c_parallelize_operations
+
+parallelization means overhead
+
+nested parallel regions: permitted in openmp:
+several ways to play with this
+
+OMP_NESTED = <TRUE> activate nesting
+OMP_NUm_THREADS = n,M,K,... now a list number for levels,EACH THREAD SPAWNS N AT 1ST LEVEL m AT SECOND LEVEL, K AT THIRD LEVEL ETCETERA 
+OMP_MAX_ACTIve levels
+
+->03_NESTED PARALLEL REGIONS
+
+
+OPENMP	made to treat regular loops
+
+
+->06a
+
+
+is wrong atomic queues up the threads
+there is a solution ->06_sum_of_an_array
+common case close in the parallel for   ask for a reduction we create parallel memory location where threads sum up at the end the final result receives all the sums, so we dont have the conflicts
+
+->exercise 05_share_works
+

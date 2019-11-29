@@ -1,0 +1,35 @@
+Using perf
+
+You have to see how the esxecutavbel performs on a certain hardware.Modern high end provessors give some tools to test this inside and outside cpu incore and outcore events.
+PMUs performance monitoring units.
+Precide event base samoling.what instruction precisely causes that cache missing
+
+Cpu inside has PMU,
+inside Kernel contains PErf_events,msr, different sep dricer. Machine independent ApIs,like PAPI, libfm4,like likwid
+Program how to access directly
+
+
+PERF performance eveents for linux.Standard interface, give me branch misses and ither data. call perf to execute the code, much berter ro use papi.
+
+perf profiles at assembly level rhe code. precide table if efvents line b y line.
+command line PERF
+
+
+perf list first column: short command dcahche=data cahce icache= instruction cache a lot if info lisr is quitr long,,, not enough,,,retired, branch instruction, flush everitying back:: top down analysis made by perf
+
+version of perf relates to the length o
+
+What to ask? ask those questions
+
+workflow
+Run the program and collect as many data as possible
+
+event based profiling vs sample based profiling
+
+each
+Translation lookaside buffer
+
+
+
+sample based:use record insteead of stat
+perf record .f 
