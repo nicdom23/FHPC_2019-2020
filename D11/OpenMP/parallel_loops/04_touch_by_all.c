@@ -105,7 +105,7 @@ int main( int argc, char **argv )
 
 #pragma omp parallel for
   for ( int ii = 0; ii < N; ii++ )
-    array[ii] = (double)ii;
+    array[ii] = (double)ii; //only change
 
 
 
