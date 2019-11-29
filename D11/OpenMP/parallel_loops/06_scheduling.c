@@ -203,7 +203,7 @@ int main( int argc, char **argv )
     tstart = omp_get_wtime();
 #pragma omp for schedule(dynamic) reduction(+:S)
     for( int i = 0; i < N; i++ )
-      S += heavy_work( N-1+1 );
+      S += heavy_work( N-i+1 );
     tend = omp_get_wtime();
     timings[DYNAMIC][myid] = tend - tstart;
     

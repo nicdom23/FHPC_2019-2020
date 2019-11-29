@@ -109,7 +109,8 @@ int main( int argc, char **argv )
   
 #pragma omp parallel for 
     for ( int ii = 0; ii < N; ii++ )//array is shared, S is shared, ii is private
-#pragma omp atomic  //ensures that this operation happens(same as critical,that refers to a region,even a single line) atomic is for a single instruction:ask that there are no conflict, and the variable is not modified concurrently
+//#pragma omp atomic  //ensures that this operation happens(same as critical,that refers to a region,even a single line) atomic is for a single instruction:ask that there are no conflict, and the variable is not modified concurrently
+
 //{{
       //#pragma omp atomic                                  // this op needs to be protected
                                                             // if you keep it commentend, that
