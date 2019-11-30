@@ -67,22 +67,25 @@ int main( int argc, char **argv )
   int     nthreads = 1;
   
   struct  timespec ts;
-  double *array;;
-
+  double *array;
   /*  -----------------------------------------------------------------------------
    *   initialize 
    *  -----------------------------------------------------------------------------
    */
 
   // check whether some arg has been passed on
-  if ( argc > 1 )
+  //
+  //
+ 
+ if ( argc > 1 )
     N = atoi( *(argv+1) );
-
+ printf("memory test\n");
   if ( (array = (double*)calloc( N, sizeof(double) )) == NULL )
-    printf("I'm sorry, on some thread there is not"
+    {
+	printf("I'm sorry, on some thread there is not"
 	   "enough memory to host %lu bytes\n",
-	   N * sizeof(double) ); return 1;
-  
+	   N * sizeof(double) ); return 1;}
+  printf("enough memory\n");
   // just give notice of what will happen and get the number of threads used
 #pragma omp parallel
   {
@@ -155,7 +158,10 @@ int get_cpu_id( void )
   
   int cpuid;
   if ( syscall( SYS_getcpu, &cpuid, NULL, NULL ) == -1 )
-    return -1;
+    
+	{printf("error in line 159");
+	return -1;
+	}
   else
     return cpuid;
   
@@ -163,8 +169,9 @@ int get_cpu_id( void )
 
   unsigned val;
   if ( read_proc__self_stat( CPU_ID_ENTRY_IN_PROCSTAT, &val ) == -1 )
-    return -1;
-
+   { printf("error in line 166");
+ return -1;
+	}
   return (int)val;
 
 #endif                                                // -----------------------
