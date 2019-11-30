@@ -1,0 +1,4 @@
+/var/spool/torque/mom_priv/jobs/3477938.master1.SC: line 6: cd: /home/ndomenis/FHPC_2019-2020/FHPC_ASSIGNMENT_2/code_tes: No such file or directory
+/usr/bin/time: cannot run ./hello_openmp: No such file or directory
+0.00user 0.00system 0:00.00elapsed ?%CPU (0avgtext+0avgdata 912maxresident)k
+0inputs+0outputs (0major+47minor)pagefaults 0swaps
