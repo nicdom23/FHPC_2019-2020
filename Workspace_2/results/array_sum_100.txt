@@ -1,0 +1,6 @@
+omp summation with 100 threads
+Sum is 0, process took 0.00233555 of wall-clock time
+
+<8.29205e-06> sec of avg thread-time
+<0> sec of min thread-time
+<6.1433e-05> sec of max thread-time
