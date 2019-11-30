@@ -1,7 +1,10 @@
-#bash command to test the execution of array_sum
+#!/bin/bash
+#PBS -l nodes=1:ppn=10
+#PBS -N touch_by_ALL_TEST
+#PBS -l walltime=00:01:00
+cd $HOME/FHPC_2019-2020/Workspace_2
 
-for  i in 10 100 1000
-do
-export OMP_NUM_THREADS=${i}
-/usr/bin/time ./array_sum -> results/array_sum_${i}.txt
-done
+gcc -fopenmp -std=gnu99 -o touch_by_all 04_touch_by_all.c
+
+/usr/bin/time ./touch_by_all 100 -> result/on10cores.txt
+ 
