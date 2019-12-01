@@ -129,7 +129,7 @@ int main( int argc, char **argv )
   double S       = 0;                                       // this will store the summation
   double th_avg_time = 0;                                   // this will be the average thread runtime
   double th_min_time = 1e11;                                // this will be the min thread runtime.
-							    // contrasting the average and the min
+  double th_max_time = 0;							    // contrasting the average and the min
 							    // time taken by the threads, you may
 							    // have an idea of the unbalance.
   
@@ -143,7 +143,8 @@ int main( int argc, char **argv )
 #else
 
 #pragma omp parallel reduction(+:th_avg_time)				\
-  reduction(min:th_min_time)                                // in this region there are 2 different
+  reduction(min:th_min_time)      \
+	reduction(max:th_max_time)// in this region there are 2 different
   {                                                         // reductions: the one of runtime, which
     struct  timespec myts;                                  // happens in the whole parallel region;
     double mystart = CPU_TIME_th;                           // and the one on S, which takes place  
@@ -154,6 +155,7 @@ int main( int argc, char **argv )
     double mytime = CPU_TIME_th - mystart; 
     th_avg_time += mytime;
     th_min_time  = (mytime < th_min_time)? mytime : th_min_time;
+	th_max_time = (mytime>th_max_time)? mytime: th_max_time;
   }
 
 #endif
@@ -168,8 +170,9 @@ int main( int argc, char **argv )
 
   printf("Sum is %g, process took %g of wall-clock time\n\n"
 	 "<%g> sec of avg thread-time\n"
-	 "<%g> sec of min thread-time\n",
-	 S, tend - tstart, th_avg_time/nthreads, th_min_time );
+	 "<%g> sec of min thread-time\n"
+	 "<%g> sec of max thread-time\n",
+	 S, tend - tstart, th_avg_time/nthreads, th_min_time , th_max_time);
 
 
 free( array );
