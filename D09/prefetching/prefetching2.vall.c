@@ -156,7 +156,7 @@ int main( int argc, char **argv)
 
   PAPI_WRITE_COUNTERS;
 
-  free(wipe_cache);
+  free(wipe_cache);  //test
   free(array);
   
   return 0;
