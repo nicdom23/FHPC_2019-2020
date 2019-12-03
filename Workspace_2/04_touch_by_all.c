@@ -37,8 +37,9 @@
 #include <unistd.h>
 #include <sys/syscall.h>
 #include <omp.h>
+#include <sched.h>
 
-
+#define _GNU_SOURCE
 #define N_default 1000
 
 #define CPU_TIME_W (clock_gettime( CLOCK_REALTIME, &ts ), (double)ts.tv_sec +	\

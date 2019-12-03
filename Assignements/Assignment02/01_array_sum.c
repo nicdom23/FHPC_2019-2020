@@ -99,9 +99,9 @@ int main( int argc, char **argv )
 #endif
 
   // initialize the array
-  srand48( time(NULL) ); //setting a non default seed value
+  srand48( time(NULL) );
   for ( int ii = 0; ii < N; ii++ )
-    array[ii] = (double)ii+1;                                 // choose the initialization you prefer;
+    array[ii] = (double)ii;                                 // choose the initialization you prefer;
     //array[ii] = drand48();                                // the first one (with integers) makes it
                                                             // to check the result
 
@@ -117,9 +117,8 @@ int main( int argc, char **argv )
   double th_min_time = 0;                                   // this will be the min thread runtime.
 							    // contrasting the average and the min
 							    // time taken by the threads, you may
-							    // have an idea of the unbalance.
-double th_max_time=0;
-	
+
+							    // have an idea of the unbalance
   double tstart  = CPU_TIME;
   
 #if !defined(_OPENMP)
@@ -142,8 +141,7 @@ double th_max_time=0;
     double mytime = CPU_TIME_th - mystart; 
     th_avg_time += mytime;
     th_min_time  = (mytime < th_min_time)? mytime : th_min_time;
-    th_max_time = (mytime>th_max_time)? mytime: th_max_time;
-  }
+ }
 
 #endif
 
@@ -160,9 +158,8 @@ double th_max_time=0;
 
 printf("Sum is %g, process took %g of wall-clock time\n\n"
        "<%g> sec of avg thread-time\n"
-       "<%g> sec of min thread-time\n"
-	"<%g> sec of max thread-time\n",
-       S, tend - tstart, th_avg_time/nthreads, th_min_time ,th_max_time);
+       "<%g> sec of min thread-time\n",
+       S, tend - tstart, th_avg_time/nthreads, th_min_time);
   
   free( array );
   return 0;
