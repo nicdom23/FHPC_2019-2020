@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=10
-#PBS -N touch_by_ALL_TEST_w_10_nodes
+#PBS -N touch_by_ALL_TEST_w_one_node
 #PBS -l walltime=00:01:00
 cd $HOME/FHPC_2019-2020/Workspace_2
 
