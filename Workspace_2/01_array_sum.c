@@ -139,12 +139,13 @@ int main( int argc, char **argv )
       S += array[ii];
 
     double mytime = CPU_TIME_th - mystart; 
-    th_avg_time += mytime;
+   printf("%g,",mytime);
+	 th_avg_time += mytime;
     th_min_time  = (mytime < th_min_time)? mytime : th_min_time;
     th_max_time = (mytime>th_max_time)? mytime: th_max_time;
    
 }
-
+ printf("\n");
 #endif
 
   double tend = CPU_TIME;                                   // this timer is CLOCK_REALTIME if OpenMP
