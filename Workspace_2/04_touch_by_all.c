@@ -88,8 +88,9 @@ int main( int argc, char **argv )
 	   N * sizeof(double) ); return 1;}
   
   // just give notice of what will happen and get the number of threads used
-#pragma omp parallel
-  {
+#pragma omp parallel  
+{
+double tstart  = CPU_TIME_W;
 #pragma omp master
     {
       nthreads = omp_get_num_threads();
@@ -120,7 +121,6 @@ int main( int argc, char **argv )
 
 
   double S       = 0;                                       // this will store the summation
-  double tstart  = CPU_TIME_W;
     
 #pragma omp parallel for reduction(+:S)
     for ( int ii = 0; ii < N; ii++ )
