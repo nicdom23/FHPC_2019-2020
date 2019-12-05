@@ -2,11 +2,11 @@
 #include <stdio.h>
 int main(){
 
-	#pragma omp parallel
+	#pragma omp parallel implicit(none)
 	{
-	 int my_id= omp_get_thread_num();
-	int num_threads = omp_get_num_threads();
-	printf("hello from thread %d of %d threads",my_id,num_threads);
+	// int my_id= omp_get_thread_num();
+	//int num_threads = omp_get_num_threads();
+	//printf("hello from thread %d of %d threads",my_id,num_threads);
 	}
 
 }
