@@ -120,7 +120,7 @@ int main( int argc, char **argv )
                                                             // if you keep it commentend, that
 							    // results in a data race       
 //}}
-      S += array[ii];
+      S += array[ii]; //if atomic is commented it always returns a random number
 
 #endif
 
