@@ -6,7 +6,6 @@
 #include <mpi.h>
 #define USE MPI
 #define SEED 35791246
-#define RAND_MAX 1
 int main ( int argc , char *argv[ ] )
 {
   
@@ -62,7 +61,7 @@ int main ( int argc , char *argv[ ] )
     }
     pi = 4.0*M/(N*numprocs) ;
     end_time=MPI_Wtime();
-  // printf ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
+   //printf ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
 //  printf("size:%d",numprocs);  
  // printf ( " %10.8f, ", end_time - start_time ) ;
   }//walltime on master
