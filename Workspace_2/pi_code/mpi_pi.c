@@ -6,7 +6,7 @@
 #include <mpi.h>
 #define USE MPI
 #define SEED 35791246
-
+#define RAND_MAX 1
 int main ( int argc , char *argv[ ] )
 {
   
