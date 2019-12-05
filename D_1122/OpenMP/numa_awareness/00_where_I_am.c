@@ -88,7 +88,8 @@ int main( int argc, char **argv )
 #ifdef SPY
     #define REPETITIONS 10000
     #define ALOT        10000000000
-    long double S = 0;
+	printf("done SPY");    
+	long double S = 0;
     for( int j = 0; j < REPETITIONS; j++ )
       #pragma omp for
       for( unsigned long long i = 0; i < ALOT; i++ )
