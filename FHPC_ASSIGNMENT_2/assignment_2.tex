@@ -26,6 +26,10 @@
 \usepackage{graphicx} % Required for the inclusion of images
 %\usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
+\usepackage{float}
+\usepackage{changepage}
+
+
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
@@ -73,44 +77,87 @@ We present the second assignment in the course of FHPC. We will discuss about:
 Objective 1 text
 \item[Exercise One] \hfill \\
 Objective 2 text
-\end{description}
-
-\subsection{Definitions}
-\label{definitions}
-\begin{description}
-\item[Stoichiometry]
-The relationship between the relative quantities of substances taking part in a reaction or forming a compound, typically a ratio of whole integers.
-\item[Atomic mass]
-The mass of an atom of a chemical element expressed in atomic mass units. It is approximately equivalent to the number of protons and neutrons in the atom (the mass number) or to the average number allowing for the relative abundances of different isotopes. 
 \end{description} 
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
-\section{Experimental Data}
+\section{Exercise zero}
 
-\begin{tabular}{ll}
-Mass of empty crucible & \\
-Mass of crucible and magnesium before heating & \\
-Mass of crucible and magnesium oxide after heating & \\
-Balance used & \#4\\
-Magnesium from sample bottle & \#1
+We start by observing two slightly different codes: 01\_array\_sum.c
+and 04\_touch\_by\_all.c . They implement the same algorithm: summing the first N natural integers. They both use the OpenMP standard to take on a parallel approach with multiple threads.
+The analysis of the programs can start by a strong scalability test.
+We report the elapsed times versus the number of cores and also the speedups versus the number of cores:
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/exercise_0_strongscaling} % Example image
+	\caption{Elapsed times for $N=10^9$}
+\end{figure}
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/exercise_0_speedup} % Example image
+	\caption{Speedup for $N=10^9$}
+\end{figure}
+
+
+We see that the code scales for the same size of the problem and that the code that implements the "`touch by all"' policy is faster.
+
+Then we can see how to calculate the parallel overhead. We can use the formula $ e(n,p) =\frac{\frac{1}{S_p(n,t)}-\frac{1}{p}}{1-\frac{1}{p}}$ to estimate the parallel overhead. A plot with the measures we have would return:
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/exercise_0_overhead} % Example image
+	\caption{Overhead for $N=10^9$}
+\end{figure}
+The touch\_by\_all code once again is better than the array\_sum code, since it has a lower parallel overhead.
+But both lines are growing, showing that both codes have a serious parallel overhead problem.
+
+Now lets compare some valuable metrics for the two codes' executions:
+
+\begin{adjustwidth}{-3cm}{}
+\begin{tabular}[H]{l|l |l l l l| l l}
+Metric & measures&&&&&mean&\\
+CPU cycles& array\_sum &372889698& 143797361&671828181&373809554&390581199&-\\
+          & touch\_by\_all&602487792&16412868&15030736&15901403&162458200&= \\
+&&&&&&&	228122999\\				
+					\hline
+Cache misses & array\_sum&9459& 11492&49514&9484&19987.25&-\\
+          & touch\_by\_all& 10356&10256 & 8417&12081&10277.5&=\\
+&&&&&&&	 9709.75\\				
+\hline
+Elapsed time   & array\_sum& 0,014486573&0,007287606&0,024476034& 0,014344770&0.01514875&- \\
+          & touch\_by\_all &0,021872540&0,002893806&0,002676134&0,002677902&0.007530096&=\\
+					&&&&&&&	 0.00761865\\				
+\hline
 \end{tabular}
-
+\end{adjustwidth}
+Even if the single performances, measured with Perf, are quite similar in their randomness, we see that the touch\_by\_all code outperforms in average the array\_sum code in all the metrics.
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------
 
-\section{Sample Calculation}
+\section{Exercise 1}
 
-\begin{tabular}{ll}
-Mass of magnesium metal & = \\
-Mass of magnesium oxide & = \\
-Mass of oxygen & = 
-\end{tabular}
+We need to rewrite the code mpi\_pi.c by means of OpenMP directives. We had to solve all the problems we encountered in lesson, like avoiding race conditions and false sharing.
+In the end we produced the simple code openmp\_pi.c.
+We show the plots for the strong and weak scalability:
 
-B
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_strongscaling} % Example image
+	\caption{Speedup for $N=10^9$}
+\end{figure}
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_weakscaling} % Example image
+	\caption{Speedup for $N=10^4*P$}
+\end{figure}
+
+The code scales very well, the speedup is almost linear. But the weak scalability doesn't hold.
 %----------------------------------------------------------------------------------------
 %	SECTION 4
 %----------------------------------------------------------------------------------------
