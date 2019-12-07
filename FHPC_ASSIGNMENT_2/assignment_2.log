@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  29 NOV 2019 14:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  5 DEC 2019 23:27
 entering extended mode
 **./assignment_2.tex
 (assignment_2.tex
@@ -95,35 +95,47 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks19
 LaTeX Info: Redefining \[ on input line 2855.
 LaTeX Info: Redefining \] on input line 2856.
+) ("C:\Program Files\MiKTeX 2.9\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks20
+\float@box=\box29
+\@float@everytoks=\toks21
+\@floatcapt=\box30
+)
+(C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/latex/changepage\changepage.sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count101
+\cp@tempcnt=\count102
 ) (assignment_2.aux)
 \openout1 = `assignment_2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 (C:\Users\giann\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count100
+\scratchcounter=\count103
 \scratchdimen=\dimen114
-\scratchbox=\box29
-\nofMPsegments=\count101
-\nofMParguments=\count102
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count103
+\scratchbox=\box31
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count106
 \MPscratchDim=\dimen115
-\MPnumerator=\count104
-\makeMPintoPDFobject=\count105
-\everyMPtoPDFconversion=\toks21
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks23
 ) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -167,27 +179,88 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
 Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-) [1
+)
+Overfull \hbox (29.80624pt too wide) in paragraph at lines 88--92
+\OT1/cmr/m/n/10 We start by ob-serv-ing two slightly dif-fer-ent codes: 01[]array[]sum.c and 04[]touch[]by[]all.c
+ []
 
-{C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] (assignment_2.aux) ) 
+<graphs/exercise_0_strongscaling.png, id=1, 588.69937pt x 447.17062pt>
+File: graphs/exercise_0_strongscaling.png Graphic file (type png)
+<use graphs/exercise_0_strongscaling.png>
+Package pdftex.def Info: graphs/exercise_0_strongscaling.png  used on input line 95.
+(pdftex.def)             Requested size: 276.00105pt x 209.64482pt.
+[1
+
+{C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<graphs/exercise_0_speedup.png, id=12, 588.69937pt x 447.17062pt>
+File: graphs/exercise_0_speedup.png Graphic file (type png)
+<use graphs/exercise_0_speedup.png>
+Package pdftex.def Info: graphs/exercise_0_speedup.png  used on input line 101.
+(pdftex.def)             Requested size: 276.00105pt x 209.64482pt.
+ [2 <./graphs/exercise_0_strongscaling.png> <./graphs/exercise_0_speedup.png>]
+<graphs/exercise_0_overhead.jpeg, id=20, 414.79968pt x 237.88875pt>
+File: graphs/exercise_0_overhead.jpeg Graphic file (type jpg)
+<use graphs/exercise_0_overhead.jpeg>
+Package pdftex.def Info: graphs/exercise_0_overhead.jpeg  used on input line 112.
+(pdftex.def)             Requested size: 276.00105pt x 158.29202pt.
+
+Overfull \hbox (86.89854pt too wide) in paragraph at lines 121--136
+[][] 
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.145 ...e end we produced the simple code openmp_
+                                                  pi.c.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.147 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (160.49445pt too wide) in paragraph at lines 144--147
+\OT1/cmr/m/n/10 false shar-ing. In the end we pro-duced the sim-ple code openmp$[]\OML/cmm/m/it/10 i:c:Weshowtheplotsfor
+thestrongandweakscalability \OT1/cmr/m/n/10 :$ 
+ []
+
+<graphs/openmp_pi_strongscaling.png, id=21, 389.20406pt x 426.09187pt>
+File: graphs/openmp_pi_strongscaling.png Graphic file (type png)
+<use graphs/openmp_pi_strongscaling.png>
+Package pdftex.def Info: graphs/openmp_pi_strongscaling.png  used on input line 151.
+(pdftex.def)             Requested size: 276.00105pt x 302.16974pt.
+File: graphs/exercise_0_speedup.png Graphic file (type png)
+<use graphs/exercise_0_speedup.png>
+Package pdftex.def Info: graphs/exercise_0_speedup.png  used on input line 156.
+(pdftex.def)             Requested size: 276.00105pt x 209.64482pt.
+[3 <./graphs/exercise_0_overhead.jpeg>] [4 <./graphs/openmp_pi_strongscaling.png>] [5] [6] (assignment_2.aux) ) 
 Here is how much of TeX's memory you used:
- 2099 strings out of 492452
- 28032 string characters out of 3129807
- 98224 words of memory out of 3000000
- 6450 multiletter control sequences out of 15000+200000
- 9670 words of font info for 35 fonts, out of 3000000 for 9000
+ 2243 strings out of 492452
+ 30753 string characters out of 3129807
+ 103369 words of memory out of 3000000
+ 6577 multiletter control sequences out of 15000+200000
+ 9363 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,6n,30p,630b,232s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-ti10.pfb>
-Output written on assignment_2.pdf (2 pages, 109221 bytes).
+ 46i,7n,30p,630b,232s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmti10.pfb>
+Output written on assignment_2.pdf (6 pages, 220600 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
