@@ -4,7 +4,6 @@
 #include <math.h>
 #include <string.h>
 #include <omp.h>
-#define USE MPI
 #define SEED 35791246
 #ifdef OUTPUT
 #define PRINTF(...) printf(__VA_ARGS__)
@@ -24,7 +23,7 @@ if ( argc <=1) {
   }
 
 int myid , numprocs ;
-#pragma omp parallel// implicit(none) reserved(local_M) public(M)
+#pragma omp parallel
 {
       numprocs= omp_get_num_threads();
      

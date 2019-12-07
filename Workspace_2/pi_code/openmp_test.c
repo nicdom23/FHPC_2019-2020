@@ -23,6 +23,7 @@ if ( argc <=1) {
   }
 
 int myid , numprocs ;
+
 #pragma omp parallel
 {
       numprocs= omp_get_num_threads();
@@ -32,17 +33,18 @@ double x, y ;
 	
 	
 	myid = omp_get_thread_num();
-	N = atoll(argv[1])/numprocs;
+//	N = atoll(argv[1])/numprocs;
+
 	PRINTF("thread %d of %d \n",myid,numprocs);
  
-  
+  N = atoll(argv[1])/numprocs;
 
   start_time = omp_get_wtime();
 
   
   unsigned int myseed=(SEED*(myid+1)) ; 
   local_M=0;
-  long long int i;//   
+  long long int i;   
 #pragma omp parallel for reduction(+:local_M) 
 for (i=0; i<N ; i++) {  
     x = rand_r(&myseed)/(double)RAND_MAX; 
@@ -53,10 +55,16 @@ for (i=0; i<N ; i++) {
 	}
 #pragma omp atomic
 //printf("M value = %lld + %lld = %lld",M ,local_M,M+local_M);
-M += local_M ;
+M += local_M;
 
 end_time=omp_get_wtime();
-PRINTF ( "\n # walltime on thread %i : %10.8f \n",myid, end_time - start_time ) ; 
+
+myid = omp_get_thread_num();
+int a =0;
+PRINTF ( "\n # walltime on thread %d : %10.8f \n",myid , end_time - start_time ) ; 
+
+
+
 }
 PRINTF("N*numprocs= %lld,%d",N,numprocs);
 pi = 4.0*M/(N*numprocs) ;
