@@ -1,12 +1,16 @@
-#include <omp.h>
+
 #include <stdio.h>
+#include <omp.h>
+
 int main(){
+#pragma omp parallel 
+{
+int my_id = omp_get_thread_num();
+int totprocs = omp_get_num_threads();
 
-	#pragma omp parallel implicit(none)
-	{
-	 int my_id= omp_get_thread_num();
-	int num_threads = omp_get_num_threads();
-	printf("hello from thread %d of %d threads",my_id,num_threads);
-	}
+printf("HELLo from proc %d of %d\n",my_id,totprocs);
+}
 
+
+return 0;
 }
