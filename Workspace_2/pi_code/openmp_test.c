@@ -1,4 +1,4 @@
-/*#include <stdlib.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <math.h>
@@ -10,12 +10,12 @@
 #else
 #define PRINTF(...)
 #endif
-*/
+
 int main ( int argc , char *argv[ ] )
 {
-  /* long long int M =0 ; 
+  long long int M =0 ; 
   double pi ;
-//  double start_time, end_time,start_time_1,end_time_1;   
+  double start_time, end_time;   
   long long int N;
 if ( argc <=1) {
     fprintf (stderr , " Usage : %s number_of_iterations \n", argv[0] ) ;
@@ -23,7 +23,8 @@ if ( argc <=1) {
   }
 
 int myid , numprocs ;
-/*#pragma omp parallel
+
+#pragma omp parallel
 {
       numprocs= omp_get_num_threads();
      
@@ -32,19 +33,19 @@ double x, y ;
 	
 	
 	myid = omp_get_thread_num();
-	M=atoll(argv[1]);
-	N = M/numprocs;
-	//PRINTF("thread %d of %d \n",myid,numprocs);
- 
-  
+//	N = atoll(argv[1])/numprocs;
 
-  //start_time_1 = omp_get_wtime();
+	PRINTF("thread %d of %d \n",myid,numprocs);
+ 
+  N = atoll(argv[1])/numprocs;
+
+  start_time = omp_get_wtime();
 
   
   unsigned int myseed=(SEED*(myid+1)) ; 
   local_M=0;
-  long long int i;//   
-/*#pragma omp parallel for reduction(+:local_M) 
+  long long int i;   
+#pragma omp parallel for reduction(+:local_M) 
 for (i=0; i<N ; i++) {  
     x = rand_r(&myseed)/(double)RAND_MAX; 
     y = rand_r(&myseed)/(double)RAND_MAX;    
@@ -52,23 +53,23 @@ for (i=0; i<N ; i++) {
       local_M++;
  // PRINTF("local threads %lld from thread %d   \n",local_M,myid);
 	}
-
-//end_time_1=omp_get_wtime();
-//start_time = omp_get_wtime();
 #pragma omp atomic
 //printf("M value = %lld + %lld = %lld",M ,local_M,M+local_M);
-M += local_M ;
+M += local_M;
 
-//end_time=omp_get_wtime();
+end_time=omp_get_wtime();
+
+myid = omp_get_thread_num();
+int a =0;
+PRINTF ( "\n # walltime on thread %d : %10.8f \n",myid , end_time - start_time ) ; 
 
 
-//PRINTF ( "\n # walltime on thread %i : %10.8f \n",myid, end_time - start_time ) ; 
-}*/
-//PRINTF ( "\n%d ; %10.8f ; %10.8f \n",M,end_time_1 - start_time_1, end_time - start_time ) ;
-//PRINTF("N*numprocs= %lld,%d",N,numprocs);
-//pi = 4.0*M/(N*numprocs) ;
- // PRINTF ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
+
+}
+PRINTF("N*numprocs= %lld,%d",N,numprocs);
+pi = 4.0*M/(N*numprocs) ;
+  PRINTF ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
 
  	
-return 0;
+
 }
