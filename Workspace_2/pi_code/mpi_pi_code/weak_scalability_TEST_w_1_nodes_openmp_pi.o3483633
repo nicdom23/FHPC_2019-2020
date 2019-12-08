@@ -1,0 +1,23 @@
+Execution 0 for p=20
+     procs  20  avg =  4.14
+Execution 1 for p=20
+     procs  20  avg =  8.14
+Execution 2 for p=20
+     procs  20  avg =  12.15
+Execution 3 for p=20
+     procs  20  avg =  16.15
+Execution 4 for p=20
+     procs  20  avg =  20.16
+Execution 5 for p=20
+     procs  20  avg =  24.20
+Execution 6 for p=20
+     procs  20  avg =  28.23
+Execution 7 for p=20
+     procs  20  avg =  32.28
+Execution 8 for p=20
+     procs  20  avg =  36.36
+Execution 9 for p=20
+     procs  20  avg =  40.41
+Execution 10 for p=20
+     procs  20  avg =  44.44
+avg time for procs  20  : 4.0400

@@ -1,6 +1,6 @@
 
 #!/bin/bash
-#PBS -l nodes=19:ppn=1
+#PBS -l nodes=20:ppn=1
 #PBS -N weak_scalability_TEST_w_1_nodes_openmp_pi
 #PBS -l walltime=00:05:00
 module load openmpi
