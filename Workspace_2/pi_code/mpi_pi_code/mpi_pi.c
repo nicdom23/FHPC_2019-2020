@@ -16,7 +16,7 @@ int main ( int argc , char *argv[ ] )
   double pi ;
    
   
-  double start_time, end_time;   
+  double start_time, end_time,start_time_1, end_time_1;   
   int myid , numprocs , proc ;
   MPI_Status status;
   MPI_Request request;
@@ -33,10 +33,11 @@ int main ( int argc , char *argv[ ] )
     MPI_Finalize() ;
     exit(-1) ;
   }
+  
+  int S=atoll(argv[1]);
+  long long int N = S/numprocs;
 
-  long long int N = atoll(argv[1])/numprocs;
-
-  start_time = MPI_Wtime();
+  start_time_1 = MPI_Wtime();
 
   
   srand48(SEED*(myid+1)) ; 
@@ -51,7 +52,11 @@ int main ( int argc , char *argv[ ] )
     if ((x*x + y*y)<1)
       local_M++;
   }
+end_time_1 = MPI_Wtime();
 
+printf ( "%d;%10.8f ;",S, end_time_1 - start_time_1 ) ;
+
+start_time = MPI_Wtime();
   if (myid ==0) { 
     M = local_M ;
     for (proc=1; proc<numprocs ; proc++) {
@@ -61,16 +66,18 @@ int main ( int argc , char *argv[ ] )
     }
     pi = 4.0*M/(N*numprocs) ;
     end_time=MPI_Wtime();
-   printf ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
+  // printf ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
 //  printf("size:%d",numprocs);  
-  //printf ( " %10.8f, ", end_time - start_time ) ;
+  printf ( " %10.8f; \n", end_time - start_time ) ;
   }//walltime on master
   else {   
 
     MPI_Ssend(&local_M , 1 ,MPI_LONG_LONG, master , tag ,MPI_COMM_WORLD) ;
     end_time=MPI_Wtime();
-  // printf ( " %10.8f,", end_time - start_time ) ;
+   printf ( " %10.8f;\n", end_time - start_time ) ;
   }
+
+
 //  printf ( "\n # walltime on processor %i : %10.8f \n",myid, end_time - start_time ) ;
   
 
