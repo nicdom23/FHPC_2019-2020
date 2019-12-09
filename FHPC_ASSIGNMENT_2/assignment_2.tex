@@ -83,11 +83,13 @@ Objective 2 text
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
-\section{Exercise zero}
+\section{Exercise 0}
 
 We start by observing two slightly different codes: 01\_array\_sum.c
 and 04\_touch\_by\_all.c . They implement the same algorithm: summing the first N natural integers. They both use the OpenMP standard to take on a parallel approach with multiple threads.
 The analysis of the programs can start by a strong scalability test.
+
+\subsection(Strong Scalability Test)
 We report the elapsed times versus the number of cores and also the speedups versus the number of cores:
 
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
@@ -105,6 +107,7 @@ We report the elapsed times versus the number of cores and also the speedups ver
 
 We see that the code scales for the same size of the problem and that the code that implements the "`touch by all"' policy is faster.
 
+\subsection(Parallel Overhead)
 Then we can see how to calculate the parallel overhead. We can use the formula $ e(n,p) =\frac{\frac{1}{S_p(n,t)}-\frac{1}{p}}{1-\frac{1}{p}}$ to estimate the parallel overhead. A plot with the measures we have would return:
 
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
@@ -113,8 +116,9 @@ Then we can see how to calculate the parallel overhead. We can use the formula $
 	\caption{Overhead for $N=10^9$}
 \end{figure}
 The touch\_by\_all code once again is better than the array\_sum code, since it has a lower parallel overhead.
-But both lines are growing, showing that both codes have a serious parallel overhead problem.
+But both lines are almost constant, showing that both codes have an almost constant parallel overhead while we increment the number of processors.
 
+\subsection(Performance evaluation)
 Now lets compare some valuable metrics for the two codes' executions:
 
 \begin{adjustwidth}{-3cm}{}
@@ -143,65 +147,68 @@ Even if the single performances, measured with Perf, are quite similar in their 
 
 We need to rewrite the code mpi\_pi.c by means of OpenMP directives. We had to solve all the problems we encountered in lesson, like avoiding race conditions and false sharing.
 In the end we produced the simple code openmp\_pi.c.
+\subsection(Strong and Weak Scalability)
 We show the plots for the strong and weak scalability:
 
 
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
 	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_strongscaling} % Example image
+	\caption{Strong scaling test for $N=10^9$}
+\end{figure}
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_strongscaling_speedup} % Example image
 	\caption{Speedup for $N=10^9$}
 \end{figure}
+
 \begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
 	\centering
 	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_weakscaling} % Example image
-	\caption{Speedup for $N=10^4*P$}
+	\caption{Weak Scaling test for $N=10^4*P$}
 \end{figure}
 
-The code scales very well, the speedup is almost linear. But the weak scalability doesn't hold.
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_weakscaling_speedup} % Example image
+	\caption{Weak Scaling speedup for $N=10^4*P$}
+\end{figure}
+In the strong scalability setting the code scales very well, the speedup is almost linear. But the weak scalability test shows that the program doesn't handle well problems of increasing size through an increase of threads.
+\subsection(Parallel overhead)
+
+Now we estimate the parallel overhead, using again the formula to calulate $e(n,p)$ when we have an increasing number of threads on multiple cores:
+
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/openmp_pi_strongscaling_overhead} % Example image
+	\caption{Overhead for $N=10^4*P$}
+\end{figure}
+We see that the overhead estimation remains almost constant, showing that the program's parallel overhead doesn't increase over the number of processors.
+\subsection(Comparison with mpi\_pi.c)
+Now it's time to test the performance of mpi\_pi.c on a single node and on multiple nodes. We started with 1 node with 20 cores and we finished with 10 cores having 2 nodes each. We see if splitting processors on multiple nodes gives a slower execution time due to the network.
+
+\begin{figure}[H] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.8\columnwidth]{graphs/mpi_pi_elaps_time_on_nodes} % Example image
+	\caption{Overhead for $N=10^4*P$}
+\end{figure}
+
+We see that the separation among nodes slightly slows down the execution time. The openmp_pi.c program running on 20 threads would instead have an elapsed time of 1.56 seconds, which is faster. The inter-core communication is faster than inter-node communication. Latency and maybe overhead
 %----------------------------------------------------------------------------------------
 %	SECTION 4
 %----------------------------------------------------------------------------------------
-
-\section{Results and Conclusions}
-
-The atomic weight of magnesium is concluded to be , as determined by the stoichiometry of its chemical combination with oxygen. This result is in agreement with the accepted value.
-
-\begin{figure}[h]
-\begin{center}
-%\includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-\caption{Figure caption.}
-\end{center}
-\end{figure}
-
 %----------------------------------------------------------------------------------------
 %	SECTION 5
 %----------------------------------------------------------------------------------------
 
-\section{}
 
-
-The most obvious source of experimental uncertainty is the limited precision of the balance. Other potential sources of experimental uncertainty are: the reaction might not be complete; if not enough time was allowed for total oxidation, less than complete oxidation of the magnesium might have, in part, reacted with nitrogen in the air (incorrect reaction); the magnesium oxide might have absorbed water from the air, and thus weigh ``too much." Because the result obtained is close to the accepted value it is possible that some of these experimental uncertainties have fortuitously cancelled one another.
 
 %----------------------------------------------------------------------------------------
 %	SECTION 6
 %----------------------------------------------------------------------------------------
 
-\section{Answers to Definitions}
-
-\begin{enumerate}
-\begin{item}
-The \emph{atomic weight of an element} is the relative weight of one of its atoms compared to C-12 with a weight of 12.0000000$\ldots$, hydrogen with a weight of 1.008, to oxygen with a weight of 16.00. Atomic weight is also the average weight of all the atoms of that element as they occur in nature.
-\end{item}
-\begin{item}
-The \emph{units of atomic weight} are two-fold, with an identical numerical value. They are g/mole of atoms (or just g/mol) or amu/atom.
-\end{item}
-\begin{item}
-\emph{Percentage discrepancy} between an accepted (literature) value and an experimental value is
-\begin{equation*}
-\frac{\mathrm{experimental\;result} - \mathrm{accepted\;result}}{\mathrm{accepted\;result}}
-\end{equation*}
-\end{item}
-\end{enumerate}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
