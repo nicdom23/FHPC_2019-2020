@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  5 DEC 2019 23:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.27)  11 DEC 2019 11:49
 entering extended mode
 **./assignment_2.tex
 (assignment_2.tex
@@ -180,87 +180,144 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-Overfull \hbox (29.80624pt too wide) in paragraph at lines 88--92
-\OT1/cmr/m/n/10 We start by ob-serv-ing two slightly dif-fer-ent codes: 01[]array[]sum.c and 04[]touch[]by[]all.c
+Overfull \hbox (17.27742pt too wide) in paragraph at lines 76--78
+\OT1/cmr/m/n/10 Comparison of an OpenMP pro-gram that im-ple-ments the "touch by one"policy
  []
 
-<graphs/exercise_0_strongscaling.png, id=1, 588.69937pt x 447.17062pt>
+
+Overfull \hbox (32.58403pt too wide) in paragraph at lines 89--95
+\OT1/cmr/m/n/10 We start by ob-serv-ing two slightly dif-fer-ent codes: 01[]array[]sum.c and 04[]touch[]by[]all.c.
+ []
+
+<graphs/exercise_0_strongscaling.png, id=1, 860.46469pt x 426.09187pt>
 File: graphs/exercise_0_strongscaling.png Graphic file (type png)
 <use graphs/exercise_0_strongscaling.png>
-Package pdftex.def Info: graphs/exercise_0_strongscaling.png  used on input line 95.
-(pdftex.def)             Requested size: 276.00105pt x 209.64482pt.
+Package pdftex.def Info: graphs/exercise_0_strongscaling.png  used on input line 101.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
 [1
 
 {C:/Users/giann/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<graphs/exercise_0_speedup.png, id=12, 588.69937pt x 447.17062pt>
+<graphs/exercise_0_speedup.png, id=12, 860.46469pt x 426.09187pt>
 File: graphs/exercise_0_speedup.png Graphic file (type png)
 <use graphs/exercise_0_speedup.png>
-Package pdftex.def Info: graphs/exercise_0_speedup.png  used on input line 101.
-(pdftex.def)             Requested size: 276.00105pt x 209.64482pt.
- [2 <./graphs/exercise_0_strongscaling.png> <./graphs/exercise_0_speedup.png>]
-<graphs/exercise_0_overhead.jpeg, id=20, 414.79968pt x 237.88875pt>
+Package pdftex.def Info: graphs/exercise_0_speedup.png  used on input line 107.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
+<graphs/exercise_0_overhead.jpeg, id=13, 860.46469pt x 426.09187pt>
 File: graphs/exercise_0_overhead.jpeg Graphic file (type jpg)
 <use graphs/exercise_0_overhead.jpeg>
-Package pdftex.def Info: graphs/exercise_0_overhead.jpeg  used on input line 112.
-(pdftex.def)             Requested size: 276.00105pt x 158.29202pt.
-
-Overfull \hbox (86.89854pt too wide) in paragraph at lines 121--136
+Package pdftex.def Info: graphs/exercise_0_overhead.jpeg  used on input line 119.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
+ [2 <./graphs/exercise_0_strongscaling.png> <./graphs/exercise_0_speedup.png>]
+Overfull \hbox (86.89854pt too wide) in paragraph at lines 129--144
 [][] 
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.145 ...e end we produced the simple code openmp_
-                                                  pi.c.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.147 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (160.49445pt too wide) in paragraph at lines 144--147
-\OT1/cmr/m/n/10 false shar-ing. In the end we pro-duced the sim-ple code openmp$[]\OML/cmm/m/it/10 i:c:Weshowtheplotsfor
-thestrongandweakscalability \OT1/cmr/m/n/10 :$ 
- []
-
-<graphs/openmp_pi_strongscaling.png, id=21, 389.20406pt x 426.09187pt>
+[3 <./graphs/exercise_0_overhead.jpeg>]
+<graphs/openmp_pi_strongscaling.png, id=28, 860.46469pt x 426.09187pt>
 File: graphs/openmp_pi_strongscaling.png Graphic file (type png)
 <use graphs/openmp_pi_strongscaling.png>
-Package pdftex.def Info: graphs/openmp_pi_strongscaling.png  used on input line 151.
+Package pdftex.def Info: graphs/openmp_pi_strongscaling.png  used on input line 163.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
+<graphs/openmp_pi_strongscaling_speedup.png, id=29, 389.20406pt x 426.09187pt>
+File: graphs/openmp_pi_strongscaling_speedup.png Graphic file (type png)
+<use graphs/openmp_pi_strongscaling_speedup.png>
+Package pdftex.def Info: graphs/openmp_pi_strongscaling_speedup.png  used on input line 169.
 (pdftex.def)             Requested size: 276.00105pt x 302.16974pt.
-File: graphs/exercise_0_speedup.png Graphic file (type png)
-<use graphs/exercise_0_speedup.png>
-Package pdftex.def Info: graphs/exercise_0_speedup.png  used on input line 156.
-(pdftex.def)             Requested size: 276.00105pt x 209.64482pt.
-[3 <./graphs/exercise_0_overhead.jpeg>] [4 <./graphs/openmp_pi_strongscaling.png>] [5] [6] (assignment_2.aux) ) 
+ [4 <./graphs/openmp_pi_strongscaling.png>]
+<graphs/openmp_pi_weakscaling.png, id=34, 860.46469pt x 426.09187pt>
+File: graphs/openmp_pi_weakscaling.png Graphic file (type png)
+<use graphs/openmp_pi_weakscaling.png>
+Package pdftex.def Info: graphs/openmp_pi_weakscaling.png  used on input line 175.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
+<graphs/openmp_pi_weakscaling_speedup.png, id=35, 860.46469pt x 426.09187pt>
+File: graphs/openmp_pi_weakscaling_speedup.png Graphic file (type png)
+<use graphs/openmp_pi_weakscaling_speedup.png>
+Package pdftex.def Info: graphs/openmp_pi_weakscaling_speedup.png  used on input line 181.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
+ [5 <./graphs/openmp_pi_strongscaling_speedup.png> <./graphs/openmp_pi_weakscaling.png>]
+<graphs/openmp_pi_strongscaling_overhead.png, id=42, 389.20406pt x 426.09187pt>
+File: graphs/openmp_pi_strongscaling_overhead.png Graphic file (type png)
+<use graphs/openmp_pi_strongscaling_overhead.png>
+Package pdftex.def Info: graphs/openmp_pi_strongscaling_overhead.png  used on input line 192.
+(pdftex.def)             Requested size: 276.00105pt x 302.16974pt.
+ [6 <./graphs/openmp_pi_weakscaling_speedup.png>]
+<graphs/time_to_solution.png, id=47, 389.20406pt x 426.09187pt>
+File: graphs/time_to_solution.png Graphic file (type png)
+<use graphs/time_to_solution.png>
+Package pdftex.def Info: graphs/time_to_solution.png  used on input line 202.
+(pdftex.def)             Requested size: 276.00105pt x 302.16974pt.
+ [7 <./graphs/openmp_pi_strongscaling_overhead.png>]
+<graphs/mpi_pi_elaps_time_on_nodes.png, id=53, 860.46469pt x 426.09187pt>
+File: graphs/mpi_pi_elaps_time_on_nodes.png Graphic file (type png)
+<use graphs/mpi_pi_elaps_time_on_nodes.png>
+Package pdftex.def Info: graphs/mpi_pi_elaps_time_on_nodes.png  used on input line 210.
+(pdftex.def)             Requested size: 276.00105pt x 136.67076pt.
+ [8 <./graphs/time_to_solution.png>]
+<graphs/pi_points_estimation_execution_time.png, id=58, 860.46469pt x 426.09187pt>
+File: graphs/pi_points_estimation_execution_time.png Graphic file (type png)
+<use graphs/pi_points_estimation_execution_time.png>
+Package pdftex.def Info: graphs/pi_points_estimation_execution_time.png  used on input line 222.
+(pdftex.def)             Requested size: 310.4979pt x 153.75703pt.
+<graphs/pi_total_sum_execution_time.png, id=59, 860.46469pt x 426.09187pt>
+File: graphs/pi_total_sum_execution_time.png Graphic file (type png)
+<use graphs/pi_total_sum_execution_time.png>
+Package pdftex.def Info: graphs/pi_total_sum_execution_time.png  used on input line 235.
+(pdftex.def)             Requested size: 310.4979pt x 153.75703pt.
+ [9 <./graphs/mpi_pi_elaps_time_on_nodes.png> <./graphs/pi_points_estimation_execution_time.png>]
+<graphs/pi_total_execution_time.png, id=65, 860.46469pt x 426.09187pt>
+File: graphs/pi_total_execution_time.png Graphic file (type png)
+<use graphs/pi_total_execution_time.png>
+Package pdftex.def Info: graphs/pi_total_execution_time.png  used on input line 245.
+(pdftex.def)             Requested size: 310.4979pt x 153.75703pt.
+ [10 <./graphs/pi_total_sum_execution_time.png> <./graphs/pi_total_execution_time.png>]
+<graphs/final_overhead.png, id=71, 694.84593pt x 426.09187pt>
+File: graphs/final_overhead.png Graphic file (type png)
+<use graphs/final_overhead.png>
+Package pdftex.def Info: graphs/final_overhead.png  used on input line 255.
+(pdftex.def)             Requested size: 310.4979pt x 190.40022pt.
+<graphs/times_comparison_openmp_pi.png, id=72, 694.84593pt x 426.09187pt>
+File: graphs/times_comparison_openmp_pi.png Graphic file (type png)
+<use graphs/times_comparison_openmp_pi.png>
+Package pdftex.def Info: graphs/times_comparison_openmp_pi.png  used on input line 265.
+(pdftex.def)             Requested size: 310.4979pt x 190.40022pt.
+ [11 <./graphs/final_overhead.png>]
+<graphs/strong_scaling_times_comparison_openmp.png, id=77, 694.84593pt x 426.09187pt>
+File: graphs/strong_scaling_times_comparison_openmp.png Graphic file (type png)
+<use graphs/strong_scaling_times_comparison_openmp.png>
+Package pdftex.def Info: graphs/strong_scaling_times_comparison_openmp.png  used on input line 277.
+(pdftex.def)             Requested size: 310.4979pt x 190.40022pt.
+<graphs/strong_scaling_times_comparison_mpi.png, id=78, 694.84593pt x 426.09187pt>
+File: graphs/strong_scaling_times_comparison_mpi.png Graphic file (type png)
+<use graphs/strong_scaling_times_comparison_mpi.png>
+Package pdftex.def Info: graphs/strong_scaling_times_comparison_mpi.png  used on input line 282.
+(pdftex.def)             Requested size: 310.4979pt x 190.40022pt.
+ [12 <./graphs/times_comparison_openmp_pi.png>]
+<graphs/strong_scaling_times_comparison.png, id=83, 694.84593pt x 426.09187pt>
+File: graphs/strong_scaling_times_comparison.png Graphic file (type png)
+<use graphs/strong_scaling_times_comparison.png>
+Package pdftex.def Info: graphs/strong_scaling_times_comparison.png  used on input line 290.
+(pdftex.def)             Requested size: 310.4979pt x 190.40022pt.
+ [13 <./graphs/strong_scaling_times_comparison_openmp.png> <./graphs/strong_scaling_times_comparison_mpi.png>] [14 <./gr
+aphs/strong_scaling_times_comparison.png>] (assignment_2.aux) ) 
 Here is how much of TeX's memory you used:
- 2243 strings out of 492452
- 30753 string characters out of 3129807
- 103369 words of memory out of 3000000
- 6577 multiletter control sequences out of 15000+200000
- 9363 words of font info for 34 fonts, out of 3000000 for 9000
+ 2349 strings out of 492452
+ 35075 string characters out of 3129807
+ 103389 words of memory out of 3000000
+ 6670 multiletter control sequences out of 15000+200000
+ 9324 words of font info for 34 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,7n,30p,630b,232s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmti10.pfb>
-Output written on assignment_2.pdf (6 pages, 220600 bytes).
+ 46i,7n,30p,388b,232s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on assignment_2.pdf (14 pages, 248886 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

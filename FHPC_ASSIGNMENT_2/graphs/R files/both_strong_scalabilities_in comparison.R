@@ -21,7 +21,7 @@ legend(14, 1.5, legend = c("touch_by_all","array_sum"), fill = c("red","blue"), 
 
 
 e_touch_by_all = (1/speedup_touch_by_all- 1/time_executions_touch_by_all$p)/(1-1/time_executions_touch_by_all$p) 
-plot(time_executions_array_sum$p,e_touch_by_all,type = "l",ylab = "overhead",ylim =c(0.5,0.8),xlab= "N of cores", col = "red", main = "Parallel Overhead")
+plot(time_executions_array_sum$p,e_touch_by_all,type = "l",ylim =c(0,1),ylab = "e(n,p)",xlab= "N of cores", col = "red", main = "Parallel Overhead Estimate")
 e_array_sum = (1/speedup_array_sum- 1/time_executions_array_sum$p)/(1-1/time_executions_array_sum$p) 
 lines(time_executions_array_sum$p,e_array_sum,type = "l",ylab = "overhead",xlab= "N of cores", col = "blue", main = "Parallel Overhead")
 legend(14, 0.65, legend = c("touch_by_all","array_sum"), fill = c("red","blue"), col="red", bg ="white")
