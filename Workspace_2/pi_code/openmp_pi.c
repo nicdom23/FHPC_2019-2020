@@ -17,7 +17,7 @@ int main ( int argc , char *argv[ ] )
    long long int M =0 ;
   int size; 
   double pi ;
-  double start_time, end_time,start_time_1,end_time_1;   
+  double start_time_1, end_time_1,start_time_2,end_time_2;   
   long long int N;
 if ( argc <=1) {
     fprintf (stderr , " Usage : %s number_of_iterations \n", argv[0] ) ;
@@ -35,8 +35,8 @@ int myid , numprocs ;
 	long long int local_M;
 	double x, y;
 	
-	S =atoll(argv[1]);
-	N = S /numprocs;
+	size =atoll(argv[1]);
+	N = size /numprocs;
 
 	unsigned int myseed=(SEED*(myid+1)) ; 
 	local_M=0;
