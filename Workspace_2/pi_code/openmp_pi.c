@@ -15,7 +15,7 @@
 int main ( int argc , char *argv[ ] )
 {
    long long int M =0 ;
-  int S; 
+  int size; 
   double pi ;
   double start_time, end_time,start_time_1,end_time_1;   
   long long int N;
@@ -28,7 +28,7 @@ int myid , numprocs ;
 #pragma omp parallel
 {
 
-    start_time_1 = omp_get_wtime();	 
+    start_time_1 = omp_get_wtime();
       numprocs= omp_get_num_threads();
       
 long long int local_M ;
@@ -36,15 +36,11 @@ double x, y ;
 	
 	
 	myid = omp_get_thread_num();
-	S =atoll(argv[1]);
-	N = S /numprocs;
-       //PRINTF("thread %d of %d \n",myid,numprocs);
- 
-  
+	PRINTF("thread %d of %d \n",myid,numprocs);
 
-  
-
-  
+	size =atoll(argv[1]);
+	N = size /numprocs;
+      
   unsigned int myseed=(SEED*(myid+1)) ; 
   local_M=0;
   long long int i;  
@@ -54,7 +50,6 @@ for (i=0; i<N ; i++) {
     y = rand_r(&myseed)/(double)RAND_MAX;    
 	if ((x*x + y*y)<1)
       local_M++;
- // PRINTF("local threads %lld from thread %d   \n",local_M,myid);
 	}
 
 end_time_1=omp_get_wtime();
@@ -63,19 +58,16 @@ start_time = omp_get_wtime();
 M += local_M ;
 
 end_time=omp_get_wtime();
-
-
-//PRINTF ( "\n # walltime on thread %i : %10.8f \n",myid, end_time - start_time ) ; 
+ 
 }
 
 //print for the comparison with mpi_pi.c
-//PRINTF ( "\n%d , %10.8f , %10.8f \n",S,end_time_1 - start_time_1, end_time - start_time ) ;
+PRINTF ( "problem size:%d , time execution of points estimation:%10.8f , time execution of total sum:%10.8f \n",size,end_time_1 - start_time_1, end_time - start_time ) ;
 //print for walltime estimation
-PRINTF ( "\n%d , %10.8f \n",S,end_time - start_time_1 ) ;
+PRINTF ( "walltime: %10.8f \n",end_time - start_time_1 ) ;
 
-//PRINTF("N*numprocs= %lld,%d",N,numprocs);
 pi = 4.0*M/(N*numprocs) ;
-  //PRINTF ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
+  PRINTF ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
 
  	
 return 0;
