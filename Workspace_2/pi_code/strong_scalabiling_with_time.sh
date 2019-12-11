@@ -3,10 +3,12 @@
 #PBS -N strong_scalability_TEST_w_20_nodes_mpi_pi
 #PBS -l walltime=00:05:00
 cd $HOME/FHPC_2019-2020/Workspace_2/pi_code
-module load openmpi
-rm time_executions_strong_mpi.csv
- touch time_executions_strong_mpi.csv
- echo "N;p;time" > time_executions_strong_mpi.csv
+
+VAR=time_executions_strong_mpi.csv
+
+rm $VAR
+ touch $VAR
+ echo "N;p;time" > $VAR
 
  N=1000000000
  NSHOTS=1
@@ -29,7 +31,7 @@ rm time_executions_strong_mpi.csv
         echo -n "avg time for procs " $procs " : "
         echo "scale=4; $avg/($NSHOTS+1)" | bc
         
-        echo -n $N";"$procs";" >> time_executions_strong_mpi.csv
-        echo "scale=4; $avg/($NSHOTS+1)" | bc >> time_executions_strong_mpi.csv
+        echo -n $N";"$procs";" >> $VAR
+        echo "scale=4; $avg/($NSHOTS+1)" | bc >> $VAR
  done
 
