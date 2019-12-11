@@ -33,7 +33,6 @@ The scope of the course is to give you:
  - Friday 22/11 : Room 128/129 SISSA via Bonomea [lecture materials](D_1122/README.md)
  - Monday 25/11 : Room 005 SISSA via Bonomea [lecture_materials](D_1125/README.md)
  - Friday 29/11 : Room D Miramare campus [lecture materials](D_1129/README.md)
-
  - Monday 02/12 : Room D Miramare campus [lecture materials](D_1202/README.md)
  - Friday 06/12 : Room D Miramare campus [lecture materials](D_1206/README.md)
  - Monday 09/12 : Room D Miramare campus(D16/README.md)
