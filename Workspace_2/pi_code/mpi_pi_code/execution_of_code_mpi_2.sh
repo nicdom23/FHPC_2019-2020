@@ -4,7 +4,7 @@
 #PBS -N weak_scalability_TEST_w_1_nodes_openmp_pi
 #PBS -l walltime=00:05:00
 cd $HOME/FHPC_2019-2020/Workspace_2/pi_code/mpi_pi_code
-VAR=parts_results/execution_code_mpi.csv
+VAR=elapsed_time/final_elapsed_time_mpi.csv
 
 module load openmpi 
 rm $VAR

@@ -5,12 +5,11 @@
 cd $HOME/FHPC_2019-2020/Workspace_2/pi_code
 export OMP_NUM_THREAD=20
 
-Var=parts_results/elapsedtime_openmpi.csv
-Var2=parts_results/walltime_openmpi.csv
+Var=elapsed_time/elapsedtime_openmpi.csv
+
 touch $Var
-touch $Var2
+
  echo "N;time" > $Var
- echo "N;time" > $Var2
  M=50000000
  NSHOTS=10
 

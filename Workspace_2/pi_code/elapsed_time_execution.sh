@@ -4,12 +4,12 @@
 #PBS -l walltime=00:05:00
 cd $HOME/FHPC_2019-2020/Workspace_2/pi_code
 
-VAR=elapsed_time_of_openmp
+VAR=elapsed_time/final_omp_elapsed_time.csv
 rm $VAR
  touch $VAR
- echo "N;p;time" > $VAR
+ echo "N,p,time" > $VAR
 
- M=1000000000
+ M=50000000
  NSHOTS=1
 
  for size in 1 2 4 6 8 10 12 14 16 18 20 
@@ -31,7 +31,7 @@ rm $VAR
         echo -n "avg time for procs " $procs " : "
         echo "scale=4; $avg/($NSHOTS+1)" | bc
         
-        echo -n $N";20;" >> $VAR
+        echo -n $N",20," >> $VAR
         echo "scale=4; $avg/($NSHOTS+1)" | bc >> $VAR
  done
 

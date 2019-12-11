@@ -6,7 +6,7 @@
 cd $HOME/FHPC_2019-2020/Workspace_2/pi_code/mpi_pi_code
 
 module load openmpi
-Var=parts_results/execution_code_mpi.csv
+Var=elapsed_time/elapsed_time_mpi_pi.csv
  touch $Var
  echo "N;time" > $Var
 
@@ -21,7 +21,7 @@ Var=parts_results/execution_code_mpi.csv
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)
  		avg=$( echo "scale=4; $avg+$realminutes+$realseconds" | bc -l ) 
-		echo "     procs " $procs " avg = " $avg 
+		echo "     procs " $p:xrocs " avg = " $avg 
               
        
         
