@@ -29,25 +29,21 @@ int myid , numprocs ;
 {
 
     start_time_1 = omp_get_wtime();
-      numprocs= omp_get_num_threads();
-      
-long long int local_M ;
-double x, y ;
-	
-	
-	myid = omp_get_thread_num();
+    numprocs= omp_get_num_threads();
+    myid = omp_get_thread_num(); 
 
-	printf("hello from thread %d from %d \n",myid,numprocs);
+	long long int local_M;
+	double x, y;
+	
 	S =atoll(argv[1]);
 	N = S /numprocs;
 
+	unsigned int myseed=(SEED*(myid+1)) ; 
+	local_M=0;
+	long long int i;  
 
-  unsigned int myseed=(SEED*(myid+1)) ; 
-  local_M=0;
-  long long int i;  
 
-
-//initialization and estmation of the parallel points
+//initialization and estmation of the circle's points
 #pragma omp parallel for reduction(+:local_M) 
 for (i=0; i<N ; i++) {  
     x = rand_r(&myseed)/(double)RAND_MAX; 
@@ -57,18 +53,18 @@ for (i=0; i<N ; i++) {
 	}
 
 end_time_1=omp_get_wtime();
-start_time = omp_get_wtime();
+start_time_2= omp_get_wtime();
 #pragma omp atomic
 M += local_M ;
 
-end_time=omp_get_wtime();
+end_time_2=omp_get_wtime();
  
 }
 
 //print for the comparison with mpi_pi.c
-PRINTF ( "problem size:%d , time execution of points estimation:%10.8f , time execution of total sum:%10.8f \n",size,end_time_1 - start_time_1, end_time - start_time ) ;
+PRINTF ( "problem size:%d , time execution of points estimation:%10.8f , time execution of total sum:%10.8f \n",size,end_time_1 - start_time_1, end_time_2 - start_time_2 ) ;
 //print for walltime estimation
-PRINTF ( "walltime: %10.8f \n",end_time - start_time_1 ) ;
+PRINTF ( "walltime: %10.8f \n",end_time_2 - start_time_1 ) ;
 
 pi = 4.0*M/(N*numprocs) ;
   PRINTF ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
