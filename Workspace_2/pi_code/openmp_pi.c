@@ -36,14 +36,18 @@ double x, y ;
 	
 	
 	myid = omp_get_thread_num();
-	PRINTF("thread %d of %d \n",myid,numprocs);
 
-	size =atoll(argv[1]);
-	N = size /numprocs;
-      
+	printf("hello from thread %d from %d \n",myid,numprocs);
+	S =atoll(argv[1]);
+	N = S /numprocs;
+
+
   unsigned int myseed=(SEED*(myid+1)) ; 
   local_M=0;
   long long int i;  
+
+
+//initialization and estmation of the parallel points
 #pragma omp parallel for reduction(+:local_M) 
 for (i=0; i<N ; i++) {  
     x = rand_r(&myseed)/(double)RAND_MAX; 
@@ -69,6 +73,6 @@ PRINTF ( "walltime: %10.8f \n",end_time - start_time_1 ) ;
 pi = 4.0*M/(N*numprocs) ;
   PRINTF ( "\n # of trials = %llu , estimate of pi is %1.9f \n", N*numprocs, pi ) ;
 
- 	
+ 
 return 0;
 }
