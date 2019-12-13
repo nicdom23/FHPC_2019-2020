@@ -72,10 +72,6 @@ N,p,time
 1000000000,16, 1.45151305
 1000000000,16, 1.45150304
 1000000000,16, 1.45270300 
-cn08-04.31842ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31843ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31864ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31866ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
 1000000000,18, 1.26768303
 1000000000,18, 1.26727509
 1000000000,18, 1.26816797
@@ -94,14 +90,6 @@ cn08-04.31866ipath_userinit: Mismatched user minor version (12) and driver minor
 1000000000,18, 1.26723003
 1000000000,18, 1.26709795
 1000000000,18, 1.26761699 
-cn08-04.31898ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31901ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31900ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31899ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31920ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31923ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31922ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
-cn08-04.31924ipath_userinit: Mismatched user minor version (12) and driver minor version (13) while context sharing. Ensure that driver and library are from the same release.
 1000000000,20, 1.19200110
 1000000000,20, 1.19181204
 1000000000,20, 1.19203401
