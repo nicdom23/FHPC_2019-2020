@@ -1,2 +1,0 @@
-11:36 Talked about parallel overhead with a coursemate:
-He gave me the formula Tparallel = Tserial/numberofprocessors + Parallel_overhead

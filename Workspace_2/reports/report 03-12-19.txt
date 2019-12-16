@@ -1,2 +1,0 @@
-22:29How to compute a strong scalability test if threads run 
-on single cores and not on multiple nodes?
