@@ -1,4 +1,0 @@
-04_touch_by_all.c: In function 'get_cpu_id':
-04_touch_by_all.c:155: warning: implicit declaration of function 'sched_getcpu'
-28.71user 1.35system 0:03.74elapsed 802%CPU (0avgtext+0avgdata 31253424maxresident)k
-0inputs+8outputs (0major+4414minor)pagefaults 0swaps
