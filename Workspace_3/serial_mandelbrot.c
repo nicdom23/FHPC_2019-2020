@@ -56,7 +56,6 @@ for(int i=0;i<n_x;i++)
 		int counter = 0;
 		for(;counter < I_max && sqrt(z_r*z_r+z_i*z_i) < 2;counter++)
 			{
-			double d=sqrt(2);
 			z_r= z_r*z_r-z_i*z_i + c_r;
 			z_i=2*z_r*z_i+c_i;
 			counter ++;
@@ -99,22 +98,6 @@ void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char 
   FILE* image_file; 
   image_file = fopen(image_name, "w"); 
   
-  // Writing header
-  // The header's format is as follows, all in ASCII.
-  // "whitespace" is either a blank or a TAB or a CF or a LF
-  // - The Magic Number (see below the magic numbers)
-  // - the image's width
-  // - the height
-  // - a white space
-  // - the image's height
-  // - a whitespace
-  // - the maximum color value, which must be between 0 and 65535
-  //
-  // if he maximum color value is in the range [0-255], then
-  // a pixel will be expressed by a single byte; if the maximum is
-  // larger than 255, then 2 bytes will be needed for each pixel
-  //
-
   int color_depth = 1+((maxval>>8)>0);       // 1 if maxval < 256, 2 otherwise
 
   fprintf(image_file, "P5\n%d %d\n%d\n", xsize, ysize, maxval);
@@ -125,14 +108,5 @@ void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char 
   fclose(image_file); 
   return ;
 
-  /* ---------------------------------------------------------------
-
-     TYPE    MAGIC NUM     EXTENSION   COLOR RANGE
-           ASCII  BINARY
-
-     PBM   P1     P4       .pbm        [0-1]
-     PGM   P2     P5       .pgm        [0-255]
-     PPM   P3     P6       .ppm        [0-2^16[
   
-  ------------------------------------------------------------------ */
 }
