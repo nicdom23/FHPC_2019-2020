@@ -1,0 +1,2 @@
+/var/spool/slurm/d/job01622/slurm_script: line 8: gcc: command not found
+/var/spool/slurm/d/job01623/slurm_script: line 11: results/ex1on1nodes10cores.txt: No such file or directory

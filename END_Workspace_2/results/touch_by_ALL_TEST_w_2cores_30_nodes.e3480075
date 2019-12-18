@@ -1,0 +1,21 @@
+04_touch_by_all.x: In function `_start':
+(.text+0x0): multiple definition of `_start'
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crt1.o:(.text+0x0): first defined here
+04_touch_by_all.x: In function `_fini':
+(.fini+0x0): multiple definition of `_fini'
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crti.o:(.fini+0x0): first defined here
+04_touch_by_all.x:(.rodata+0x0): multiple definition of `_IO_stdin_used'
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crt1.o:(.rodata.cst4+0x0): first defined here
+04_touch_by_all.x: In function `__data_start':
+(.data+0x0): multiple definition of `__data_start'
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crt1.o:(.data+0x0): first defined here
+04_touch_by_all.x: In function `__data_start':
+(.data+0x8): multiple definition of `__dso_handle'
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/crtbegin.o:(.rodata+0x0): first defined here
+04_touch_by_all.x: In function `_init':
+(.init+0x0): multiple definition of `_init'
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crti.o:(.init+0x0): first defined here
+/usr/bin/ld: warning: Cannot create .eh_frame_hdr section, --eh-frame-hdr ignored.
+/usr/bin/ld: error in 04_touch_by_all.x(.eh_frame); no .eh_frame_hdr table will be created.
+collect2: ld returned 1 exit status
+/var/spool/torque/mom_priv/jobs/3480075.master1.SC: line 9: result/ex2on2nodesand30cores.txt: No such file or directory
