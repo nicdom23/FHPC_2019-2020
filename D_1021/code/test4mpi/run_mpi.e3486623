@@ -1,0 +1,4 @@
+/var/spool/torque/mom_priv/jobs/3486623.master1.SC: line 6: cd: /home/ndomenis/ndomenis/FHPC_2019-2020/D_1021/code/test4mpi: No such file or directory
+loading dependency gnu/4.9.2
+loading dependency numactl/2.0.10
+loading dependency hwloc/1.10.0
