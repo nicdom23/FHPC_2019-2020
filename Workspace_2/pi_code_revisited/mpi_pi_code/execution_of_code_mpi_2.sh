@@ -11,7 +11,7 @@ rm $VAR
  touch $VAR
  echo "N,time" > $VAR
 
- M=500000000
+ M=50000000
  NSHOTS=1
 
  for procs in 1 2 4 6 8 10 12 14 16 18 20 
