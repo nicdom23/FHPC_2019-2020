@@ -10,6 +10,8 @@
 #else
 #define PRINTF(...)
 #endif
+
+#include<omp>
 void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char *image_name);
 
 int main ( int argc , char *argv[ ] )
@@ -30,10 +32,11 @@ x_R= atoll(argv[5]);
 y_R = atoll(argv[6]);
 I_max= atoll(argv[7]);
 
-char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
+short int *matrix = (short int*)malloc(n_x * n_y * sizeof(short int));
 
-
+#pragma omp parallel for
 for(int i=0;i<n_x;i++)
+	#pragma omp parallel for
 	for(int j=0;j<n_y;j++){
 		int offset= i*n_y+j;
 		matrix[offset]= 0;
@@ -43,10 +46,11 @@ double c_r, c_i;
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_R-y_L)/n_y;
 
-
+#pragma omp parallel for
 for(int i=0;i<n_x;i++)
+	#pragma omp parallel for
         for(int j=0;j<n_y;j++)
-	{	
+	{
 		
 		
 		c_r=x_L+(i*delta_x);
@@ -70,14 +74,14 @@ for(int i=0;i<n_x;i++)
 		
 	//printMatrix(matrix,n_x,n_y);
 
-	/*for(int i=0;i<n_x;i++){
+	for(int i=0;i<n_x;i++){
 		printf("\n");
 		for(int j=0;j<n_y;j++){
 			int offset= i*n_y+j;			
 			printf("%d ",matrix[offset]);
 			}
- 		}*/
-write_pgm_image(matrix,50,n_x,n_y,"mandelbrot");
+ 		}
+write_pgm_image(matrix,100,n_x,n_y,"mandelbrot");
 return 0;
 }
 
