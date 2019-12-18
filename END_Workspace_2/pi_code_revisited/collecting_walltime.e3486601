@@ -1,0 +1,13 @@
+touch: cannot touch `time_executions/omp_walltime_execution.csv': No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 10: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory
+/var/spool/torque/mom_priv/jobs/3486601.master1.SC: line 18: time_executions/omp_walltime_execution.csv: No such file or directory

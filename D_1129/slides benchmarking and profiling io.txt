@@ -1,0 +1,122 @@
+benchmark:standardized way to compare performance of different systems
+
+HPL HIGh PERFORMANce LINPACK  good benchmark to 
+now input output benchmark
+hpl is no more relevant
+
+should be simple portable and scalable
+actually adapt it to a different size of the system
+consistent and repeatable results
+accepted by users
+
+synthethic workload benchmark
+
+mosti important applicatiion based benchmark
+
+microbenchmark like stream
+
+discuss IO benchmark io is the weak part of the chain
+io perfotmance harder than cpu an memory benchmark
+io performance relies on complicated -io stack
+
+io library
+
+RAID infrastrucure has a cache Into the DISK
+on a single io server
+
+
+parallel filesystem is more complex at least three different stuff
+which kind of network are we using 
+a lot of different layers, complicates to measure numbers
+IO library is user
+RAID infrastructure on the hardware
+
+how to test, perform high level benchmark, how is the stack build
+benchmark alls tructures on the stack
+
+which performance can i get from the disk
+
+combine all numbers toghether and get a performance model and some expected values
+We run the high level benchmark and compare with you have built
+
+enable raid infrastructure and measure its raw perfomance
+the disk has a certain MB/s set up file system and go down to 180
+
+think about a cluster where you have a lot of clients and of servers and a vast network
+
+benchmark all the single components, get a common result, compare with the benchmark
+
+what is the network occupation, maybe i have to decide on a separated network
+metadata iops vs bandwidth, not so gigantic files on which io operations are important
+
+
+benchmark your own application 
+very complicated, moving data takes days, very hard to standardise and distribute
+
+you have to benchmark your own workload, first thing get a grant to run an application, all this runs in the time they gave me - do a benchmark analysis- very large grant need benchmark processing; again in IO
+----
+program scales well keep constant the io operations, the problem doesnt scale anymore
+
+increase the number of processors the green part increases while the rest remains really small, it doesnt scale because it is poorly parallelied by the IO part
+remove the IO part  collect the data and reduce the number of processors that write
+
+kind of situation youre dealing with
+
+do benchmark of your stuff  
+
+io performance measurements so many sequential bands
+single shared files lot of dim
+
+a method that says how much des it take to run the application
+
+what kind of IO the application does
+find the right benchmark;;
+
+no one size fits all solution to the io problemù
+no find the right machine that can work for everything
+many io patterns work well for some range of parameters.
+conflicts with increase performance by decreasing number of IO operations and increasing size
+
+
+microbenchmarks to play  use iozone
+lustre to stripe the file over different osd
+
+try to compile iozone and try to use scratch
+
+IOR the the facto IO banchmark for HPC
+
+i have three tasks
+blocksize = blocksize filesystem
+
+ior is a parallel appliction 
+write a file that is large as
+
+one file per process, instead of writing a shared file sistem i write independent files
+
+the performance increases bandwidth
+each single process writes its one file 
+parallel approach, ditruibute the single files for many differetn osd
+why such a large difference in terms of writing and reading: in the first read is five times faster than write
+why do i have a write speed of
+why? buffering save the file in the buffer and when reading finds data in buffer, wrong benchmarking, measure whole filesystem, deal with small files
+consider what you can get out the system
+
+you can play some flags
+
+mdtest measures metadata performance  you say that every process will create state and remove do this
+
+run test  on 2 filesystems
+
+on a lot of small files luster is not woring well im so slow at creating metadata
+
+darshan opens source runtime library
+catches POZIX I/O applications
+low memory consumptions  code link the darshan library of the code
+
+darshan by means of this tool you understand the problem of our applications
+
+how to use darsha on IOR
+
+ROMIO
+
+check by yourself on what IOR hints can do first DSSC laureate

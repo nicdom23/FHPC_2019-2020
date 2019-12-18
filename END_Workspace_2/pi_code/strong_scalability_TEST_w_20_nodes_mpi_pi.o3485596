@@ -1,0 +1,376 @@
+Execution 0 for p=1
+0:00.18
+     procs  1  avg =  .18
+Execution 1 for p=1
+0:00.15
+     procs  1  avg =  .33
+Execution 2 for p=1
+0:00.13
+     procs  1  avg =  .46
+Execution 3 for p=1
+0:00.16
+     procs  1  avg =  .62
+Execution 4 for p=1
+0:00.15
+     procs  1  avg =  .77
+Execution 5 for p=1
+0:00.14
+     procs  1  avg =  .91
+Execution 6 for p=1
+0:00.14
+     procs  1  avg =  1.05
+Execution 7 for p=1
+0:00.15
+     procs  1  avg =  1.20
+Execution 8 for p=1
+0:00.13
+     procs  1  avg =  1.33
+Execution 9 for p=1
+0:00.15
+     procs  1  avg =  1.48
+Execution 10 for p=1
+0:00.16
+     procs  1  avg =  1.64
+avg time for procs  1  : .1490
+Execution 0 for p=2
+0:00.25
+     procs  2  avg =  .25
+Execution 1 for p=2
+0:00.26
+     procs  2  avg =  .51
+Execution 2 for p=2
+0:00.26
+     procs  2  avg =  .77
+Execution 3 for p=2
+0:00.26
+     procs  2  avg =  1.03
+Execution 4 for p=2
+0:00.26
+     procs  2  avg =  1.29
+Execution 5 for p=2
+0:00.24
+     procs  2  avg =  1.53
+Execution 6 for p=2
+0:00.27
+     procs  2  avg =  1.80
+Execution 7 for p=2
+0:00.27
+     procs  2  avg =  2.07
+Execution 8 for p=2
+0:00.26
+     procs  2  avg =  2.33
+Execution 9 for p=2
+0:00.29
+     procs  2  avg =  2.62
+Execution 10 for p=2
+0:00.26
+     procs  2  avg =  2.88
+avg time for procs  2  : .2618
+Execution 0 for p=4
+0:00.40
+     procs  4  avg =  .40
+Execution 1 for p=4
+0:00.41
+     procs  4  avg =  .81
+Execution 2 for p=4
+0:00.46
+     procs  4  avg =  1.27
+Execution 3 for p=4
+0:00.44
+     procs  4  avg =  1.71
+Execution 4 for p=4
+0:00.47
+     procs  4  avg =  2.18
+Execution 5 for p=4
+0:00.48
+     procs  4  avg =  2.66
+Execution 6 for p=4
+0:00.47
+     procs  4  avg =  3.13
+Execution 7 for p=4
+0:00.46
+     procs  4  avg =  3.59
+Execution 8 for p=4
+0:00.31
+     procs  4  avg =  3.90
+Execution 9 for p=4
+0:00.41
+     procs  4  avg =  4.31
+Execution 10 for p=4
+0:00.44
+     procs  4  avg =  4.75
+avg time for procs  4  : .4318
+Execution 0 for p=6
+0:00.63
+     procs  6  avg =  .63
+Execution 1 for p=6
+0:00.66
+     procs  6  avg =  1.29
+Execution 2 for p=6
+0:00.57
+     procs  6  avg =  1.86
+Execution 3 for p=6
+0:00.62
+     procs  6  avg =  2.48
+Execution 4 for p=6
+0:00.61
+     procs  6  avg =  3.09
+Execution 5 for p=6
+0:00.58
+     procs  6  avg =  3.67
+Execution 6 for p=6
+0:00.68
+     procs  6  avg =  4.35
+Execution 7 for p=6
+0:00.68
+     procs  6  avg =  5.03
+Execution 8 for p=6
+0:00.63
+     procs  6  avg =  5.66
+Execution 9 for p=6
+0:00.48
+     procs  6  avg =  6.14
+Execution 10 for p=6
+0:00.66
+     procs  6  avg =  6.80
+avg time for procs  6  : .6181
+Execution 0 for p=8
+0:00.90
+     procs  8  avg =  .90
+Execution 1 for p=8
+0:00.78
+     procs  8  avg =  1.68
+Execution 2 for p=8
+0:00.81
+     procs  8  avg =  2.49
+Execution 3 for p=8
+0:00.78
+     procs  8  avg =  3.27
+Execution 4 for p=8
+0:00.83
+     procs  8  avg =  4.10
+Execution 5 for p=8
+0:00.81
+     procs  8  avg =  4.91
+Execution 6 for p=8
+0:00.89
+     procs  8  avg =  5.80
+Execution 7 for p=8
+0:00.81
+     procs  8  avg =  6.61
+Execution 8 for p=8
+0:00.84
+     procs  8  avg =  7.45
+Execution 9 for p=8
+0:00.77
+     procs  8  avg =  8.22
+Execution 10 for p=8
+0:00.81
+     procs  8  avg =  9.03
+avg time for procs  8  : .8209
+Execution 0 for p=10
+0:00.79
+     procs  10  avg =  .79
+Execution 1 for p=10
+0:00.92
+     procs  10  avg =  1.71
+Execution 2 for p=10
+0:00.97
+     procs  10  avg =  2.68
+Execution 3 for p=10
+0:00.95
+     procs  10  avg =  3.63
+Execution 4 for p=10
+0:01.00
+     procs  10  avg =  4.63
+Execution 5 for p=10
+0:01.01
+     procs  10  avg =  5.64
+Execution 6 for p=10
+0:00.95
+     procs  10  avg =  6.59
+Execution 7 for p=10
+0:01.06
+     procs  10  avg =  7.65
+Execution 8 for p=10
+0:00.93
+     procs  10  avg =  8.58
+Execution 9 for p=10
+0:01.07
+     procs  10  avg =  9.65
+Execution 10 for p=10
+0:00.94
+     procs  10  avg =  10.59
+avg time for procs  10  : .9627
+Execution 0 for p=12
+0:00.80
+     procs  12  avg =  .80
+Execution 1 for p=12
+0:01.04
+     procs  12  avg =  1.84
+Execution 2 for p=12
+0:01.12
+     procs  12  avg =  2.96
+Execution 3 for p=12
+0:00.85
+     procs  12  avg =  3.81
+Execution 4 for p=12
+0:01.28
+     procs  12  avg =  5.09
+Execution 5 for p=12
+0:01.17
+     procs  12  avg =  6.26
+Execution 6 for p=12
+0:01.13
+     procs  12  avg =  7.39
+Execution 7 for p=12
+0:01.13
+     procs  12  avg =  8.52
+Execution 8 for p=12
+0:01.15
+     procs  12  avg =  9.67
+Execution 9 for p=12
+0:01.14
+     procs  12  avg =  10.81
+Execution 10 for p=12
+0:01.16
+     procs  12  avg =  11.97
+avg time for procs  12  : 1.0881
+Execution 0 for p=14
+0:01.31
+     procs  14  avg =  1.31
+Execution 1 for p=14
+0:01.33
+     procs  14  avg =  2.64
+Execution 2 for p=14
+0:01.31
+     procs  14  avg =  3.95
+Execution 3 for p=14
+0:01.42
+     procs  14  avg =  5.37
+Execution 4 for p=14
+0:01.23
+     procs  14  avg =  6.60
+Execution 5 for p=14
+0:01.15
+     procs  14  avg =  7.75
+Execution 6 for p=14
+0:01.29
+     procs  14  avg =  9.04
+Execution 7 for p=14
+0:01.24
+     procs  14  avg =  10.28
+Execution 8 for p=14
+0:01.41
+     procs  14  avg =  11.69
+Execution 9 for p=14
+0:01.30
+     procs  14  avg =  12.99
+Execution 10 for p=14
+0:01.38
+     procs  14  avg =  14.37
+avg time for procs  14  : 1.3063
+Execution 0 for p=16
+0:01.13
+     procs  16  avg =  1.13
+Execution 1 for p=16
+0:01.39
+     procs  16  avg =  2.52
+Execution 2 for p=16
+0:01.41
+     procs  16  avg =  3.93
+Execution 3 for p=16
+0:01.54
+     procs  16  avg =  5.47
+Execution 4 for p=16
+0:01.41
+     procs  16  avg =  6.88
+Execution 5 for p=16
+0:01.50
+     procs  16  avg =  8.38
+Execution 6 for p=16
+0:01.47
+     procs  16  avg =  9.85
+Execution 7 for p=16
+0:01.60
+     procs  16  avg =  11.45
+Execution 8 for p=16
+0:01.49
+     procs  16  avg =  12.94
+Execution 9 for p=16
+0:01.71
+     procs  16  avg =  14.65
+Execution 10 for p=16
+0:01.49
+     procs  16  avg =  16.14
+avg time for procs  16  : 1.4672
+Execution 0 for p=18
+0:01.77
+     procs  18  avg =  1.77
+Execution 1 for p=18
+0:01.66
+     procs  18  avg =  3.43
+Execution 2 for p=18
+0:01.27
+     procs  18  avg =  4.70
+Execution 3 for p=18
+0:01.62
+     procs  18  avg =  6.32
+Execution 4 for p=18
+0:01.67
+     procs  18  avg =  7.99
+Execution 5 for p=18
+0:01.63
+     procs  18  avg =  9.62
+Execution 6 for p=18
+0:01.56
+     procs  18  avg =  11.18
+Execution 7 for p=18
+0:01.61
+     procs  18  avg =  12.79
+Execution 8 for p=18
+0:01.67
+     procs  18  avg =  14.46
+Execution 9 for p=18
+0:01.70
+     procs  18  avg =  16.16
+Execution 10 for p=18
+0:01.65
+     procs  18  avg =  17.81
+avg time for procs  18  : 1.6190
+Execution 0 for p=20
+0:02.06
+     procs  20  avg =  2.06
+Execution 1 for p=20
+0:01.76
+     procs  20  avg =  3.82
+Execution 2 for p=20
+0:01.86
+     procs  20  avg =  5.68
+Execution 3 for p=20
+0:01.82
+     procs  20  avg =  7.50
+Execution 4 for p=20
+0:01.92
+     procs  20  avg =  9.42
+Execution 5 for p=20
+0:01.64
+     procs  20  avg =  11.06
+Execution 6 for p=20
+0:01.79
+     procs  20  avg =  12.85
+Execution 7 for p=20
+0:01.40
+     procs  20  avg =  14.25
+Execution 8 for p=20
+0:01.73
+     procs  20  avg =  15.98
+Execution 9 for p=20
+0:01.75
+     procs  20  avg =  17.73
+Execution 10 for p=20
+0:01.76
+     procs  20  avg =  19.49
+avg time for procs  20  : 1.7718
+cn01-12 : flushing filesystem cache...
+cn01-12 : filesystem cache flushed
