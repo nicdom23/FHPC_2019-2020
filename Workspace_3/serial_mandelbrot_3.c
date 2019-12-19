@@ -1,18 +1,10 @@
 #include <stdlib.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <math.h>
-#include <string.h>
-#include <omp.h>
-#define SEED 35791246
-#ifdef OUTPUT
-#define PRINTF(...) printf(__VA_ARGS__)
-#else
-#define PRINTF(...)
-#endif
 void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char *image_name);
 double module(int real,int imag);
 void printMatrix(int *matrix, int n_rows, int n_columns);
+int isMandelbrot(double c_r,double c_i,int I_max);
 int main ( int argc , char *argv[ ] )
 {
   int n_x,n_y;
@@ -81,6 +73,23 @@ for(int i=0;i<n_x;i++)
  		}*/
 write_pgm_image(matrix,50,n_x,n_y,"mandelbrot");
 return 0;
+}
+
+int isMandelbrot(double c_r,double c_i,int I_max){//verifies if the element belongs to the mandelbrot set
+		double z_r=0;
+		double z_i=0;
+		int counter = 0;
+		for(;counter < I_max && module(z_r,z_i) < 2;counter++)
+			{
+			double z_r_1= z_r*z_r-z_i*z_i + c_r;
+			double z_i_1=2*z_r*z_i+c_i;
+			z_r=z_r_1;
+			z_i=z_i_1;
+			counter ++;
+			}
+		if (counter<I_max) return counter;//does not belong to the mandelbrot set
+		
+		return 0;//does belong to the mandelbrot set
 }
 
 
