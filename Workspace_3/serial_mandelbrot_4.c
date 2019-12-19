@@ -56,7 +56,6 @@ double delta_y = (y_L-y_R)/n_y;
 
 //printf("delta_x%f,deltaY: %f \n", delta_x,delta_y);
 
-#pragma omp parallel for
 for(int i=0;i<n_x;i++){
 	//printf("\n*************\n");
         for(int j=0;j<n_y;j++)
@@ -70,7 +69,7 @@ for(int i=0;i<n_x;i++){
 	}
 	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
 //produce image
-write_pgm_image(matrix,50,n_x,n_y,"parallel_mandelbrot_image");
+write_pgm_image(matrix,50,n_x,n_y,"mandelbrot_image");
 
 return 0;
 }
