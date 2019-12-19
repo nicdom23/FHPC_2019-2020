@@ -2,8 +2,8 @@
 #PBS -l nodes=1:ppn=20
 #PBS -N weak_scalability_TEST_w_20_nodes_openmp_pi
 #PBS -l walltime=00:05:00
-cd $HOME/FHPC_2019-2020/Workspace_2/pi_code
-Var=results/time_execution_for_weak_scalability.csv
+cd $HOME/FHPC_2019-2020/Workspace_3
+Var=results/time_execution_for_weak_scalability_mandelbrot.csv
 
 rm $Var
  touch $Var
@@ -21,7 +21,7 @@ rm $Var
  		export OMP_NUM_THREADS=$procs
 		echo "Execution $i for p=$procs"
 		#/usr/bin/time -f "buuuh %E" ./array_sum $N
-		realtime=$( /usr/bin/time -f "buuuh %E" ./openmp_pi $N 2>&1 | grep buuuh | cut -d' ' -f2) 
+		realtime=$( /usr/bin/time -f "buuuh %E" ./openmp_mandelbrot $N $N -2 2 2 -2 1000 2>&1 | grep buuuh | cut -d' ' -f2) 
 		echo $realtime
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)
