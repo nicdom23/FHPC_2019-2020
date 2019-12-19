@@ -36,23 +36,19 @@ short int *matrix = (short int*)malloc(n_x * n_y * sizeof(short int));
 
 #pragma omp parallel for
 for(int i=0;i<n_x;i++)
-	#pragma omp parallel for
+
 	for(int j=0;j<n_y;j++){
 		int offset= i*n_y+j;
-		matrix[offset]= 0;
-	}
+		matrix[offset]= 0;	}
 
 double c_r, c_i;
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_R-y_L)/n_y;
 
-#pragma omp parallel for
+
 for(int i=0;i<n_x;i++)
-	#pragma omp parallel for
         for(int j=0;j<n_y;j++)
-	{
-		
-		
+	{	
 		c_r=x_L+(i*delta_x);
 		c_i= y_L+(j*delta_y);
 		double z_r=0;
