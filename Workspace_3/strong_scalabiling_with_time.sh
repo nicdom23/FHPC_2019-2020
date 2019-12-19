@@ -4,7 +4,7 @@
 #PBS -l walltime=00:10:00
 cd $HOME/FHPC_2019-2020/Workspace_3
 
-VAR=time_executions_strong_mandelbrot.csv
+VAR=time_executions_strong_scalability_mandelbrot.csv
 
 rm $VAR
  touch $VAR

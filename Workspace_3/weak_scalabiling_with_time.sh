@@ -3,7 +3,7 @@
 #PBS -N weak_scalability_TEST_w_20_nodes_openmp_pi
 #PBS -l walltime=00:05:00
 cd $HOME/FHPC_2019-2020/Workspace_3
-Var=results/time_execution_for_weak_scalability_mandelbrot.csv
+Var=time_execution_weak_scalability_mandelbrot.csv
 
 rm $Var
  touch $Var
