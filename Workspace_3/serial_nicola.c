@@ -2,76 +2,58 @@
 #include <stdio.h>
 #include <math.h>
 void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char *image_name);
-//creates the pgm image containing the fractal
-
 double module(int real,int imag);
-//calculates the module of a complex number
-
-void printMatrix(char *matrix, int n_rows, int n_columns);
-//prints the given matrix
-
+void printMatrix(int *matrix, int n_rows, int n_columns);
 char isMandelbrot(double c_r,double c_i,int I_max);
-//identifies if the given complex number belongs to the mandelbrot set
-//Returns 0 if the point belongs to the mandelbrot set
-//Returns the number of iterations to reach module(c_r,c_i)>2 if the points doesn't belong to the mandelbrot set
-
 int main ( int argc , char *argv[ ] )
 {
-//Initialization of variables
   int n_x,n_y;
   double x_L, y_L, x_R, y_R;   
   long long int I_max;
-
-//input check
-if ( argc <=7) {
-    fprintf (stderr , " Usage : %s int n_x-int n_y-double x_L-double y_L-double x_R-double y_R-int I_max \n", argv[0] ) ;
+if ( argc <=1) {
+    fprintf (stderr , " Usage : %s n_x n_y x_L y_L x_R y_R I_max \n", argv[0] ) ;
     exit(-1) ;
   }
 
-//data collection from input
 n_x = atoll(argv[1]);
 n_y= atoll(argv[2]);
-sscanf(argv[3], "%lf", &x_L);
-sscanf(argv[4], "%lf", &y_L);
-sscanf(argv[5], "%lf", &x_R);
-sscanf(argv[6], "%lf", &y_R);
+x_L= atoll(argv[3]);
+y_L= atoll(argv[4]);
+x_R= atoll(argv[5]);
+y_R = atoll(argv[6]);
 I_max= atoll(argv[7]);
 
-//check on collected data
-if ( y_R>=y_L|| x_L>=x_R) {
-    fprintf (stderr , " The first point must be the top left point of the area.\n The second point must be the bottom right point of the area.  \n") ;
-    exit(-1) ;
-  }
-//creating matrix
 char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
 
-//calculating horizontal and vertical offset
+
+double c_r, c_i;
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_L-y_R)/n_y;
+printf("%f,%f", x_R,x_L);
 
-//debugging prints
-//printf("x_L %f,y_L %f ,x_R %f,y_R %f\n",x_L,y_L,x_R,y_R);
+printf("%f,%f", delta_x,delta_y);
 
-//printf("x_r-x_l%f, y_l-y_r%f \n",x_R-x_L,y_L-y_R);
-
-//printf("delta_x%f,deltaY: %f \n", delta_x,delta_y);
-
-#pragma omp parallel for
-for(int i=0;i<n_x;i++){
-	//printf("\n*************\n");
-        for(int j=0;j<n_y;j++)
+for(int j=0;j<n_y;j++){
+	printf("\n*************\n");
+        for(int i=0;i<n_x;i++)
 	{	
-		double c_r=x_L+(j*delta_x);
-		double c_i= y_L-(i*delta_y);
-		//printf("%5.3f + i %5.3f :",c_r,c_i);
-	        int offset= i*n_y+j;					
+		c_r=x_L+(i*delta_x);
+		c_i= y_L-(j*delta_y);
+		printf("%5.2f + i %5.2f :",c_r,c_i);
+	        int offset= j*n_x+i;					
 		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
 	}	
 	}
-	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
-//produce image
-write_pgm_image(matrix,50,n_x,n_y,"parallel_mandelbrot_image");
+	//printMatrix(matrix,n_x,n_y);
 
+	/*for(int i=0;i<n_x;i++){
+		printf("\n");
+		for(int j=0;j<n_y;j++){
+			int offset= i*n_y+j;			
+			printf("%d ",matrix[offset]);
+			}
+ 		}*/
+write_pgm_image(matrix,50,n_x,n_y,"mandelbrot_image");
 return 0;
 }
 
@@ -94,7 +76,7 @@ char isMandelbrot(double c_r,double c_i,int I_max){//verifies if the element bel
 }
 
 
-void printMatrix(char *matrix, int n_rows, int n_columns)
+void printMatrix(int *matrix, int n_rows, int n_columns)
 	{  for(int i=0;i<n_rows;i++)
 		{printf("\n");
 		for(int j=0;j<n_columns;j++){
