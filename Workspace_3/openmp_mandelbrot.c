@@ -18,7 +18,7 @@ char isMandelbrot(double c_r,double c_i,int I_max);
 int main ( int argc , char *argv[ ] )
 {
 //Initialization of variables
-  int n_x,n_y;
+  long long int n_x,n_y;
   double x_L, y_L, x_R, y_R;   
   long long int I_max;
 
@@ -29,13 +29,13 @@ if ( argc <=7) {
   }
 
 //data collection from input
-n_x = atoll(argv[1]);
-n_y= atoll(argv[2]);
+sscanf(argv[1], "%lld", &n_x);
+sscanf(argv[2], "%lld", &n_y);
 sscanf(argv[3], "%lf", &x_L);
 sscanf(argv[4], "%lf", &y_L);
 sscanf(argv[5], "%lf", &x_R);
 sscanf(argv[6], "%lf", &y_R);
-I_max= atoll(argv[7]);
+sscanf(argv[3], "%lld", &I_max);
 
 //check on collected data
 if ( y_R>=y_L|| x_L>=x_R) {
@@ -43,8 +43,9 @@ if ( y_R>=y_L|| x_L>=x_R) {
     exit(-1) ;
   }
 //creating matrix
+printf("creating matrix");
 char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
-
+printf("matrix created");
 //calculating horizontal and vertical offset
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_L-y_R)/n_y;
@@ -56,19 +57,20 @@ double delta_y = (y_L-y_R)/n_y;
 
 //printf("delta_x%f,deltaY: %f \n", delta_x,delta_y);
 
-#pragma omp parallel for
-for(int i=0;i<n_x;i++){
-	//printf("\n*************\n");
-        for(int j=0;j<n_y;j++)
-	{	
-		double c_r=x_L+(j*delta_x);
-		double c_i= y_L-(i*delta_y);
-		//printf("%5.3f + i %5.3f :",c_r,c_i);
-	        int offset= i*n_y+j;					
-		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
-	}	
+
+	for(int i=0;i<n_x;i++){
+		//printf("\n*************\n");
+        	for(int j=0;j<n_y;j++){	
+			double c_r=x_L+(j*delta_x);
+			double c_i= y_L-(i*delta_y);
+			//printf("%5.3f + i %5.3f :",c_r,c_i);
+		        int offset= i*n_y+j;					
+			matrix[offset]= isMandelbrot(c_r,c_i,I_max);
+		}	
 	}
-	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
+	
+	printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
+
 //produce image
 write_pgm_image(matrix,50,n_x,n_y,"parallel_mandelbrot_image");
 

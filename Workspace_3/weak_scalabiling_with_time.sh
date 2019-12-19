@@ -3,13 +3,13 @@
 #PBS -N weak_scalability_TEST_w_20_nodes_openmp_pi
 #PBS -l walltime=00:05:00
 cd $HOME/FHPC_2019-2020/Workspace_3
-Var=time_execution_weak_scalability_mandelbrot.csv
+Var=time_execution_weak_mandelbrot.csv
 
 rm $Var
  touch $Var
  echo "N;p;time" > $Var
 
- M=1000000
+ M=10000
  NSHOTS=10
 
  for procs in 1 2 4 6 8 10 12 14 16 18 20 
@@ -21,7 +21,7 @@ rm $Var
  		export OMP_NUM_THREADS=$procs
 		echo "Execution $i for p=$procs"
 		#/usr/bin/time -f "buuuh %E" ./array_sum $N
-		realtime=$( /usr/bin/time -f "buuuh %E" ./openmp_mandelbrot $N $N -2 2 2 -2 1000 2>&1 | grep buuuh | cut -d' ' -f2) 
+		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 1000 2>&1 | grep buuuh | cut -d' ' -f2) 
 		echo $realtime
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)

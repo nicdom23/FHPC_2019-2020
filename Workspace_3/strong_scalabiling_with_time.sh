@@ -4,13 +4,13 @@
 #PBS -l walltime=00:10:00
 cd $HOME/FHPC_2019-2020/Workspace_3
 
-VAR=time_executions_strong_scalability_mandelbrot.csv
+VAR=time_execution_strong_scalability_mandelbrot.csv
 
 rm $VAR
  touch $VAR
  echo "N;p;time" > $VAR
 
- N=1000000000
+ N=100000
  NSHOTS=1
 
  for procs in 1 2 4 6 8 10 12 14 16 18 20 
@@ -21,7 +21,7 @@ rm $VAR
  		export OMP_NUM_THREADS=$procs
 		echo "Execution $i for p=$procs"
 		#/usr/bin/time -f "buuuh %E" ./array_sum $N
-		realtime=$( /usr/bin/time -f "buuuh %E" ./openmp_mandelbrot $N $N -2 2 2 -2 1000 2>&1 | grep buuuh | cut -d' ' -f2) 
+		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 1000 2>&1 | grep buuuh | cut -d' ' -f2) 
 		echo $realtime
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)
