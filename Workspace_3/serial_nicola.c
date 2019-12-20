@@ -17,11 +17,12 @@ if ( argc <=1) {
 
 n_x = atoll(argv[1]);
 n_y= atoll(argv[2]);
-x_L= atoll(argv[3]);
-y_L= atoll(argv[4]);
-x_R= atoll(argv[5]);
-y_R = atoll(argv[6]);
+sscanf(argv[3], "%lf", &x_L);
+sscanf(argv[4], "%lf", &y_L);
+sscanf(argv[5], "%lf", &x_R);
+sscanf(argv[6], "%lf", &y_R);
 I_max= atoll(argv[7]);
+
 
 char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
 
@@ -34,12 +35,12 @@ printf("%f,%f", x_R,x_L);
 printf("%f,%f", delta_x,delta_y);
 
 for(int j=0;j<n_y;j++){
-	printf("\n*************\n");
+	//printf("\n*************\n");
         for(int i=0;i<n_x;i++)
 	{	
 		c_r=x_L+(i*delta_x);
 		c_i= y_L-(j*delta_y);
-		printf("%5.2f + i %5.2f :",c_r,c_i);
+		// printf("%5.2f + i %5.2f :",c_r,c_i);
 	        int offset= j*n_x+i;					
 		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
 	}	
@@ -53,7 +54,7 @@ for(int j=0;j<n_y;j++){
 			printf("%d ",matrix[offset]);
 			}
  		}*/
-write_pgm_image(matrix,50,n_x,n_y,"mandelbrot_image");
+write_pgm_image(matrix,50,n_x,n_y,"custom_mandelbrot_image");
 return 0;
 }
 
@@ -64,8 +65,11 @@ char isMandelbrot(double c_r,double c_i,int I_max){//verifies if the element bel
 		char to_return;
 		for(;counter < I_max && module(z_r,z_i) < 2;counter++)
 			{
-			double z_r_1= z_r*z_r-z_i*z_i + c_r;
+			double z_r_1= z_r*z_r-z_i*z_i+c_r;
 			double z_i_1=2*z_r*z_i+c_i;
+			
+			double z_r_2=z_r_1*z_r+z_i_1*z_i+c_r;
+			double z_i_2=2*z_r_1*z_i+c_i;
 			z_r=z_r_1;
 			z_i=z_i_1;
 			counter ++;
