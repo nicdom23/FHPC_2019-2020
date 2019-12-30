@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include<limits.h>
 #include <math.h>
 #include<omp.h>
 void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char *image_name);
@@ -20,7 +20,7 @@ char isMandelbrot(double c_r,double c_i,int I_max);
 int main ( int argc , char *argv[ ] )
 {
 //Initialization of variables
-  long long int n_x,n_y;
+  long long unsigned int n_x,n_y;
   double x_L, y_L, x_R, y_R;   
   long long int I_max;
 
@@ -29,25 +29,31 @@ if ( argc <=7) {
     fprintf (stderr , " Usage : %s int n_x-int n_y-double x_L-double y_L-double x_R-double y_R-int I_max \n", argv[0] ) ;
     exit(-1) ;
   }
-printf("data collection");
+//printf("data collection");
 //data collection from input
 
-sscanf(argv[1], "%lld", &n_x);
-sscanf(argv[2], "%lld", &n_y);
+sscanf(argv[1], "%llu", &n_x);
+sscanf(argv[2], "%llu", &n_y);
 sscanf(argv[3], "%lf", &x_L);
 sscanf(argv[4], "%lf", &y_L);
 sscanf(argv[5], "%lf", &x_R);
 sscanf(argv[6], "%lf", &y_R);
 sscanf(argv[7], "%lld", &I_max);
-printf("data collected");
+//printf("data collected");
 //check on collected data
 if ( y_R>=y_L|| x_L>=x_R) {
     fprintf (stderr , " The first point must be the top left point of the area.\n The second point must be the bottom right point of the area.  \n") ;
     exit(-1) ;
   }
+
+/*printf("%llu",ULLONG_MAX);
+if ( n_x*n_y>ULLONG_MAX) {
+    fprintf (stderr , " Please insert a smaller n_x and n_y  \n") ;
+    exit(-1) ;
+  }*/
 //creating matrix
 char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
-printf("matrix made");
+//printf("matrix made");
 //calculating horizontal and vertical offset
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_L-y_R)/n_y;
@@ -66,14 +72,15 @@ for(int i=0;i<n_x;i++){
 		double c_r=x_L+(j*delta_x);
 		double c_i= y_L-(i*delta_y);
 		//printf("%5.3f + i %5.3f :",c_r,c_i);
-	        int offset= i*n_y+j;					
+	        long long unsigned int offset= i*n_y+j;
+		//printf("offset: %lld",offset);					
 		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
 	}	
 	}
 	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
 //produce image
 write_pgm_image(matrix,50,n_x,n_y,"parallel_mandelbrot_image");
-
+free(matrix);
 return 0;
 }
 
