@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=20
 #PBS -N weak_scalability_TEST_w_20_nodes_openmp_pi
-#PBS -l walltime=00:05:00
+#PBS -l walltime=00:20:00
 cd $HOME/FHPC_2019-2020/Workspace_3
 Var=time_execution_weak_mandelbrot.csv
 
@@ -9,8 +9,8 @@ rm $Var
  touch $Var
  echo "N;p;time" > $Var
 
- M=10000
- NSHOTS=10
+ M=1000
+ NSHOTS=1
 
  for procs in 1 2 4 6 8 10 12 14 16 18 20 
  do
@@ -20,9 +20,10 @@ rm $Var
         do
  		export OMP_NUM_THREADS=$procs
 		echo "Execution $i for p=$procs"
-		#/usr/bin/time -f "buuuh %E" ./array_sum $N
-		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 1000 2>&1 | grep buuuh | cut -d' ' -f2) 
-		echo $realtime
+               # /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 100
+
+		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 100 2>&1 | grep buuuh | cut -d' ' -f2) 
+		#echo realtime $realtime
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)
  		avg=$( echo "scale=4; $avg+$realminutes+$realseconds" | bc -l ) 
@@ -30,8 +31,8 @@ rm $Var
  	done
         echo -n "avg time for procs " $procs " : "
         echo "scale=4; $avg/($NSHOTS+1)" | bc
-        
-        echo -n $N";"$procs";" >> $Var
+       
+        echo -n $N","$procs"," >> $Var
         echo "scale=4; $avg/($NSHOTS+1)" | bc >> $Var
  done
 

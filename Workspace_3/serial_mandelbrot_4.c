@@ -44,7 +44,7 @@ if ( y_R>=y_L|| x_L>=x_R) {
   }
 //creating matrix
 char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
-
+if(!matrix){printf("Memory allocation failed,not enough memory"); exit(-1);}
 //calculating horizontal and vertical offset
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_L-y_R)/n_y;
@@ -70,7 +70,7 @@ for(int i=0;i<n_x;i++){
 	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
 //produce image
 write_pgm_image(matrix,50,n_x,n_y,"mandelbrot_image");
-
+free(matrix);
 return 0;
 }
 
