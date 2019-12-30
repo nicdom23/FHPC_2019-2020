@@ -1,0 +1,30 @@
+Execution 0 for p=1
+     procs  1  avg =  9.83
+Execution 1 for p=1
+     procs  1  avg =  19.60
+avg time for procs  1  : 9.8000
+Execution 0 for p=2
+     procs  2  avg =  20.67
+Execution 1 for p=2
+     procs  2  avg =  41.33
+avg time for procs  2  : 20.6650
+Execution 0 for p=4
+     procs  4  avg =  66.58
+Execution 1 for p=4
+     procs  4  avg =  133.19
+avg time for procs  4  : 66.5950
+Execution 0 for p=6
+     procs  6  avg =  114.16
+Execution 1 for p=6
+     procs  6  avg =  228.55
+avg time for procs  6  : 114.2750
+Execution 0 for p=8
+     procs  8  avg =  176.46
+Execution 1 for p=8
+     procs  8  avg =  354.97
+avg time for procs  8  : 177.4850
+Execution 0 for p=10
+     procs  10  avg =  224.23
+Execution 1 for p=10
+cn01-15 : flushing filesystem cache...
+cn01-15 : filesystem cache flushed
