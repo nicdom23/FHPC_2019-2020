@@ -1,9 +1,9 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=20
-#PBS -N weak_scalability_TEST_w_20_nodes_openmp_pi
-#PBS -l walltime=00:20:00
+#PBS -N weak_scalability_on_mandelbrot
+#PBS -l walltime=01:00:00
 cd $HOME/FHPC_2019-2020/Workspace_3
-Var=time_execution_weak_mandelbrot.csv
+Var=results/time_execution_weak_mandelbrot.csv
 
 rm $Var
  touch $Var
