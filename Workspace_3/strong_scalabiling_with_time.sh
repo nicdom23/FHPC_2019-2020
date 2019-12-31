@@ -1,10 +1,10 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=20
-#PBS -N strong_scalability_TEST_w_20_nodes_mpi_pi
+#PBS -N strong_scalability_on_mandelbrot
 #PBS -l walltime=00:20:00
 cd $HOME/FHPC_2019-2020/Workspace_3
 
-VAR=time_execution_strong_scalability_mandelbrot.csv
+VAR=results/time_execution_strong_mandelbrot.csv
 
 rm $VAR
  touch $VAR
