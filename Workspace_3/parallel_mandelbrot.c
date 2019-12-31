@@ -3,6 +3,11 @@
 #include<limits.h>
 #include <math.h>
 #include<omp.h>
+#include <sched.h>
+#define _GNU_SOURCE
+
+int sched_getcpu( void );
+
 void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char *image_name);
 //creates the pgm image containing the fractal
 
@@ -67,8 +72,12 @@ double delta_y = (y_R-y_L)/n_y;
 #pragma omp parallel for
 for(int i=0;i<n_x;i++){
 	//printf("\n*************\n");
-        for(int j=0;j<n_y;j++)
-	{	
+        int me = omp_get_thread_num();
+		#pragma omp critical
+  		printf("thread %2d is running on core %2d\n", me, sched_getcpu() );  
+	for(int j=0;j<n_y;j++)
+	{	  
+  		
 		double c_r=x_L+(j*delta_x);
 		double c_i= y_R-(i*delta_y);
 		//printf("%5.3f + i %5.3f :",c_r,c_i);
@@ -131,6 +140,11 @@ void write_pgm_image( void *image, int maxval, int xsize, int ysize, const char 
 
   fclose(image_file); 
   return ;
-
-  
+ 
 }
+
+
+
+
+
+
