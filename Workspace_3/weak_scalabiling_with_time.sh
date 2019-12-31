@@ -7,7 +7,7 @@ Var=results/time_execution_weak_mandelbrot.csv
 
 rm $Var
  touch $Var
- echo "N;p;time" > $Var
+ echo "N,p,time" > $Var
 
  M=1000
  NSHOTS=1
@@ -22,7 +22,7 @@ rm $Var
 		echo "Execution $i for p=$procs"
                # /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 100
 
-		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 100 2>&1 | grep buuuh | cut -d' ' -f2) 
+		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 -2 2 2 100 2>&1 | grep buuuh | cut -d' ' -f2) 
 		#echo realtime $realtime
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)

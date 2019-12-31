@@ -72,9 +72,9 @@ double delta_y = (y_R-y_L)/n_y;
 #pragma omp parallel for
 for(int i=0;i<n_x;i++){
 	//printf("\n*************\n");
-       // int me = omp_get_thread_num();
-		//#pragma omp critical
-  		//printf("thread %2d is running on core %2d\n", me, sched_getcpu() );  
+                int me = omp_get_thread_num();
+		#pragma omp critical
+  		printf("thread %2d is running on core %2d\n", me, sched_getcpu() );  
 	for(int j=0;j<n_y;j++)
 	{	  
   		
