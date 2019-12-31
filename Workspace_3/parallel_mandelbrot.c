@@ -41,8 +41,8 @@ sscanf(argv[6], "%lf", &y_R);
 sscanf(argv[7], "%lld", &I_max);
 //printf("data collected");
 //check on collected data
-if ( y_R>=y_L|| x_L>=x_R) {
-    fprintf (stderr , " The first point must be the top left point of the area.\n The second point must be the bottom right point of the area.  \n") ;
+if ( y_R<=y_L|| x_L>=x_R) {
+    fprintf (stderr , " The first point must be the bottom left point of the area.\n The second point must be the top right point of the area.  \n") ;
     exit(-1) ;
   }
 
@@ -56,7 +56,7 @@ char *matrix = (char*)malloc(n_x * n_y * sizeof(char));
 //printf("matrix made");
 //calculating horizontal and vertical offset
 double delta_x = (x_R-x_L)/n_x;
-double delta_y = (y_L-y_R)/n_y;
+double delta_y = (y_R-y_L)/n_y;
 
 //debugging prints
 //printf("x_L %f,y_L %f ,x_R %f,y_R %f\n",x_L,y_L,x_R,y_R);
@@ -70,7 +70,7 @@ for(int i=0;i<n_x;i++){
         for(int j=0;j<n_y;j++)
 	{	
 		double c_r=x_L+(j*delta_x);
-		double c_i= y_L-(i*delta_y);
+		double c_i= y_R-(i*delta_y);
 		//printf("%5.3f + i %5.3f :",c_r,c_i);
 	        long long unsigned int offset= i*n_y+j;
 		//printf("offset: %lld",offset);					
