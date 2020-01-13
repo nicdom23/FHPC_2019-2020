@@ -61,7 +61,7 @@ if(!matrix)
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_R-y_L)/n_y;
 double start_time,end_time;
-#pragma omp parallel for
+#pragma omp parallel for schedule(dynamic,10)
     for(int i=0;i<n_x;i++){  
 	for(int j=0;j<n_y;j++)
 	{	  
