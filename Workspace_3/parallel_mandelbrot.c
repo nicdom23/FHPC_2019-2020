@@ -61,22 +61,27 @@ if(!matrix)
 double delta_x = (x_R-x_L)/n_x;
 double delta_y = (y_R-y_L)/n_y;
 double start_time,end_time;
-#pragma omp parallel for
+
+#pragma omp parallel
+{
+int my_thread_id = omp_get_thread_num();
+start_time=omp_get_wtime();
+#pragma omp for nowait
     for(int i=0;i<n_x;i++){  
 	for(int j=0;j<n_y;j++)
 	{	  
   		
 		double c_r=x_L+(j*delta_x);
 		double c_i= y_R-(i*delta_y);
-	int my_thread_id = omp_get_thread_num();
 	        long long unsigned int offset= i*n_y+j;
-		start_time=omp_get_wtime();			
+			
 		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
-		end_time=omp_get_wtime();
-
-	  printf( " thread num %d has execution time %f \n", my_thread_id, end_time-start_time );
+		
 	}	
 	}
+end_time=omp_get_wtime();
+   printf( " thread num %d has execution time %f \n", my_thread_id, end_time-start_time );
+}
 	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
 //produce image
 write_pgm_image(matrix,50,n_x,n_y,"parallel_mandelbrot_image");
