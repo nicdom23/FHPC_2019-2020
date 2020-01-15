@@ -34,7 +34,11 @@ uses such data layout. ``TransA`` and ``TransB`` tell that the matrices should b
   C(M,N) = alpha*A(M,K)*B(K,N) + beta*C(K,N)
 ```
 
+<<<<<<< HEAD
+The parameters ``lda``, ``lbd`` and ``ldc`` are the leading dimensions of the matrices, which, since we are using colmajor order, should be the number of rows (lda=M, ldb=K, ldc=M)
+=======
 The paramters ``lda``, ``lbd`` and ``ldc`` are the leading dimensions of the matrices, which, since we are using colmajor order, should be the number of rows (lda=M, ldb=K, ldc=M)
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 
 To compile and run the code, first submit an interactive job to the queue system
 
@@ -45,6 +49,10 @@ On C3HPC:
 
 ```
 On Ulysses new partition:
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 ```
 srun -N 1 -p gpu2 --pty bash
 ```
@@ -53,14 +61,21 @@ Load the needed module
 
 ```
 
+<<<<<<< HEAD
+  module load intel
+=======
   module load openblas/0.3.6/gcc/8.2.0-3hba37z
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 
 ```  
 
 And type 
 
 ```
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
   make cpu
 ```
 
@@ -84,11 +99,19 @@ You can use positional argument to specify the size
 
 will use M=2000 K=1000 and N=3000, so we will get C(2000,3000) = A(2000,1000)\*B(1000,3000)
 
+<<<<<<< HEAD
+The present BLAS code is based on Intel MKL implementation, which is multithreaded. To control the number of threads you could use the environment variable ``OMP_NUM_THREADS``
+=======
 The present BLAS code is based on the OpenBLAS implementation, which is multithreaded. To control the number of threads you could use the environment variable ``OMP_NUM_THREADS``
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 
 ```
 
   export OMP_NUM_THREADS=4
+<<<<<<< HEAD
+```
+=======
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 
 By default this variable has been set by the queue system to the number of cores requested at submission time (``ppn=24`` means ``OMP_NUM_THREADS=24``), but can be changed at runtime.
 
@@ -156,13 +179,20 @@ This data movement costs quite some time, such that using cuBLAS becomes benefic
 To compile code load the CUDA environment
 
 ```
+<<<<<<< HEAD
+ module load cuda
+=======
  module load cuda/
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 ```
 
 and then issues:
 
 ```
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
   make gpu
 ```
 
@@ -220,8 +250,12 @@ The Tesla series instead have typically twice as much single precision register 
 
 #### Proposed Exercise
 
+<<<<<<< HEAD
+- Increasing the matrices size up to 20000x20000 (single precision) or 14000x14000 (double precision) analyse the scaling of the GEMM calculation, for both CPU  and GPU and find the size for which the GPU is beneficial. Plot your results.
+=======
 - Increasing the matrices size up to 20000x20000 (single precision) or 14000x14000 (double precision) analyse the scaling of the GEMM calculation, for both CPU 
   and GPU and find the size for which the GPU is beneficial. Plot your results.
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 
 - Repeat the analysis for different values of OMP_NUM_THREADS. (Remember, this effect only the CPU BLAS, not the cuBLAS)
  
@@ -229,9 +263,22 @@ The Tesla series instead have typically twice as much single precision register 
     export OMP_NUM_THREADS=4
 ```
 
+<<<<<<< HEAD
+#### Fortran Interface to cublas
+
+see here:
+
+ - https://docs.nvidia.com/cuda/cublas/index.html#appendix-b-cublas-fortran-bindings
+
+=======
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
 #### More resources
 
 
 For further information please visit the official cuBLAS page:
 
+<<<<<<< HEAD
+  - https://docs.nvidia.com/cuda/cublas/index.html
+=======
     [https://docs.nvidia.com/cuda/cublas/index.html]
+>>>>>>> 0448face249e52a4fd7755555907e16e0db85c92
