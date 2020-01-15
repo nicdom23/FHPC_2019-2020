@@ -43,7 +43,7 @@ int main( void )
   int array[ 3 ];
 
   for ( int ii = 0; ii <= 3; ii++ )
-    array[ ii ] = ii;
+    array[ ii ] = ii;//produces a stack smash that will result in a segfault
 
   return 0;
 }
