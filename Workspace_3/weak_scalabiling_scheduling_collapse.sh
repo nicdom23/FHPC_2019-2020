@@ -1,16 +1,16 @@
 #!/bin/bash
 #PBS -l nodes=1:ppn=20
-#PBS -N no_sch_weak_scalability_on_mandelbrot_lower_N
+#PBS -N sched_collapse_weak_scalability_on_mandelbrot_scheduling
 #PBS -l walltime=01:00:00
 cd $HOME/FHPC_2019-2020/Workspace_3
-Var=results/time_execution_weak_mandelbrot_no_sched_no_collapse.csv
+Var=results/time_execution_weak_mandelbrot_scheduling_collapse.csv
 
 rm $Var
  touch $Var
  echo "N,p,time" > $Var
 
-
  M=1000
+
  NSHOTS=1
 
  for procs in 1 2 4 6 8 10 12 14 16 18 20 
@@ -23,7 +23,7 @@ rm $Var
 		echo "Execution $i for p=$procs"
                # /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 2 2 -2 100
 
-		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot $N $N -2 -2 2 2 100 2>&1 | grep buuuh | cut -d' ' -f2) 
+		realtime=$( /usr/bin/time -f "buuuh %E" ./parallel_mandelbrot_schedule_collapse $N $N -2 -2 2 2 100 2>&1 | grep buuuh | cut -d' ' -f2) 
 		#echo realtime $realtime
 		realminutes=$(( $(echo $realtime | cut -d':' -f1)*60 ))
 		realseconds=$(echo $realtime | cut -d':' -f2)
