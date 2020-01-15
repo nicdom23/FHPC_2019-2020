@@ -65,22 +65,26 @@ double start_time,end_time;
 #pragma omp parallel
 {
 int my_thread_id = omp_get_thread_num();
-start_time=omp_get_wtime();
-#pragma omp for nowait
+ start_time=omp_get_wtime();
+#pragma omp for schedule(dynamic,1) nowait
+
     for(int i=0;i<n_x;i++){  
 	for(int j=0;j<n_y;j++)
 	{	  
   		
 		double c_r=x_L+(j*delta_x);
 		double c_i= y_R-(i*delta_y);
+
 	        long long unsigned int offset= i*n_y+j;
-			
-		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
 		
+		matrix[offset]= isMandelbrot(c_r,c_i,I_max);
+	
+
 	}	
 	}
-end_time=omp_get_wtime();
-   printf( " thread num %d has execution time %f \n", my_thread_id, end_time-start_time );
+	end_time=omp_get_wtime();
+    printf( " thread num %d has execution time %f \n", my_thread_id, end_time-start_time );
+
 }
 	//printMatrix(matrix,n_x,n_y); //uncomment to print the matrix
 //produce image
