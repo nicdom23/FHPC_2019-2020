@@ -100,7 +100,6 @@ char isMandelbrot(double c_r,double c_i,int I_max){//verifies if the element bel
 			double z_i_1=2*z_r*z_i+c_i;
 			z_r=z_r_1;
 			z_i=z_i_1;
-			counter ++;
 			}
 		if (counter<I_max) to_return=counter;//does not belong to the mandelbrot set
 		else to_return = 0;//does belong to the mandelbrot set

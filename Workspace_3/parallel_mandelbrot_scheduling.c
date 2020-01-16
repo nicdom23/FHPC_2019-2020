@@ -66,6 +66,7 @@ double start_time,end_time;
 {
 int my_thread_id = omp_get_thread_num();
  start_time=omp_get_wtime();
+//these two for cycles explore all the matrix to verify if the points belong to the Mandelbrot Set
 #pragma omp for schedule(dynamic,1) nowait
 
     for(int i=0;i<n_x;i++){  
@@ -104,7 +105,6 @@ char isMandelbrot(double c_r,double c_i,int I_max){//verifies if the element bel
 			double z_i_1=2*z_r*z_i+c_i;
 			z_r=z_r_1;
 			z_i=z_i_1;
-			counter ++;
 			}
 		if (counter<I_max) to_return=counter;//does not belong to the mandelbrot set
 		else to_return = 0;//does belong to the mandelbrot set
