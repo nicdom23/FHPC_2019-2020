@@ -1,0 +1,25 @@
+$ g++ sum_of_n.c -o sum_of_n.x
+$ time ./sum_of_n.x < n.txt
+total sum: 500500
+real    0m0.005s
+user    0m0.000s
+sys     0m0.002s
+
+$ module load openmpi
+$ mpicc mpi_sum_of_n.c -o mpi_sum_of_n.x -std=c11
+time mpirun -np 10 ./mpi_sum_of_n.x < n.txt
+time spent on process 1 is 0.000041 seconds
+time spent on process 2 is 0.004197 seconds
+time spent on process 3 is 0.000022 seconds
+time spent on process 4 is 0.009296 seconds
+time spent on process 5 is 0.004883 seconds
+time spent on process 6 is 0.000022 seconds
+time spent on process 7 is 0.008823 seconds
+total sum: 500500 
+time spent on process 0 is 0.023464 seconds
+time spent on process 8 is 0.000022 seconds
+time spent on process 9 is 0.004411 seconds
+
+real    0m1.853s
+user    0m11.561s
+sys     0m0.635s

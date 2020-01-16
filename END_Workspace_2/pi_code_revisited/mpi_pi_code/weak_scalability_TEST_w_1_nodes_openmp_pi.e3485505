@@ -1,0 +1,2 @@
+/var/spool/torque/mom_priv/jobs/3485505.master1.SC: line 31: syntax error near unexpected token `$NSHOTS+1'
+/var/spool/torque/mom_priv/jobs/3485505.master1.SC: line 31: `        echo "scale=4; $avg/($NSHOTS+1)" | bc >> $VAR'
