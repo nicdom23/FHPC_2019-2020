@@ -2,7 +2,7 @@
 #PBS -l nodes=1:ppn=20
 #PBS -N scheduling_strong_scalability_on_mandelbrot
 #PBS -l walltime=00:20:00
-cd $HOME/FHPC_2019-2020/Workspace_3
+cd $HOME/workspace_assignment_3/FHPC_2019-2020/Workspace_3
 
 VAR=results/time_execution_strong_mandelbrot_scheduling_no_collapse.csv
 

@@ -2,13 +2,11 @@
 #PBS -l nodes=1:ppn=20
 #PBS -N strong_scalability_on_mandelbrot
 #PBS -l walltime=00:20:00
-cd $HOME/FHPC_2019-2020/Workspace_3
+#PBS -q devel
+cd $HOME/workspace_assignment_3/FHPC_2019-2020/Workspace_3
 
-<<<<<<< HEAD
+
 VAR=results/time_execution_strong_mandelbrot_no_sched_no_collapse.csv
-=======
-VAR=results/time_execution_strong_mandelbrot.csv
->>>>>>> 169f038e270b9a7f602f0270cedec879ea919a1b
 
 rm $VAR
  touch $VAR
